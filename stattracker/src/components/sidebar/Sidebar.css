@@ -1,0 +1,13 @@
+.sidebar {
+    background-color: #011327;
+    width: 8%;
+    height: 1000px;
+}
+.sidebar.open {
+    width: 14%;
+}
+.logo-small {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}

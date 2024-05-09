@@ -1,11 +1,15 @@
-import Example from "./components/example/example"
+//import Example from "./components/example/example"
+//import Pruebas from "./components/pruebas/pruebas"
+
+import { Sidebar } from "./components/sidebar/Sidebar";
+import './App.css'
 
 function App() {
   
 
   return (
     <>
-      <Example/>
+      <Sidebar />
     </>
   )
 }
