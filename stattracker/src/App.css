@@ -1,3 +1,11 @@
+:root{
+    --white: #FFFFFF;
+    --blue: #004675;
+    --red: #F4341F;
+    --green: #C2E812;
+    --Lora-font: "Lora", serif;
+}
+
 body {
     margin: 0px;
 }

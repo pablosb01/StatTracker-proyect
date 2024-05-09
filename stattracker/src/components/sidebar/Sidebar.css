@@ -1,13 +1,56 @@
 .sidebar {
     background-color: #011327;
     width: 8%;
-    height: 1000px;
+    height: 931px;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+
+    span{
+        display: none;
+        transition: all 0.5s ease-in-out;
+    }
+
+    /* .logo-container {
+        margin-bottom: 10%;
+    } */
 }
 .sidebar.open {
     width: 14%;
+
+    span{
+        display: flex;
+    }
 }
+
 .logo-small {
     width: 90%;
     display: block;
     margin: 0 auto;
+}
+
+.svg-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+
+    .svg-row {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;
+        color: white;
+        font-family: var(--Lora-font);
+        font-weight: 500;
+        font-size: larger;
+
+        svg{
+            fill: white;
+            width: 20%;
+        }
+    }
 }
