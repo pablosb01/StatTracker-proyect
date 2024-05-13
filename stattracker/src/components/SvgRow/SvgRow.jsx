@@ -32,13 +32,30 @@ export function SvgRow({ name }) {
     ),
   };
 
+  const linkObject = {
+    GitHub: (
+      'https://github.com/pablosb01/StatTracker-proyect'
+    ),
+    Instagram: (
+      'instagram.com/'
+    ),
+    VALORANT: (
+      'https://www.riotgames.com/es'
+    ),
+    Honkai: (
+      'https://hsr.hoyoverse.com/es-es/home'
+    ),
+  };
+
   const icon = svgObject[name]
+  const link = linkObject[name]
 
     return(
         <div className="svg-row">
-            {icon}
-            <span>{name}</span>
+            <a href={link}>
+              {icon}
+              <span>{name}</span>
+            </a>
         </div>
     )
 }
-
