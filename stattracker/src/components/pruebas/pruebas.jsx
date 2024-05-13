@@ -11,6 +11,8 @@ function Pruebas() {
 
     //!
 
+    gameData.players[8].stats.kills
+
   return (
     <>
     </>
