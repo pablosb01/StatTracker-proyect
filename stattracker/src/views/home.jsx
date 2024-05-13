@@ -1,7 +1,6 @@
 import { Sidebar } from '../components/sidebar/Sidebar'
-import './App.css'
 
-function App() {
+function Home() {
   
 
   return (
@@ -11,4 +10,4 @@ function App() {
   )
 }
 
-export default App
+export default Home
