@@ -1,19 +1,16 @@
 //import Example from "./components/example/example"
 //import Pruebas from "./components/pruebas/pruebas"
 
-import { Sidebar } from "./components/sidebar/Sidebar";
+import { Route, Routes } from "react-router-dom";
+import  Home  from "./views/home.jsx";
 import './App.css'
-import matchInfo from './objects/matchinfo'
 
 function App() {
 
-  console.log(matchInfo)
-  
-
   return (
-    <>
-      <Sidebar />
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
   )
 }
 
