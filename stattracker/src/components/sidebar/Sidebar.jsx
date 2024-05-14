@@ -34,22 +34,22 @@ export function Sidebar() {
   console.log(isOpen);
 
   return (
-    <div className="global-container">
-      <div className={`sidebar ${isOpen ? "open" : ""}`}>
-        <div className={"logo-container"}>
-          <img
-            src={buttonImage}
-            onClick={toggleSidebar}
-            className={"logo-small"}
-          />
-        </div>
-        <div className={"svg-container"}>
-          <SvgRow name={"GitHub"} />
-          <SvgRow name={"Instagram"} />
-          <SvgRow name={"VALORANT"} />
-          <SvgRow name={"Honkai"} />
-        </div>
+    
+    <div className={`sidebar ${isOpen ? "open" : ""}`}>
+      <div className={"logo-container"}>
+        <img
+          src={buttonImage}
+          onClick={toggleSidebar}
+          className={"logo-small"}
+        />
+      </div>
+      <div className={"svg-container"}>
+        <SvgRow name={"GitHub"} />
+        <SvgRow name={"Instagram"} />
+        <SvgRow name={"VALORANT"} />
+        <SvgRow name={"Honkai"} />
       </div>
     </div>
+    
   );
 }
