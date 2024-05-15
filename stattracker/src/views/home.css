@@ -1,6 +1,31 @@
 .homeBackground {
-    background-image: url('/src/views/logo-big-background.png'); /* Ruta de la imagen de fondo */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
-    background-position: center; /* Centra la imagen en el fondo */;
+    background-image: url('/src/views/logo-big-background.png');
+    background-position: center;
+    background-size: cover;
     height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.cardContainer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 20px
+}
+
+@media (max-width: 1200px) {
+    .cardContainer{
+        grid-template-columns: repeat(2,1fr);
+        padding-top: 10%;
+    }
+}
+
+@media (max-width: 420px) {
+    .cardContainer{
+        grid-template-columns: repeat(1,1fr);
+        padding-top: 10%;
+    }
 }
