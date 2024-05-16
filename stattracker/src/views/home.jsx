@@ -11,8 +11,9 @@ function Home() {
         <>
             <Sidebar />
             <div className="homeBackground">
-                
+            <h1>Start tracking your stats</h1>
                 <div className='cardContainer'>
+                    
                     <GameSelector imageSrc={valoHome}/>
                     <GameSelector imageSrc={honkHome}/>
                     <GameSelector imageSrc={exampleImage}/>

@@ -1,11 +1,12 @@
 .sidebar {
     background-color: #011327;
     width: 8%;
-    height: 931px;
-    transition: all 0.5s ease-in-out;
+    height: 100vh;
+    transition: width 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: relative;
+    min-height: 70px;
 
     span{
         display: none;
@@ -75,6 +76,8 @@
         .logo-container {
             margin-bottom: 0px;
             width: 40%;
+            min-height: 70px;
+            aspect-ratio: 1914/1074;
         }
 
         .logo-container img {
@@ -93,7 +96,7 @@
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 500px) {
     .sidebar {
 
         .logo-container img{
@@ -101,7 +104,7 @@
         }
 
         .svg-container {
-            width: 80%;
+            width: 100%;
 
             svg {
                 width: 30%;
