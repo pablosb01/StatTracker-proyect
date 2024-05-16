@@ -5,14 +5,18 @@ import { Route, Routes } from "react-router-dom";
 import  Home  from "./views/home/home.jsx";
 import { ValoHome } from "./views/valorant-home/valorant-home.jsx";
 import './App.css'
+import { Sidebar } from "./components/sidebar/Sidebar.jsx";
 
 function App() {
 
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path='/valo' element={<ValoHome/>} />
-    </Routes>
+    <>
+      <Sidebar/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path='/valo' element={<ValoHome/>} />
+      </Routes>
+    </>
   )
 }
 

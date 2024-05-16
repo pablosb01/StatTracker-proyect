@@ -4,7 +4,7 @@ import './valorant-home.css'
 export function ValoHome() {
     return(
         <>
-        <Sidebar/>
+        {/* <Sidebar/> */}
             <div className='valo-background'>
 
             </div>
