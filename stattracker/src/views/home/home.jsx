@@ -1,18 +1,18 @@
 
-import { GameSelector } from "../components/gameSelector/GameSelector";
-import { Sidebar } from "../components/sidebar/Sidebar";
+import { GameSelector } from "../../components/gameSelector/GameSelector";
+import { Sidebar } from "../../components/sidebar/Sidebar";
 import "./home.css";
-import valoHome from "../components/gameSelector/valorant-home.png"
-import honkHome from "../components/gameSelector/honkai-home.jpg"
-import exampleImage from "../components/gameSelector/example.png"
+import valoHome from "/src/assets/valorant-home.png"
+import honkHome from "/src/assets/honkai-home.jpg"
+import exampleImage from "/src/assets/example.png"
 
 function Home() {
     return (
         <>
             <Sidebar />
-            <div className="homeBackground">
+            <div className="home-background">
             <h1>Start tracking your stats</h1>
-                <div className='cardContainer'>
+                <div className='card-container'>
                     
                     <GameSelector imageSrc={valoHome}/>
                     <GameSelector imageSrc={honkHome}/>

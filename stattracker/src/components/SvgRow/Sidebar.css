@@ -67,7 +67,6 @@
         flex-direction: row;
         width: 100%;
         height: fit-content;
-        transition: none;
 
         .svg-container {
             display: flex;

@@ -1,5 +1,5 @@
-.homeBackground {
-    background-image: url('/src/views/logo-big-background.png');
+.home-background {
+    background-image: url('/src/assets/logo-big-background.png');
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -16,7 +16,7 @@
 }
 
 
-.cardContainer{
+.card-container{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -26,15 +26,15 @@
 }
 
 @media (max-width: 1200px) {
-    .cardContainer{
+    .card-container{
         grid-template-columns: repeat(2,1fr);
         padding-top: 0;
         width: inherit;
     }
-    .homeBackground {
+    .home-background {
         margin-left: 0;
         padding-top: 0%;
-        background-image: url('/src/views/home-back-tablet-phone.png');
+        background-image: url('/src/assets/home-back-tablet-phone.png');
         height: 100%;
         background-position: bottom;
 
@@ -46,12 +46,12 @@
 
 
 @media (max-width: 500px) {
-    .cardContainer{
+    .card-container{
         grid-template-columns: repeat(1,1fr);
         justify-content: center;
         place-items: center;
     }
-    .homeBackground {
+    .home-background {
         padding-top: 8vh;
     }
 }
