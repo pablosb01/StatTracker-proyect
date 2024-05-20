@@ -4,14 +4,14 @@ import { SvgRow } from '../SvgRow/SvgRow';
 
 export function Sidebar() {
   return (
-    <nav className="w-screen flex justify-between bg-[var(--gray-nav)] h-14">
-      <div className="flex items-center px-4">
+    <nav className="w-screen flex justify-between bg-[var(--gray-nav)] px-5">
+      <div className="flex items-center">
         <a href="/" className="text-lg font-bold text-white">
-          <img src={logo} alt="Logo" className="h-12" />
+          <img src={logo} alt="Logo" className="h-12 my-[10px]" />
         </a>
       </div>
-      <div className="px-4 h-full w-full flex">
-        <div className="w-full flex items-center h-full flex-start">
+      <div className="px-5 h-full flex">
+        <div className="flex items-center h-full flex-start">
           <SvgRow name='VALORANT'/>
           <SvgRow name='Honkai'/>
         </div>

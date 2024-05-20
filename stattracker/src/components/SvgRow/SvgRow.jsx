@@ -36,13 +36,13 @@ export function SvgRow({ name }) {
           isPending
             ? "bg-green-600 text-green-300"
             : isActive
-            ? "pl-5 pr-5 border-t border-t-2 border-gray-400 border-start-start-radius border-start-end-radius bg-[var(--gray-background)] text-red-600 h-full flex flex-row gap-5 fill-white-600"
-            : "pl-5 pr-5 bg-[var(--gray-nav)] h-full flex flex-row gap-5 fill-white-600 text-white bg-[var(--gray-nav) hover:bg-gray-700 hover:text-white"
+            ? "px-5 font-semibold border-t border-t-2 border-gray-400 border-start-start-radius border-start-end-radius bg-[var(--gray-background)] text-red-600 h-full flex flex-row gap-5 fill-white-600"
+            : "px-5 bg-[var(--gray-nav)] h-full flex flex-row gap-5 fill-white-600 text-white bg-[var(--gray-nav) hover:bg-gray-700 hover:text-white"
         }
       >
         {/* <div className='h-full w-full flex flex-row gap-5 fill-white-600'> */}
         {icon}
-        <p className="flex items-center font-[Montserrat] font-semibold">{name}</p>
+        <p className="flex items-center font-[Montserrat] hidden md:flex">{name}</p>
         {/* </div> */}
       </NavLink>
     </div>
