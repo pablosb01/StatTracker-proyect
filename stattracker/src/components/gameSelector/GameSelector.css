@@ -1,4 +1,5 @@
 .game-card {
+
     width: fit-content;
     width: 27vh;
     height: 35vh;
@@ -9,8 +10,15 @@
         border-radius: 35px;
         border: solid 5px black;
         box-sizing: border-box;
+        transition: transform 0.3s ease;
     }
+
+    img:hover {
+        transform: scale(1.1);
+    }
+
 }
+
 
 @media (max-width: 1200px) {
     /* .gameCard {
