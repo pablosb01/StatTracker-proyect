@@ -1,0 +1,28 @@
+:root{
+    --white: #FFFFFF;
+    --blue: #004675;
+    --red: #F4341F;
+    --green: #C2E812;
+    --dark-blue-background-home: #2C2E30;
+    --gray-nav: #1F2326;
+    --gray-background: #2D3033; 
+    --Lora-font: "Lora", serif;
+    --Ubuntu-font: "Ubuntu", sans-serif;
+    --Montserrat-font: "Montserrat", sans-serif;
+}
+
+#root {
+    display: flex;
+}
+
+body {
+    margin: 0px;
+    height: 100vh;
+    background-color: var(--gray-background);
+}
+
+@media (max-width: 1200px) {
+    #root {
+        flex-direction: column;
+    }
+}
