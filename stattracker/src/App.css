@@ -4,11 +4,10 @@
     --red: #F4341F;
     --green: #C2E812;
     --dark-blue-background-home: #2C2E30;
-    --gray-nav: #1F2326;
-    --gray-background: #2D3033; 
+    --gray-nav: rgb(39, 39 ,42);  
+    --gray-background: rgb(24, 24, 27);
     --Lora-font: "Lora", serif;
     --Ubuntu-font: "Ubuntu", sans-serif;
-    --Montserrat-font: "Montserrat", sans-serif;
 }
 
 #root {
