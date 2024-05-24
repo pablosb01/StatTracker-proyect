@@ -1,5 +1,5 @@
 import React from 'react';
-import './Agents.css';
+/* import './Agents.css'; */
 
 const agentsData = [
   { name: 'Clove', role: 'Controller', winRate: '52.3%', pickRate: '9.7%', imgSrc: './src/assets/clove.png'},
@@ -30,28 +30,28 @@ const agentsData = [
 
 export function Agents() {
   return (
-    <div className="agents-card">
-      <div className="agents-header">
+    <div className="absolute w-[660px] h-[380px] border border-solid border-gray-500 rounded-[5px] overflow-hidden font-ubuntu box-border bg-[#BDBDBD] mr-[62px]">
+      <div className="h-[52px] bg-gradient-to-r from-[#FF8878] to-[#FF3217] bg-[#004675] pl-[15px] text-[32px] font-bold font-ubuntu text-white rounded-[12px] shadow-[0_4px_4px_rgba(0, 0, 0, 0.25)]">
         <span>AGENTS</span>
       </div>
-      <div className="agents-list">
+      <div className="h-[328px] overflow-y-auto">
         {agentsData.map((agent, index) => (
-          <div className="agent-item" key={index}>
-            <div className="agent-info">
-              <img src={agent.imgSrc} alt={agent.name} className="agent-image" />
-              <div className="agent-details">
-                <span className="agent-name">{agent.name}</span>
-                <span className="agent-role">{agent.role}</span>
+          <div className="display-flex h-[82px] px-[10px] justify-between border-b border-gray-300" key={index}>
+            <div className="display-flex items-center">
+              <img src={agent.imgSrc} alt={agent.name} className="w-[56px] h-[53px] mr-[37px]" />
+              <div className="display-flex flex-col justify-between">
+                <span className="text-2xl font-bold font-['var(--Ubuntu-font)']">{agent.name}</span>
+                <span className="text-lg font-bold font-['var(--Lora-font)'] text-gray-600">{agent.role}</span>
               </div>
             </div>
-            <div className="agent-stats">
+            <div className="flex flex-row items-center gap-[84px] pr-[62px]">
                 <div>
-              <span className="agent-winrate">Win Rate:</span>
-              <span className="agent-winrate1">{agent.winRate}</span>
+              <span className="flex flex-col text-lg">Win Rate:</span>
+              <span className="flex text-xl justify-center">{agent.winRate}</span>
               </div>
               <div>
-              <span className="agent-pickrate">Pick Rate:</span>
-              <span className="agent-pickrate1">{agent.pickRate}</span>
+              <span className="flex flex-col text-lg justify-center">Pick Rate:</span>
+              <span className="flex text-xl justify-center">{agent.pickRate}</span>
                 </div>
             </div>
           </div>
