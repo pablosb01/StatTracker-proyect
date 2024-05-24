@@ -1,16 +1,15 @@
+import { Agents } from '../../components/Agents/Agents'
+import UserFormValorant from '../../components/UserFormValorant/UserFormValorant'
 import matchInfo from '/src/objects/matchinfo.js'
-import './valorant-home.css'
 
 export function ValoHome() {
     console.log(matchInfo)
 
 
-
-
-
     return(
         <>
-            
+            <UserFormValorant/>
+            <Agents/>
         </>
     )
 }
