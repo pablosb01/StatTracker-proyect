@@ -1,5 +1,6 @@
 import matchInfo from '/src/objects/matchinfo.js'
-import './valorant-home.css'
+
+import LeaderBoard from '/src/components/leaderboard/LeaderBoard.jsx'
 
 export function ValoHome() {
     console.log(matchInfo)
@@ -10,7 +11,7 @@ export function ValoHome() {
 
     return(
         <>
-            
+          <LeaderBoard/>  
         </>
     )
 }
