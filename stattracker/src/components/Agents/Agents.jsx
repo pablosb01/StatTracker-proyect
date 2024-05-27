@@ -1,5 +1,5 @@
 import React from 'react';
-/* import './Agents.css'; */
+import './Agents.css';
 
 const agentsData = [
   { name: 'Clove', role: 'Controller', winRate: '52.3%', pickRate: '9.7%', imgSrc: './src/assets/clove.png'},
@@ -30,28 +30,28 @@ const agentsData = [
 
 export function Agents() {
   return (
-    <div className="absolute w-[660px] h-[380px] border border-gray-300 rounded-lg overflow-hidden font-ubuntu bg-gray-400 mr-62">
-      <div className="h-16 bg-gradient-to-r from-pink-500 to-orange-500 text-white p-3 rounded-t-lg shadow-md">
+    <div className="absolute w-[660px] h-[380px]  rounded-[7px] overflow-hidden bg-gray-300 mx-62">
+      <div className="h-[52px] bg-stone-900 border border-gray-300 text-white px-[15px] flex items-center font-semibold text-[32px]  leading-none rounded-[7px] box-shadow-0_4_4_rgba(0,0,0,0.25)">
         <span>AGENTS</span>
       </div>
-      <div className="h-328 overflow-y-auto">
+      <div className="h-[328px] overflow-y-auto">
         {agentsData.map((agent, index) => (
-          <div className="flex h-20 p-3 justify-between border-b border-gray-200" key={index}>
+          <div className="flex h-[82px] p-[10px] justify-between border-b border-stone-800" key={index}>
             <div className="flex items-center">
-              <img src={agent.imgSrc} alt={agent.name} className="w-22 h-21 mr-24" />
+              <img src={agent.imgSrc} alt={agent.name} className="w-[56px] h-[53px] rounded-full mr-[37px]" />
               <div className="flex flex-col justify-between">
-                <span className="text-22 font-bold ubuntu-font">{agent.name}</span>
-                <span className="text-18 font-bold lora-font text-gray-600">{agent.role}</span>
+                <span className="font-bold text-[22px]">{agent.name}</span>
+                <span className="text-[18px] text-gray-48">{agent.role}</span>
               </div>
             </div>
-            <div className="flex flex-row items-center justify-between pr-62">
-                <div>
-                  <span className="flex flex-col">Win Rate:</span>
-                  <span className="justify-center text-24">{agent.winRate}</span>
-                </div>
-                <div>
-                  <span className="flex flex-col justify-center">Pick Rate:</span>
-                  <span className="justify-center text-24">{agent.pickRate}</span>
+            <div className="flex flex-row gap-[15px] justify-between">
+              <div className='flex flex-col'>
+                <span className="font-bold text-[18px]">Win Rate:</span>
+                <span className=" text-[24px]">{agent.winRate}</span>
+              </div>
+                <div className='flex flex-col'>
+                  <span className="font-bold text-[18px]">Pick Rate:</span>
+                  <span className="text-[24px]">{agent.pickRate}</span>
                 </div>
             </div>
           </div>
