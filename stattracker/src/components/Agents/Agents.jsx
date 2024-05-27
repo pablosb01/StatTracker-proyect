@@ -30,28 +30,28 @@ const agentsData = [
 
 export function Agents() {
   return (
-    <div className="absolute w-[660px] h-[380px] border border-solid border-gray-500 rounded-[5px] overflow-hidden font-ubuntu box-border bg-[#BDBDBD] mr-[62px]">
-      <div className="h-[52px] bg-gradient-to-r from-[#FF8878] to-[#FF3217] bg-[#004675] pl-[15px] text-[32px] font-bold font-ubuntu text-white rounded-[12px] shadow-[0_4px_4px_rgba(0, 0, 0, 0.25)]">
+    <div className="absolute w-[660px] h-[380px] border border-gray-300 rounded-lg overflow-hidden font-ubuntu bg-gray-400 mr-62">
+      <div className="h-16 bg-gradient-to-r from-pink-500 to-orange-500 text-white p-3 rounded-t-lg shadow-md">
         <span>AGENTS</span>
       </div>
-      <div className="h-[328px] overflow-y-auto">
+      <div className="h-328 overflow-y-auto">
         {agentsData.map((agent, index) => (
-          <div className="display-flex h-[82px] px-[10px] justify-between border-b border-gray-300" key={index}>
-            <div className="display-flex items-center">
-              <img src={agent.imgSrc} alt={agent.name} className="w-[56px] h-[53px] mr-[37px]" />
-              <div className="display-flex flex-col justify-between">
-                <span className="text-2xl font-bold font-['var(--Ubuntu-font)']">{agent.name}</span>
-                <span className="text-lg font-bold font-['var(--Lora-font)'] text-gray-600">{agent.role}</span>
+          <div className="flex h-20 p-3 justify-between border-b border-gray-200" key={index}>
+            <div className="flex items-center">
+              <img src={agent.imgSrc} alt={agent.name} className="w-22 h-21 mr-24" />
+              <div className="flex flex-col justify-between">
+                <span className="text-22 font-bold ubuntu-font">{agent.name}</span>
+                <span className="text-18 font-bold lora-font text-gray-600">{agent.role}</span>
               </div>
             </div>
-            <div className="flex flex-row items-center gap-[84px] pr-[62px]">
+            <div className="flex flex-row items-center justify-between pr-62">
                 <div>
-              <span className="flex flex-col text-lg">Win Rate:</span>
-              <span className="flex text-xl justify-center">{agent.winRate}</span>
-              </div>
-              <div>
-              <span className="flex flex-col text-lg justify-center">Pick Rate:</span>
-              <span className="flex text-xl justify-center">{agent.pickRate}</span>
+                  <span className="flex flex-col">Win Rate:</span>
+                  <span className="justify-center text-24">{agent.winRate}</span>
+                </div>
+                <div>
+                  <span className="flex flex-col justify-center">Pick Rate:</span>
+                  <span className="justify-center text-24">{agent.pickRate}</span>
                 </div>
             </div>
           </div>
