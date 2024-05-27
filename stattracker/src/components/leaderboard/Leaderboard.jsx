@@ -1,4 +1,6 @@
 import { ValorantPlayerCard } from "./ValorantPlayerCard"
+import { ValorantPlayerCard1 } from "./ValorantPlayerCard1"
+import { ValorantPlayerCard2 } from "./ValorantPlayerCard2"
 
 function LeaderBoard() {
 
@@ -22,17 +24,17 @@ function LeaderBoard() {
 
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <div className="w-2/5 rounded-lg drop-shadow-md bg-gray-400">
-        <div className="h-12 rounded-lg drop-shadow-md bg-gradient-to-r from-red-400 to-red-600">
-          <h2 className=" text-left self-center p-1.5 pl-3 font-bold text-3xl text-white">
+    <div className="flex justify-center">
+      <div className="rounded-lg drop-shadow-md bg-gray-300">
+        <div className="flex items-center h-[54px] rounded-lg drop-shadow-md bg-stone-900 border border-gray-300">
+          <h2 className=" text-left items-center p-1.5 pl-3  text-3xl text-white font-sans">
             LEADERBOARD
           </h2>
         </div>
         <div className="flex justify-around gap-2 p-2 items-end">
-          <ValorantPlayerCard playerName={top3PlayersUserInfo[1].name} playerAvatar={top3PlayersUserInfo[1].avatar} playerMedal={top3PlayersUserInfo[1].medal} medalSize={16} cardSize={52}/>
-          <ValorantPlayerCard playerName={top3PlayersUserInfo[0].name} playerAvatar={top3PlayersUserInfo[0].avatar} playerMedal={top3PlayersUserInfo[0].medal} medalSize={20} cardSize={48}/>
-          <ValorantPlayerCard playerName={top3PlayersUserInfo[2].name} playerAvatar={top3PlayersUserInfo[2].avatar} playerMedal={top3PlayersUserInfo[2].medal} medalSize={12} cardSize={44}/>
+          <ValorantPlayerCard playerName={top3PlayersUserInfo[1].name} playerAvatar={top3PlayersUserInfo[1].avatar} playerMedal={top3PlayersUserInfo[1].medal}/>
+          <ValorantPlayerCard1 playerName={top3PlayersUserInfo[0].name} playerAvatar={top3PlayersUserInfo[0].avatar} playerMedal={top3PlayersUserInfo[0].medal}/>
+          <ValorantPlayerCard2 playerName={top3PlayersUserInfo[2].name} playerAvatar={top3PlayersUserInfo[2].avatar} playerMedal={top3PlayersUserInfo[2].medal} />
         </div>
       </div>
     </div>

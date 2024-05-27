@@ -3,8 +3,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      colors: {
+        'custom-green': '#C2E812',
+      },
       fontFamily: {
-        montserrat: 'Montserrat'
+        montserrat: 'Montserrat',
+        sans: ['Ubuntu' , 'sans-serif'],
       },
       keyframes: {
         "nav-link-tag": {

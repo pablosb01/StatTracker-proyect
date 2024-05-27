@@ -1,8 +1,8 @@
-export function ValorantPlayerCard({playerName, playerAvatar, playerMedal}) {
+export function ValorantPlayerCard2({playerName, playerAvatar, playerMedal}) {
 
     return (
-          <div className="bg-red-600 rounded-lg drop-shadow-md overflow-hidden flex flex-col justify-end h-fit ">
-            <div className={`bg-gray-500 rounded-lg drop-shadow-md h-[230px] overflow-hidden`}>
+          <div className="bg-gray-300 rounded-lg drop-shadow-md overflow-hidden flex flex-col justify-end h-fit ">
+            <div className={`bg-gray-500 rounded-lg drop-shadow-md h-[190px] overflow-hidden`}>
               <img src={playerMedal} alt="Medalla" className={`w-12 absolute`}/>
               <img src={playerAvatar} alt="Imagen" className=""/>
             </div>

@@ -30,8 +30,8 @@ const agentsData = [
 
 export function Agents() {
   return (
-    <div className="absolute w-[660px] h-[380px]  rounded-[7px] overflow-hidden bg-gray-300 mx-62">
-      <div className="h-[52px] bg-stone-900 border border-gray-300 text-white px-[15px] flex items-center font-semibold text-[32px]  leading-none rounded-[7px] box-shadow-0_4_4_rgba(0,0,0,0.25)">
+    <div className="w-[660px] h-[380px]  rounded-[7px] overflow-hidden bg-gray-300 mx-62">
+      <div className="h-[52px] bg-stone-900 border border-gray-300 text-white px-[15px] flex items-center text-[32px]  leading-none rounded-[7px] box-shadow-0_4_4_rgba(0,0,0,0.25)">
         <span>AGENTS</span>
       </div>
       <div className="h-[328px] overflow-y-auto">
