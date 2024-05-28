@@ -1,10 +1,12 @@
-import './GameSelector.css'
+export function GameSelector({imageSrc, gameName}) {
 
-export function GameSelector({imageSrc}) {
 
     return(
-        <div className='game-card'>
-            <img src={imageSrc}/>
+        <div className='relative flex justify-center items-center bg-stone-900 rounded-[2rem]'>
+            <img className='w-[27vh] h-[32vh] rounded-[10px] hover:scale-[123%] transition duration-200 transform ease-in-out' src={imageSrc}/>
+            <div className="paralelogramo transition duration-200 background ease-in-out">
+                <p>{gameName}</p>
+            </div>
         </div>
-    )
-}
+    );
+}   

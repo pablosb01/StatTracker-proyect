@@ -28,6 +28,37 @@
     border-radius: 10px;
 }
 
+.paralelogramo {
+    width: 220px;
+    height: 70px;
+    background-color: #ff4d4d;
+    transform: skew(-20deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;    
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%) skew(-20deg);
+    z-index: 1;
+}
+
+.paralelogramo:hover{
+    background-color: #ff6161;
+}
+
+
+.paralelogramo p {
+    transform: skew(20deg);
+    margin: 0;
+    z-index: 2;
+}
+
 body {
     margin: 0px;
     height: 100vh;
