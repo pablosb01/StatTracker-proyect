@@ -1,5 +1,4 @@
 import { GameSelector } from "../../components/gameSelector/GameSelector";
-import "./home.css";
 /* import Jett from '/src/assets/home-imgs/jett.png'; */
 import { Link } from 'react-router-dom';
 import  Logo  from '/src/assets/home-imgs/scole-biglogo.png';
@@ -10,12 +9,12 @@ import { GameSelector2 } from "../../components/gameSelector/GameSelector2";
 function Home() {
     return (
         <>
-            <div className='flex flex-col'>
+            <div className='flex flex-col items-center'>
                 <div className='flex flex-col justify-center items-center'>
-                    <img src={Logo} className='w-1/4 pt-8'/>
+                    <img src={Logo} className='w-1/2 pt-8 md:w-1/3 lg:w-1/3 xl:w-1/4'/>
                     <h1 className='text-white font-sans text-xl pt-4'>Start tracking your stats</h1>
                 </div>
-                <div className='flex flex-row gap-8 justify-center pt-4'>
+                <div className='flex flex-col flex-wrap gap-10 justify-center pt-4 md:flex-wrap md:gap-12 md:flex-2 md:flex-row'>
                     <Link to='/valorant'>
                         <GameSelector imageSrc='/src/assets/home-imgs/jett.png' gameName='VALORANT'/>
                     </Link>
