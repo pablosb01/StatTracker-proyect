@@ -32,8 +32,8 @@ function UserFormValorant () {
         type="submit"
         className="bg-red-600 hover:ring-white-500 hover:ring-2 hover:outline-none text-white font-bold py-2 px-4 rounded-[25px]"
       >
-        <div className='flex row justify-between items-center h-2'>
-            <img src={RiotLogo} className='w-10 h-10 mx-auto'/>
+        <div className='flex row justify-between items-center md:h-2 h-4'>
+            <img src={RiotLogo} className='w-8 h-auto mx-auto'/>
             Submit
         </div>
       </button>
