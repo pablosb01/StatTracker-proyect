@@ -1,5 +1,5 @@
 import React from 'react';
-/* import './Agents.css'; */
+import './Agents.css';
 
 const agentsData = [
   { name: 'Clove', role: 'Controller', winRate: '52.3%', pickRate: '9.7%', imgSrc: './src/assets/clove.png'},
@@ -30,28 +30,28 @@ const agentsData = [
 
 export function Agents() {
   return (
-    <div className="absolute w-[660px] h-[380px] border border-solid border-gray-500 rounded-[5px] overflow-hidden font-ubuntu box-border bg-[#BDBDBD] mr-[62px]">
-      <div className="h-[52px] bg-gradient-to-r from-[#FF8878] to-[#FF3217] bg-[#004675] pl-[15px] text-[32px] font-bold font-ubuntu text-white rounded-[12px] shadow-[0_4px_4px_rgba(0, 0, 0, 0.25)]">
+    <div className="w-full h-[380px] md:w-full rounded-[7px] overflow-hidden bg-gray-300 mx-62">
+      <div className="h-1/6 bg-stone-900 border border-gray-300 text-white px-4 flex items-center text-4xl leading-none rounded-[7px] box-shadow-0_4_4_rgba(0,0,0,0.25)">
         <span>AGENTS</span>
       </div>
-      <div className="h-[328px] overflow-y-auto">
+      <div className="h-5/6 overflow-y-auto">
         {agentsData.map((agent, index) => (
-          <div className="display-flex h-[82px] px-[10px] justify-between border-b border-gray-300" key={index}>
-            <div className="display-flex items-center">
-              <img src={agent.imgSrc} alt={agent.name} className="w-[56px] h-[53px] mr-[37px]" />
-              <div className="display-flex flex-col justify-between">
-                <span className="text-2xl font-bold font-['var(--Ubuntu-font)']">{agent.name}</span>
-                <span className="text-lg font-bold font-['var(--Lora-font)'] text-gray-600">{agent.role}</span>
+          <div className="flex h-1/4 md:p-3 p-1 justify-between border-b border-stone-800" key={index}>
+            <div className="flex items-center">
+              <img src={agent.imgSrc} alt={agent.name} className="w-14 h-14 rounded-full md:mr-8 mr-2" />
+              <div className="flex flex-col justify-between">
+                <span className="font-bold text-md">{agent.name}</span>
+                <span className="text-md text-gray-48">{agent.role}</span>
               </div>
             </div>
-            <div className="flex flex-row items-center gap-[84px] pr-[62px]">
-                <div>
-              <span className="flex flex-col text-lg">Win Rate:</span>
-              <span className="flex text-xl justify-center">{agent.winRate}</span>
+            <div className="flex flex-row  md:gap-8 gap-2 justify-between">
+              <div className='flex flex-col items-center justify-center'>
+                <span className="font-bold text-md md:text-xl">Win Rate:</span>
+                <span className=" text-xl md:text-2xl">{agent.winRate}</span>
               </div>
-              <div>
-              <span className="flex flex-col text-lg justify-center">Pick Rate:</span>
-              <span className="flex text-xl justify-center">{agent.pickRate}</span>
+                <div className='flex flex-col items-center justify-center w-fit'>
+                  <span className="font-bold md:text-xl text-md">Pick Rate:</span>
+                  <span className="md:text-2xl text-xl">{agent.pickRate}</span>
                 </div>
             </div>
           </div>
