@@ -38,9 +38,9 @@ export function Agents() {
         {agentsData.map((agent, index) => (
           <div className="flex h-1/4 md:p-3 p-1 justify-between border-b border-stone-800" key={index}>
             <div className="flex items-center">
-              <img src={agent.imgSrc} alt={agent.name} className="w-14 h-14 rounded-full md:mr-8 mr-2" />
+              <img src={agent.imgSrc} alt={agent.name} className="xl:w-14 xl:h-14 w-12 h-12  rounded-full md:mr-8 mr-2" />
               <div className="flex flex-col justify-between">
-                <span className="font-bold text-md">{agent.name}</span>
+                <span className="font-bold text-md xl:text-xl">{agent.name}</span>
                 <span className="text-md text-gray-48">{agent.role}</span>
               </div>
             </div>
