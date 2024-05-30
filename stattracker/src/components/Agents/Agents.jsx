@@ -30,7 +30,7 @@ const agentsData = [
 
 export function Agents() {
   return (
-    <div className="w-full h-[380px] md:w-full rounded-[7px] overflow-hidden bg-gray-300 mx-62">
+    <div className="caja w-full h-[380px] md:w-full rounded-[7px] overflow-hidden bg-gray-300 mx-62">
       <div className="h-1/6 bg-stone-900 border border-gray-300 text-white px-4 flex items-center text-4xl leading-none rounded-[7px] box-shadow-0_4_4_rgba(0,0,0,0.25)">
         <span>AGENTS</span>
       </div>

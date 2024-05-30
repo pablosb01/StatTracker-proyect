@@ -14,7 +14,7 @@ function Home() {
                     <img src={Logo} className='w-1/2 pt-8 md:w-1/3 lg:w-1/3 xl:w-1/4'/>
                     <h1 className='text-white font-sans text-xl pt-4'>Start tracking your stats</h1>
                 </div>
-                <div className='flex flex-col flex-wrap gap-20 justify-center pt-4 md:flex-wrap md:gap-12 md:flex-2 md:flex-row'>
+                <div className='flex flex-col flex-wrap gap-20 justify-center pt-4 md:flex-wrap md:gap-16 lg:gap-12 md:flex-2 md:flex-row'>
                     <Link to='/valorant'>
                         <GameSelector imageSrc='/src/assets/home-imgs/jett.png' gameName='VALORANT'/>
                     </Link>

@@ -97,7 +97,7 @@
     justify-content: center;
   } */
 
-  ::-webkit-scrollbar {
+/*   ::-webkit-scrollbar {
     width: 21px;
     height: 100px;
     background: #686868;
@@ -123,4 +123,4 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #383838;
   border-radius: 5px;
-}
+} */
