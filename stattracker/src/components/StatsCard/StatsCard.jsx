@@ -7,7 +7,9 @@ const StatsCard = ({player}) => {
 const rankVariableImage = `https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/${player.rank}.png`
 
 function calculateWinRate ({player}) {
+
   const totalGames = player.wins + player.defeats
+
   if(totalGames == 0) {
     return 0;
   }

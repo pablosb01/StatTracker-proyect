@@ -1,12 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import RiotLogo from '/src/assets/riotgames-logo.webp'
+import { useNavigate } from 'react-router-dom'
 
 function UserFormValorant () {
   const [accountName, setAccountName] = useState('');
   const [hashtag, setHashtag] = useState('');
+  const navigate = useNavigate();
+
+ /*  useEffect(()=>{
+    const newUrl = `/valorant/${accountName}${hashtag}`;
+    navigate(newUrl, {replace: true});
+  }, [accountName, hashtag, navigate]); */
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+
+    const newUrl = `/valorant/${accountName}/${hashtag}`;
+    navigate(newUrl, {replace: true});
+
+
     // Handle form submission, e.g., send search request
     console.log('Account Name:', accountName);
     console.log('Hashtag:', hashtag);
