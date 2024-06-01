@@ -1,7 +1,7 @@
 //import Example from "./components/example/example"
 //import Pruebas from "./components/pruebas/pruebas"
 
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './App.css'
 import Home from "./views/home/home.jsx";

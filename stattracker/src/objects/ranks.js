@@ -1,4 +1,4 @@
-const ranks = {
+const ranksIcon = {
     0: 'Unranked',
     1: 'Unranked',
     2: 'Unranked',
@@ -29,5 +29,38 @@ const ranks = {
     27: 'Radiant'
 };
 
+const rankMap = {
+    'UNRANKED': 0,
+    'UNRANKED': 1,
+    'UNRANKED': 2,
+    'IRON_1': 3,
+    'IRON_2': 4,
+    'IRON_3': 5,
+    'BRONZE_1': 6,
+    'BRONZE_2': 7,
+    'BRONZE_3': 8,
+    'SILVER_1': 9,
+    'SILVER_2': 10,
+    'SILVER_3': 11,
+    'GOLD_1': 12,
+    'GOLD_2': 13,
+    'GOLD_3': 14,
+    'PLATINUM_1': 15,
+    'PLATINUM_2': 16,
+    'PLATINUM_3': 17,
+    'DIAMOND_1': 18,
+    'DIAMOND_2': 19,
+    'DIAMOND_3': 20,
+    'ASCENDANT_1': 21,
+    'ASCENDANT_2': 22,
+    'ASCENDANT_3': 23,
+    'IMMORTAL_1': 24,
+    'IMMORTAL_2': 25,
+    'IMMORTAL_3': 26,
+    'RADIANT': 27
+};
 
-export default ranks;
+
+
+
+export default {rankMap, ranksIcon};
