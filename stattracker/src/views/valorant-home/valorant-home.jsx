@@ -6,7 +6,7 @@ import ValoLogo from '/src/assets/valorant-logo.png'
 import { Download } from '../../components/downloadbutton/DownloadButton'
 
 export function ValoHome() {
-    console.log(matchInfo.matchInfo)
+    console.log(matchInfo)
 
 
     return(

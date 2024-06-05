@@ -1,9 +1,10 @@
 import StatsCard from "../../components/StatsCard/StatsCard";
 /* import player from '/src/objects/player' */
-import { useEffect, useState } from "react";
+import { useMemo, useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
 import ranksIcon from '/src/objects/ranks.js'
 import gameData from '/src/objects/matchinfo.js'
+import { MatchHistory } from "../../components/MatchHistory/MatchHistory";
 
 export function PlayerValorant() {
     //hooks para fetch y almacenar raw
@@ -23,13 +24,14 @@ export function PlayerValorant() {
     const [kda, setKda] = useState();
     const [totalHeadshots, setTotalHeadshots] = useState()
     const [headshotPercent, setHeadshotPercent] = useState()
+    const [battleScore, setBattleScore] = useState()
 
     const apiKey = 'RGAPI-5d2556b1-3701-48f6-a3e2-3a265e24e1de'
 
 
     //!FETCH PARA SACAR EL ID DE JUGADOR
 
-    console.log(gameData);
+    /* console.log(gameData); */
 
     /* function getId(apiKey, accountName, hashtag) {
         fetch(`https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${accountName}/${hashtag}?api_key=${apiKey}`)
@@ -155,9 +157,11 @@ export function PlayerValorant() {
         calculateHeadshotPercentage(matchInfo, puId);
     },[totalHeadshots, totalKills]) */
 
-    setPuId("FjXIt87aLFSWcVkZJhxiTyAgf90zeiz2yjiPQtxbmng8oYlFeqwS9ziS7-Er8NClXt2ephk_gS754g")
+    //!FALTA QUITAR FOREACH (JESUS) Y VOLVER A MATCHINFO(ESTA EN GAMEDATA(OBJETO ESTATICO))
 
-    function getTotalHeadshots (matchInfo, puId) {
+    /* setPuId("FjXIt87aLFSWcVkZJhxiTyAgf90zeiz2yjiPQtxbmng8oYlFeqwS9ziS7-Er8NClXt2ephk_gS754g") */
+
+    /* function getTotalHeadshots (matchInfo, puId) {
         setTotalHeadshots(0)
         
         gameData.roundResults.forEach(round => {
@@ -173,30 +177,60 @@ export function PlayerValorant() {
     }
 
     
-    getTotalHeadshots(gameData, puId)
+    getTotalHeadshots(gameData, puId) */
 
-    console.log(totalHeadshots)
 
-    function calculateHeadshotPercentage () {
+    /* function calculateHeadshotPercentage () {
         const headshotPercentage = (totalHeadshots / totalKills) * 100;
         setHeadshotPercentage(headshotPercentage.toFixed(2));
     }
 
     useEffect(()=> {
         calculateHeadshotPercentage(matchInfo, puId);
-    },[totalHeadshots, totalKills])
+    },[totalHeadshots, totalKills]) */
 
-    
+    //! -------------------------------------
 
-    const playerOverall = {
-        rank: rank,
-        kills: totalKills,
-        deaths: totalDeaths,
-        assists: totalAssists,
-        kda: kda,
-        rankName: rankName,
-        rankId: rankId,
+    /* function battleScore(matchInfo, puId) {
+        let roundScore = 0;
+        let matches = 0;
+        matchInfo.forEach(match => {
+            match.players.forEach(player => {
+                if(player.puuid === puId) {
+                    roundScore += player.stats.score / player.stats.roundsPlayed;
+                    matches += 1;
+                }
+            })
+        })
     }
+
+    useEffect(() => {
+        battleScore(gameData, puId)
+    }, [gameData, puId]) */
+
+    //! --------------------------------------
+
+    /* const getbattleScore = useMemo(() => {
+        let roundScore = 0;
+        let matches = 0;
+        matchInfo.forEach(match => {
+          match.players.forEach(player => {
+            if (player.puuid === puId) {
+                roundScore += player.stats.score / player.stats.roundsPlayed;
+                matches += 1;
+            }
+            });
+        });
+        let scoreResult = roundScore / matches
+        return { scoreResult };
+      }, [gameData, puId]);
+    
+      useEffect(() => {
+        setBattleScore(scoreResult)
+      }, [getbattleScore]); */
+
+      //!FALTAN WINS DEFEATS ECONOMY(NO SE PUEDE) WR
+
 
     /* if(loading) {
         return <div>loading..</div>
@@ -206,8 +240,21 @@ export function PlayerValorant() {
         return <div>error: {error.message}</div>
     } */
 
+    const playerOverall = {
+        rank: rank,
+        rankName: rankName,
+        kills: totalKills,
+        deaths: totalDeaths,
+        assists: totalAssists,
+        kda: kda,
+        rankId: rankId,
+        battleScore : battleScore,
+        headshotPercent : headshotPercent
+    }
+
     const player = {
         rank: 13,
+        rankName: 'Gold 1',
         ladderPoints: 50,
         wins: 20,
         defeats: 4,
@@ -217,15 +264,25 @@ export function PlayerValorant() {
         headshots: 27,
         combatscore: 323,
         economy: 217,
+        kda: 1.20,
+        headshotPercent: 20,
+        wr: 80,
     }
     
 
     return(
         <>
             {/* <StatsCard rank='12' ladderPoints='50' wins='2' defeats='2'/> */}
-            <StatsCard player={player}/>
-            <h1>{accountName}</h1>
-            <h1>{hashtag}</h1>
+            <div className="flex flex-col">
+                <div className="flex flex-row gap-3">
+                    <h1 className='font-sans text-white text-4xl'>{accountName}</h1>
+                    <h1 className='font-sans text-gray-500 text-4xl'>#{hashtag}</h1>
+                </div>
+                <div className='flex flex-row'>
+                    <StatsCard player={player}/>
+                    <MatchHistory/>
+                </div>
+            </div>
         </>
     )
 }
