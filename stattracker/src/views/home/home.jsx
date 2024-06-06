@@ -1,5 +1,5 @@
 import { GameSelector } from "../../components/gameSelector/GameSelector";
-/* import Jett from '/src/assets/home-imgs/jett.png'; */
+/* import Jett from '/public/assets/home-imgs/jett.png'; */
 import { Link } from 'react-router-dom';
 import  Logo  from '/public/assets/home-imgs/scole-biglogo.png';
 import { GameSelector2 } from "../../components/gameSelector/GameSelector2";
