@@ -1,4 +1,5 @@
 import gameData from "../../objects/matchinfo";
+import { useEffect } from "react"
 
 export function MatchStats({playerid}) {
 
@@ -36,7 +37,37 @@ export function MatchStats({playerid}) {
       
         return totalDamage;
     }
+
+    function getPlayerHeadshots (puuid) {
+      let headshots = 0;
+
+      gameData.roundResults.forEach(round => {
+        round.playerStats.forEach(player => {
+          if(player.puuid === puuid) {
+            player.damage.forEach(dmg => {
+              headshots += dmg.headshots
+            })
+          }
+        })
+        })
+      return headshots;
+    }
+
+    useEffect(()=>{
+      getPlayerHeadshots(puuid)
+    },[puuid])
+ 
+    function calculateHeadshotperc() {
+      let headshotPercentage = (getPlayerHeadshots(puuid) / playerStats.kills * 100);
+      return headshotPercentage
+    }
+
     
+    
+    
+    
+    
+    const hsp = calculateHeadshotperc().toFixed(1)
     const totalDamage = calculateTotalDamage(puuid)
     const numberOfRounds = gameData.roundResults.length;
     const mpr = (playerStats.kills / numberOfRounds).toFixed(2);
@@ -63,7 +94,7 @@ export function MatchStats({playerid}) {
                     <p className="text-sm text-gray-300">{dpr} DPR</p>
                 </div>
                 <div className="w-2/5">
-                    <p>21,7% Cabeza</p> {/* STILL HARDCODED */}
+                    <p>{hsp}% Cabeza</p>
                     <p className="text-sm text-gray-300">{averageScore} Puntuación media</p>
                 </div>
                 <div className="w-1/5">

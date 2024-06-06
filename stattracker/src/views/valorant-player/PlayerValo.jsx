@@ -31,6 +31,8 @@ export function PlayerValorant() {
 
     //!FETCH PARA SACAR EL ID DE JUGADOR
 
+    console.log(gameData)
+
     /* console.log(gameData); */
 
     /* function getId(apiKey, accountName, hashtag) {
@@ -275,12 +277,17 @@ export function PlayerValorant() {
             {/* <StatsCard rank='12' ladderPoints='50' wins='2' defeats='2'/> */}
             <div className="flex flex-col">
                 <div className="flex flex-row gap-3">
+                    
                     <h1 className='font-sans text-white text-4xl'>{accountName}</h1>
                     <h1 className='font-sans text-gray-500 text-4xl'>#{hashtag}</h1>
                 </div>
-                <div className='flex flex-row'>
-                    <StatsCard player={player}/>
-                    <MatchHistory/>
+                <div className='flex flex-row gap-6'>
+                    <div className='flex flex-col'>
+                        <StatsCard player={player}/>
+                    </div>
+                    <div className='flex flex-col'>
+                        <MatchHistory/>
+                    </div>
                 </div>
             </div>
         </>
