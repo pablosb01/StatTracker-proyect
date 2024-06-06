@@ -4,10 +4,31 @@ import LeaderBoard from '../../components/leaderboard/Leaderboard'
 import matchInfo from '/src/objects/matchinfo.js'
 import ValoLogo from '/public/assets/valorant-logo.png'
 import { Download } from '../../components/downloadbutton/DownloadButton'
+import {useState, useEffect} from "react" 
 
 export function ValoHome() {
-    console.log(matchInfo)
+    const [leaderboardData, setLeaderboardData] = useState();
+    /* console.log(matchInfo) */
 
+    let apiKey = 'RGAPI-1c653bf0-78a3-4609-812a-d5920753ff7a'
+    let episode = "79f9d00f-433a-85d6-dfc3-60aef115e699"
+
+
+
+    function getLeaderboardInfo(apiKey, episode) {
+        fetch(`https://eu.api.riotgames.com/val/ranked/v1/leaderboards/by-act/${episode}?size=3&startIndex=0&api_key=${apiKey}`)
+         .then(response => response.json())
+         .then(data => setLeaderboardData(data))
+         .then(() => console.log(leaderboardData))
+         /* .then(() => setLoading(true)) */
+         .catch(error => setError(error));
+    }
+
+    useEffect(()=> {
+        getLeaderboardInfo(apiKey, episode)
+    },[apiKey, episode])
+
+    
 
     return(
         <>
