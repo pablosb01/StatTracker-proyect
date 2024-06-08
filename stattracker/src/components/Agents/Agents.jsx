@@ -1,4 +1,3 @@
-import './Agents.css';
 import Clove from '/assets/clove.png'
 import Reyna from '/assets/reyna.png'
 import Phoenix from '/assets/phoenix.png'
