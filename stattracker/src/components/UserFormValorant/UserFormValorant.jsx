@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import RiotLogo from '/public/assets/riotgames-logo.webp'
+import { useState, useEffect } from 'react';
+import RiotLogo from '/assets/riotgames-logo.webp'
 import { useNavigate } from 'react-router-dom'
 
 function UserFormValorant () {

@@ -2,9 +2,9 @@ import { ValorantPlayerCard } from "./ValorantPlayerCard"
 import { ValorantPlayerCard1 } from "./ValorantPlayerCard1"
 import { ValorantPlayerCard2 } from "./ValorantPlayerCard2"
 import { useState, useEffect } from "react";
-import oro from "/public/assets/medals/Oro.png";
-import plata from "/public/assets/medals/Plata.png";
-import bronce from "/public/assets/medals/Bronce.png";
+import oro from "/assets/medals/Oro.png";
+import plata from "/assets/medals/Plata.png";
+import bronce from "/assets/medals/Bronce.png";
 
 function LeaderBoard() {
 
