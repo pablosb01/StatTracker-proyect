@@ -1,9 +1,12 @@
 import { GameSelector } from "../../components/gameSelector/GameSelector";
-/* import Jett from '/src/assets/home-imgs/jett.png'; */
+/* import Jett from '/public/assets/home-imgs/jett.png'; */
 import { Link } from 'react-router-dom';
-import  Logo  from '/src/assets/home-imgs/scole-biglogo.png';
+import  Logo  from '/public/assets/home-imgs/scole-biglogo.png';
 import { GameSelector2 } from "../../components/gameSelector/GameSelector2";
-
+import Jett from '/public/assets/home-imgs/jett.png'
+import March from '/public/assets/home-imgs/march.png';
+import cs2 from '/public/assets/home-imgs/cs2.png';
+import honkai from '/public/assets/home-imgs/xiao.png';
 
 
 function Home() {
@@ -16,13 +19,13 @@ function Home() {
                 </div>
                 <div className='flex flex-col flex-wrap gap-20 justify-center pt-4 md:flex-wrap md:gap-16 lg:gap-12 md:flex-2 md:flex-row'>
                     <Link to='/valorant'>
-                        <GameSelector imageSrc='/src/assets/home-imgs/jett.png' gameName='VALORANT'/>
+                        <GameSelector imageSrc={Jett} gameName='VALORANT'/>
                     </Link>
                     <Link to='/honkai'>
-                        <GameSelector imageSrc='/src/assets/home-imgs/march.png' gameName='HONKAI: Star Rail'/>
+                        <GameSelector imageSrc={March} gameName='HONKAI: Star Rail'/>
                     </Link>
-                    <GameSelector2 imageSrc='/src/assets/home-imgs/cs2.png' gameName='Counter Strike 2'/>
-                    <GameSelector2 imageSrc='/src/assets/home-imgs/xiao.png' gameName='Genshin Impact'/>
+                    <GameSelector2 imageSrc={cs2} gameName='Counter Strike 2'/>
+                    <GameSelector2 imageSrc={honkai} gameName='Genshin Impact'/>
                 </div>
             </div>
         </>

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import ValorantLogo from '../../assets/logos/ValorantLogo';
-import logo from '../../assets/small-logo-nb.png';
+import ValorantLogo from '/assets/logos/ValorantLogo';
+import logo from '/assets/small-logo-nb.png';
 import { NavItem } from '../navitem/NavItem';
-import HonkaiLogo from '../../assets/logos/HonkaiLogo';
+import HonkaiLogo from '/assets/logos/HonkaiLogo';
 
 export function Navbar() {
   return (

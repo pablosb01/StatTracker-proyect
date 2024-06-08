@@ -2,6 +2,9 @@ import { ValorantPlayerCard } from "./ValorantPlayerCard"
 import { ValorantPlayerCard1 } from "./ValorantPlayerCard1"
 import { ValorantPlayerCard2 } from "./ValorantPlayerCard2"
 import { useState, useEffect } from "react";
+import oro from "/assets/medals/Oro.png";
+import plata from "/assets/medals/Plata.png";
+import bronce from "/assets/medals/Bronce.png";
 
 function LeaderBoard() {
 
@@ -9,20 +12,22 @@ function LeaderBoard() {
   const top3PlayersUserInfo=[{
       name:"Bulb", 
       avatar:"https://images.wikidexcdn.net/mwuploads/wikidex/thumb/4/43/latest/20190406170624/Bulbasaur.png/200px-Bulbasaur.png",
-      medal: "/src/assets/medals/Oro.png",
+      medal: oro,
       leaderboardRank: 1
   },{
       name:"Ivy", 
       avatar:"https://images.wikidexcdn.net/mwuploads/wikidex/thumb/8/86/latest/20190406151903/Ivysaur.png/200px-Ivysaur.png",
-      medal: "/src/assets/medals/Plata.png",
+      medal: plata,
       leaderboardRank: 2
   },{
       name: "Venus", 
       avatar: "https://images.wikidexcdn.net/mwuploads/wikidex/thumb/b/be/latest/20160309230456/Venusaur.png/200px-Venusaur.png",
-      medal: "/src/assets/medals/Bronce.png",
+      medal: bronce,
       leaderboardRank: 3
   }
   ]
+
+  
 
 
 

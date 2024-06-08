@@ -8,12 +8,11 @@ const rankVariableImage = `https://trackercdn.com/cdn/tracker.gg/valorant/icons/
 
 
   return (
-    <div className="max-w-sm mx-auto bg-gray-900 text-white rounded-xl shadow-md overflow-hidden">
-      <div className="p-4">
+      <div className="p-4 max-w-sm bg-gray-900 text-white rounded-xl shadow-md overflow-hidden h-fit w-1/5">
         <div className="flex justify-between bg-gray-900 p-4 rounded gap-4">
-          <button className="relative">
+          <button className="flex justify-center">
             <select 
-              className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 focus:outline-none"
+              className="px-4 py-2 bg-gray-900 border border-gray-300 rounded hover:bg-gray-600 focus:outline-none"
             >
               <option>Overall</option>
               <option>Option 1</option>
@@ -22,7 +21,7 @@ const rankVariableImage = `https://trackercdn.com/cdn/tracker.gg/valorant/icons/
           </button>
           <button className="relative">
             <select 
-              className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 focus:outline-none"
+              className="px-4 py-2 bg-gray-900 border border-gray-300 rounded hover:bg-gray-600 focus:outline-none mr-10"
             >
               <option>EP 8 - ACT 3</option>
               <option>Option 1</option>
@@ -67,7 +66,6 @@ const rankVariableImage = `https://trackercdn.com/cdn/tracker.gg/valorant/icons/
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
