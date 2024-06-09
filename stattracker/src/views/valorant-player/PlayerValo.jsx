@@ -276,11 +276,11 @@ export function PlayerValorant() {
         <>
             {/* <StatsCard rank='12' ladderPoints='50' wins='2' defeats='2'/> */}
             <div className="flex flex-col">
-                <div className="flex flex-row gap-3 mb-10">
-                    <h1 className='font-sans text-white text-4xl'>{accountName}</h1>
+                <div className="flex flex-row gap-3 mb-10 mt-10 justify-center items-center">
+                    <h1 className='font-sans text-white text-6xl'>{accountName}</h1>
                     <h1 className='font-sans text-gray-500 text-4xl'>#{hashtag}</h1>
                 </div>
-                <div className='flex flex-row gap-6'>
+                <div className='flex flex-row'>
                     <StatsCard player={player}/>
                     <MatchHistory/>
                 </div>

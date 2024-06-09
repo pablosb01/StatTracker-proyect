@@ -4,7 +4,7 @@ export function MatchHistory() {
 
   
   return (
-    <div className="bg-gray-900 rounded-md h-fit w-3/5 overflow-hidden mx-62">
+    <div className="mx-auto bg-gray-900 rounded-md h-fit w-3/5 overflow-hidden mx-62">
         <div className="h-1/6 bg-gray-900 border border-gray-300 text-white p-3 flex items-center text-4xl leading-none rounded-[7px] box-shadow-0_4_4_rgba(0,0,0,0.25)">
             <span>Match History</span>
         </div>

@@ -8,7 +8,7 @@ const rankVariableImage = `https://trackercdn.com/cdn/tracker.gg/valorant/icons/
 
 
   return (
-      <div className="p-4 max-w-sm bg-gray-900 text-white rounded-xl shadow-md overflow-hidden h-fit w-1/5">
+      <div className="mx-auto p-4 max-w-sm bg-gray-900 text-white rounded-xl shadow-md overflow-hidden h-fit w-1/5">
         <div className="flex justify-between bg-gray-900 p-4 rounded gap-4">
           <button className="flex justify-center">
             <select 
