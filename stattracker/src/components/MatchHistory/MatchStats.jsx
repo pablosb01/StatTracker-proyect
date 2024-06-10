@@ -1,9 +1,14 @@
 import gameData from "../../objects/matchinfo";
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Neon from '/assets/neon.png'
 
 
 export function MatchStats({playerid}) {
+  const [agent, setAgent] = useState()
+
+  function getPlayerAgent () {
+    
+  }
 
     const puuid = playerid;
     
@@ -105,7 +110,7 @@ export function MatchStats({playerid}) {
               <p className="text-stone-900 font-bold text-sm">.</p>
               <p className="text-gray-400 text-xs">anteayer</p>
           </div> */}
-          <img src={Neon} alt="Neon Agent Logo" className="w-14 h-13 rounded-lg" />
+          <img src={Neon} alt="Neon Agent Logo" className="w-14 h-13 rounded-xl" />
           <div className="flex flex-col w-full pl-5">
               <div className="flex flex-row">
                 <span className="text-red-500 font-bold text-sm pb-3 w-1/5">Derrota</span>
