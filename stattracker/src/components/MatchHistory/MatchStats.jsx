@@ -1,6 +1,7 @@
 import gameData from "../../objects/matchinfo";
 import { useEffect, useState } from "react"
 import Neon from '/assets/neon.png'
+import radiant from '/assets/radiant.png'
 
 
 export function MatchStats({playerid}) {
@@ -83,57 +84,72 @@ export function MatchStats({playerid}) {
     const averageScore = (playerStats.score/ numberOfRounds).toFixed(0);
   
     return (
-        <div className="flex items-center h-auto md:p-3 border-b border-stone-800">
-          {/* <div className="flex items-center">
-            <img src={Neon} alt="Neon Agent Logo" className="w-14 h-13 rounded-lg" />
-            <div className=" ml-4 pt-3">
-                <p className="text-red-500 font-bold text-sm pb-3">Derrota</p>
-                <p className="text-white text-sm mt-1">8-13</p>
-                <p className="text-gray-400 text-xs">Ascent</p>
-            </div>
-          </div>
-          <div className="ml-4 pt-3">
-              <p className="text-red-500 font-bold text-xs pb-3">+150 RR</p>
-              <p className="text-custom-orange font-bold text-sm">{kda} KDA</p>
-              <p className="text-gray-400 text-xs">{playerStats.kills}/{playerStats.deaths}/{playerStats.assists}</p>
-          </div>
-          <div className="flex flex-col">
-            <p className="text-white font-bold text-sm pt-10">{mpr} MPR</p>
-            <p className="text-gray-400 text-xs">{dpr} DPR</p>
-          </div>
-          <div className="flex flex-col">
-            <p className="text-white font-bold text-sm pt-10">{hsp}% Cabeza</p>
-            <p className="text-gray-400 text-xs">{averageScore} Puntuación media</p>
-          </div>
-          <div className="flex flex-col pb-3">
-              <p className="text-gray-400 font-bold text-xs pb-3 pt-3.5">10th · Competitive</p>
-              <p className="text-stone-900 font-bold text-sm">.</p>
-              <p className="text-gray-400 text-xs">anteayer</p>
-          </div> */}
+      <>
+        <div className="hidden xl:flex xl:items-center xl:h-auto md:p-3 xl:border-b xl:border-stone-800">
           <img src={Neon} alt="Neon Agent Logo" className="w-14 h-13 rounded-xl" />
           <div className="flex flex-col w-full pl-5">
-              <div className="flex flex-row">
-                <span className="text-red-500 font-bold text-sm pb-3 w-1/5">Derrota</span>
-                <span className="text-red-500 font-bold text-xs w-1/5">+150 RR</span>
+              <div className="grid grid-rows-2 xl:flex xl:flex-row">
+                <span className="text-red-500 font-bold text-2xl pb-2 w-1/5">Derrota</span>
+                <span className="text-red-500 font-bold text-lg pt-1 w-1/5">+150 RR</span>
                 <span className="w-1/5"></span>
                 <span className="w-1/5"></span>
-                <span className="flex text-gray-400 font-bold text-xs w-1/5">10th · Competitive</span>
+                <span className="flex text-gray-400 font-bold text-lg w-1/5 justify-end">10th · Competitive</span>
               </div>
             <div className="flex flex-row">
-              <span className="flex text-white text-sm w-1/5">8-13</span>
-              <span className="text-custom-orange font-bold text-sm w-1/5">{kda} KDA</span>
-              <span className="text-white font-bold text-sm w-1/5">{mpr} MPR</span>
-              <span className="text-white font-bold text-sm w-1/5">{hsp}% Cabeza</span>
+              <span className="flex text-white text-xl w-1/5">8-13</span>
+              <span className="text-custom-orange font-bold text-xl w-1/5">{kda} KDA</span>
+              <span className="text-white font-bold text-xl w-1/5">{mpr} MPR</span>
+              <span className="text-white font-bold text-xl w-1/5">{hsp}% Cabeza</span>
               <span className="w-1/5"></span>
             </div>
             <div className="flex flex-row">
-              <span className="text-gray-400 text-xs w-1/5">Ascent</span>
-              <span className="text-gray-400 text-xs w-1/5">{playerStats.kills}/{playerStats.deaths}/{playerStats.assists}</span>
-              <span className="text-gray-400 text-xs w-1/5">{dpr} DPR</span>
-              <span className="text-gray-400 text-xs w-1/5">{averageScore} Puntuación media</span>
-              <span className="text-gray-400 text-xs w-1/5">anteayer</span>
+              <span className="text-gray-400 text-xl w-1/5">Ascent</span>
+              <span className="text-gray-400 text-xl w-1/5">{playerStats.kills}/{playerStats.deaths}/{playerStats.assists}</span>
+              <span className="text-gray-400 text-xl w-1/5">{dpr} DPR</span>
+              <span className="text-gray-400 text-xl w-1/5">{averageScore} Puntuación media</span>
+              <span className="flex text-gray-400 text-xl w-1/5 justify-end">anteayer</span>
+            </div>
+          </div>
+          </div>
+
+        <div className="xl:hidden h-auto flex w-full border-b border-stone-800">
+          <div className="flex flex-col m-3 border-l-4 border-red-700 w-full">
+            <div className="flex flex-row w-full justify-between px-2">
+              <div className="flex pb-2">
+                <img src={Neon} alt="Neon Agent Logo" className="w-auto h-fit rounded-2xl" />
+                <div className="flex flex-col pl-3">
+                  <span className="flex text-gray-400 font-bold text-xs">Competitive · 13h ago</span>
+                  <span className="text-white font-bold text-sm">Ascent</span>
+                </div>
+              </div>
+              <img src={radiant} className="w-auto h-3/5"></img>
+              <div className="flex flex-col">
+                <div>
+                  <span className="text-green-600 text-base">8 </span><span className="text-white text-base">: </span><span className="text-red-600 text-base">13</span>
+                </div>
+              <span className="text-white font-bold text-sm bg-red-400 rounded-xl p-1">10th</span>
+              </div>
+            </div>
+            <div className="flex flex-row justify-between px-3">
+              <div className="flex flex-col justify-between">
+                <span className="flex flex-start text-custom-orange font-bold text-sm">K / D / A</span>
+                <span className="text-gray-400 text-sm">{playerStats.kills}/{playerStats.deaths}/{playerStats.assists}</span>
+              </div>
+              <div className="flex flex-col justify-between">
+                <span className="flex flex-center text-custom-orange font-bold text-sm">K/D</span>
+                <span className="text-gray-400 font-bold text-sm">{kda}</span>
+              </div>
+              <div className="flex flex-col justify-between">
+                <span className="text-white font-bold text-base">HS%</span>
+                <span className="text-gray-400 font-bold text-sm">{hsp}</span>
+              </div>
+              <div className="flex flex-col justify-between">
+                <span className="text-white font-bold text-base">ACS</span>
+                <span className="text-gray-400 text-sm font-bold">{averageScore}</span>
+              </div>
             </div>
           </div>
         </div>
+        </>
     )
 }
