@@ -53,15 +53,17 @@ const agentsData = [
 
 export function Agents() {
   return (
-    <div className="caja w-full h-[380px] md:w-full rounded-[7px] overflow-hidden bg-gray-300 mx-62">
-      <div className="h-1/6 bg-stone-900 border border-gray-300 text-white px-4 flex items-center text-4xl leading-none rounded-[7px] box-shadow-0_4_4_rgba(0,0,0,0.25)">
-        <span>AGENTS</span>
+    <div className="caja w-full max-w-[600px] h-[380px] rounded-[7px] overflow-hidden bg-gray-300">
+      <div className="flex items-center h-12 rounded-lg drop-shadow-md bg-stone-900 border border-gray-300">
+        <h2 className="text-left items-center p-1.5 pl-3  text-3xl text-white font-sans">
+          AGENTS
+        </h2>
       </div>
       <div className="h-5/6 overflow-y-auto">
         {agentsData.map((agent, index) => (
           <div className="flex h-1/4 md:p-3 p-1 justify-between border-b border-stone-800" key={index}>
             <div className="flex items-center">
-              <img src={agent.imgSrc} alt={agent.name} className="xl:w-14 xl:h-14 w-12 h-12  rounded-full md:mr-8 mr-2" />
+              <img src={agent.imgSrc} alt={agent.name} className="w-14 h-14 rounded-lg sm:mr-8 mr-2" />
               <div className="flex flex-col justify-between">
                 <span className="font-bold text-md xl:text-xl">{agent.name}</span>
                 <span className="text-md text-gray-48">{agent.role}</span>

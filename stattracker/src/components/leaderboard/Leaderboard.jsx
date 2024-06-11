@@ -8,8 +8,8 @@ import leaderboardArr from "../../objects/leaderboard";
 function LeaderBoard() {
 
   return (
-    <div className="flex justify-center w-full">
-      <div className="rounded-lg drop-shadow-md bg-gray-300 w-full">
+    <div className="flex justify-center w-full max-w-[600px]">
+      <div className="rounded-lg drop-shadow-md bg-gray-300">
         <div className="flex items-center h-12 rounded-lg drop-shadow-md bg-stone-900 border border-gray-300">
           <h2 className="text-left items-center p-1.5 pl-3  text-3xl text-white font-sans">
             LEADERBOARD

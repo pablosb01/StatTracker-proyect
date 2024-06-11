@@ -38,7 +38,7 @@ export function ValoHome() {
                     <UserFormValorant/>
                     <Agents/>
                 </div>
-                <div className='flex items-center flex-col w-full gap-16 justify-center md:w-1/2 xl:w-fit xl:px-20'>
+                <div className='relative xl:w-1/2 md:w-2/3 flex flex-col gap-16 items-center xl:px-20'>
                     <LeaderBoard/>
                     <Download/>
                 </div>
