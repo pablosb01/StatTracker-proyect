@@ -1,7 +1,3 @@
-import ranks from '/src/objects/ranks.js'
-
-
-
 const StatsCard = ({player}) => {
 
 const rankVariableImage = `https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/${player.rank}.png`
