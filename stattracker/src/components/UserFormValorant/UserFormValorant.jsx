@@ -27,7 +27,7 @@ function UserFormValorant () {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-4 flex-wrap justify-center">
+    <form onSubmit={handleSubmit} className="flex gap-4 flex-wrap justify-center max-w-[600px]">
       <input
         type="text"
         placeholder="Account Name"
