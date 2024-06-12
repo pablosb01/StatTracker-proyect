@@ -217,18 +217,18 @@ export function MatchStats({playerid}) {
                 <span className="flex text-gray-400 font-bold text-lg w-1/5 justify-end">10th · Competitive</span>
               </div>
             <div className="flex flex-row">
-              <span className="flex text-white text-3xl w-1/5">8-13</span>
+              <span className="flex text-black text-3xl w-1/5">8-13</span>
               <span className="text-custom-orange font-bold text-xl w-1/5">{kda} KDA</span>
-              <span className="text-white font-bold text-xl w-1/5">{mpr} MPR</span>
-              <span className="text-white font-bold text-xl w-1/5">{hsp}% Cabeza</span>
+              <span className="text-black font-bold text-xl w-1/5">{mpr} MPR</span>
+              <span className="text-black font-bold text-xl w-1/5">{hsp}% Cabeza</span>
               <span className="w-1/5"></span>
             </div>
             <div className="flex flex-row">
-              <span className="text-gray-400 text-xl w-1/5">Ascent</span>
-              <span className="text-gray-400 text-xl w-1/5">{playerStats.kills}/{playerStats.deaths}/{playerStats.assists}</span>
-              <span className="text-gray-400 text-xl w-1/5">{dpr} DPR</span>
-              <span className="text-gray-400 text-xl w-1/5">{averageScore} Puntuación media</span>
-              <span className="flex text-gray-400 text-xl w-1/5 justify-end">anteayer</span>
+              <span className="text-black-400 text-xl w-1/5">Ascent</span>
+              <span className="text-black-400 text-xl w-1/5">{playerStats.kills}/{playerStats.deaths}/{playerStats.assists}</span>
+              <span className="text-black-400 text-xl w-1/5">{dpr} DPR</span>
+              <span className="text-black-400 text-xl w-1/5">{averageScore} Puntuación media</span>
+              <span className="flex text-black-400 text-xl w-1/5 justify-end">anteayer</span>
             </div>
           </div>
         </div>

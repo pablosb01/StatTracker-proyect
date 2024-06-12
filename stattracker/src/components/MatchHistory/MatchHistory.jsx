@@ -5,8 +5,8 @@ export function MatchHistory() {
   
   return (
     <>
-    <div className="mx-auto hidden xl:block bg-custom-background rounded-md h-full w-3/5 overflow-hidden mx-62">
-        <div className="h-1/6 bg-custom-background border border-gray-300 text-white p-3 flex items-center text-4xl leading-none rounded-[7px] box-shadow-0_4_4_rgba(0,0,0,0.25)">
+    <div className="mx-auto hidden xl:block bg-gray-300 rounded-md h-full w-3/5 overflow-hidden mx-62">
+        <div className="h-1/6 bg-gradient-to-r from-black to-red-900 border border-gray-300 text-white p-3 flex items-center text-4xl leading-none rounded-[7px] box-shadow-0_4_4_rgba(0,0,0,0.25)">
             <span>Match History</span>
         </div>
         <div className="h-5/6">
