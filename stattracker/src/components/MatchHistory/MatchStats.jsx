@@ -10,8 +10,7 @@ export function MatchStats({playerid}) {
   const [agentPicture, setAgentPicture] = useState(null);
   const [gameResult, setGameResult] = useState(null)
   const [resultColor, setResultColor] = useState(null)
-
-  console.log(gameData)
+  const [borderColor, setBorderColor] = useState(null)
 
   const puuid = playerid;
 
@@ -72,7 +71,6 @@ export function MatchStats({playerid}) {
   useEffect(()=>{
     const result = getResult(puuid);
     if (result) {
-      console.log(result);
       setGameResult(result);
     }else{
       console.log('no result found')
@@ -92,6 +90,21 @@ export function MatchStats({playerid}) {
   useEffect(() => {
     const resColor = getResultColor(gameResult)
     setResultColor(resColor)
+  },[gameResult])
+
+  function getResultColorBorder (gameResult) {
+    if (gameResult === "Win") {
+      return 'flex flex-col m-3 border-l-4 border-green-700 w-full'
+    } else if (gameResult === 'Defeat') {
+      return 'flex flex-col m-3 border-l-4 border-red-700 w-full'
+    } else {
+      return null;
+    }
+  }
+
+  useEffect(() => {
+    const borColor = getResultColorBorder(gameResult)
+    setBorderColor(borColor)
   },[gameResult])
 
 
@@ -167,7 +180,7 @@ export function MatchStats({playerid}) {
   
     return (
       <>
-        <div className="flex items-center h-auto md:p-3 border-b border-stone-800">
+        <div className="lg:flex items-center flex  h-auto md:p-3 hidden border-b border-stone-800">
           {/* <div className="flex items-center">
             <img src={Neon} alt="Neon Agent Logo" className="w-14 h-13 rounded-lg" />
             <div className=" ml-4 pt-3">
@@ -218,13 +231,13 @@ export function MatchStats({playerid}) {
               <span className="flex text-gray-400 text-xl w-1/5 justify-end">anteayer</span>
             </div>
           </div>
-          </div>
+        </div>
 
         <div className="xl:hidden h-auto flex w-full border-b border-stone-800">
-          <div className="flex flex-col m-3 border-l-4 border-red-700 w-full">
+          <div className={borderColor}>
             <div className="flex flex-row w-full justify-between px-2">
               <div className="flex pb-2">
-                <img src={Neon} alt="Neon Agent Logo" className="w-auto h-fit rounded-2xl" />
+                <img src={agentPicture} alt="Neon Agent Logo" className="w-18 h-16 rounded-2xl" />
                 <div className="flex flex-col pl-3">
                   <span className="flex text-gray-400 font-bold text-xs">Competitive · 13h ago</span>
                   <span className="text-white font-bold text-sm">Ascent</span>
