@@ -3,10 +3,10 @@ import { GameSelector } from "../../components/gameSelector/GameSelector";
 import { Link } from 'react-router-dom';
 import  Logo  from '/public/assets/home-imgs/scole-biglogo.png';
 import { GameSelector2 } from "../../components/gameSelector/GameSelector2";
-import Jett from '/public/assets/home-imgs/jett.png'
-import March from '/public/assets/home-imgs/march.png';
-import cs2 from '/public/assets/home-imgs/cs2.png';
-import honkai from '/public/assets/home-imgs/xiao.png';
+import Jett from '/assets/home-imgs/jett.png'
+import March from '/assets/home-imgs/march.png';
+import cs2 from '/assets/home-imgs/cs2.png';
+import honkai from '/assets/home-imgs/xiao.png';
 
 
 function Home() {

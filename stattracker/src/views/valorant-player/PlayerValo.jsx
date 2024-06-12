@@ -276,7 +276,7 @@ export function PlayerValorant() {
     return(
         <>
             {/* <StatsCard rank='12' ladderPoints='50' wins='2' defeats='2'/> */}
-            <div className="flex flex-col bg-custom-bg">
+            <div className="flex flex-col">
                 <div className="flex flex-row xl:gap-3 gap-4 mb-10 mt-10 justify-center xl:justify-start  xl:mx-28 lg:items-center">
                     <img className='h-20 rounded-full'src={profilePhoto}></img>
                     <h1 className='font-sans text-white text-6xl'>{accountName}</h1>

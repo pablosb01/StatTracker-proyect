@@ -5,14 +5,96 @@ import radiant from '/assets/radiant.png'
 
 
 export function MatchStats({playerid}) {
-  const [agent, setAgent] = useState()
+  const [agent, setAgent] = useState(null);
+  const [agentInfo, setAgentInfo] = useState(null);
+  const [agentPicture, setAgentPicture] = useState(null);
+  const [gameResult, setGameResult] = useState(null)
+  const [resultColor, setResultColor] = useState(null)
 
-  function getPlayerAgent () {
-    
+  console.log(gameData)
+
+  const puuid = playerid;
+
+  function getPlayerAgent(puuid) {
+    const player = gameData.players.find(player => player.puuid === puuid);
+    if (player) {
+      setAgent(player.characterId);
+    } else {
+      console.error(`Player not found with puuid ${puuid}`);
+    }
   }
 
-    const puuid = playerid;
-    
+  useEffect(() => {
+    if (puuid) {
+      getPlayerAgent(puuid);
+    }
+  }, [puuid]);
+
+  useEffect(() => {
+    if (agent) {
+      fetch(`https://valorant-api.com/v1/agents/${agent}`)
+      .then(response => response.json())
+      .then(data => {
+          setAgentInfo(data);
+          setAgentPicture(data.data.displayIcon);
+        })
+      .catch(err => console.error(err));
+    }
+  }, [agent]);
+
+  function getResult(puuid){
+    if(!puuid) {
+      return null;
+    }
+    const player = gameData.players.find(currentPlayer => currentPlayer.puuid === puuid);
+    if(!player) {
+      return null;
+    }
+    if (player.teamId === "BLUE") {
+      const blueTeam = gameData.teams.find(team => team.teamId === 'Blue');
+      if (blueTeam) {
+        return blueTeam.won? "Win" : "Defeat";
+      } else {
+        return "Unknown";
+      }
+    } else if (player.teamId === "RED") {
+      const redTeam = gameData.teams.find(team => team.teamId === 'Red');
+      if (redTeam) {
+        return redTeam.won? "Win" : "Defeat";
+      } else {
+        return "Unknown";
+      }
+    } else {
+      return "Unknown team";
+    }
+  }
+
+  useEffect(()=>{
+    const result = getResult(puuid);
+    if (result) {
+      console.log(result);
+      setGameResult(result);
+    }else{
+      console.log('no result found')
+    }
+  },[puuid])
+
+  function getResultColor (gameResult) {
+    if (gameResult === "Win") {
+      return 'text-green-500 font-bold text-2xl pb-2 w-1/5'
+    } else if (gameResult === 'Defeat') {
+      return 'text-red-500 font-bold text-2xl pb-2 w-1/5'
+    } else {
+      return null;
+    }
+  }
+
+  useEffect(() => {
+    const resColor = getResultColor(gameResult)
+    setResultColor(resColor)
+  },[gameResult])
+
+
     function getPlayerStatsByPuuid(puuid) {
         const player = gameData.players.find(p => p.puuid === puuid);
       
@@ -85,18 +167,44 @@ export function MatchStats({playerid}) {
   
     return (
       <>
-        <div className="hidden xl:flex xl:items-center xl:h-auto md:p-3 xl:border-b xl:border-stone-800">
-          <img src={Neon} alt="Neon Agent Logo" className="w-14 h-13 rounded-xl" />
+        <div className="flex items-center h-auto md:p-3 border-b border-stone-800">
+          {/* <div className="flex items-center">
+            <img src={Neon} alt="Neon Agent Logo" className="w-14 h-13 rounded-lg" />
+            <div className=" ml-4 pt-3">
+                <p className="text-red-500 font-bold text-sm pb-3">Derrota</p>
+                <p className="text-white text-sm mt-1">8-13</p>
+                <p className="text-gray-400 text-xs">Ascent</p>
+            </div>
+          </div>
+          <div className="ml-4 pt-3">
+              <p className="text-red-500 font-bold text-xs pb-3">+150 RR</p>
+              <p className="text-custom-orange font-bold text-sm">{kda} KDA</p>
+              <p className="text-gray-400 text-xs">{playerStats.kills}/{playerStats.deaths}/{playerStats.assists}</p>
+          </div>
+          <div className="flex flex-col">
+            <p className="text-white font-bold text-sm pt-10">{mpr} MPR</p>
+            <p className="text-gray-400 text-xs">{dpr} DPR</p>
+          </div>
+          <div className="flex flex-col">
+            <p className="text-white font-bold text-sm pt-10">{hsp}% Cabeza</p>
+            <p className="text-gray-400 text-xs">{averageScore} Puntuación media</p>
+          </div>
+          <div className="flex flex-col pb-3">
+              <p className="text-gray-400 font-bold text-xs pb-3 pt-3.5">10th · Competitive</p>
+              <p className="text-stone-900 font-bold text-sm">.</p>
+              <p className="text-gray-400 text-xs">anteayer</p>
+          </div> */}
+          <img src={agentPicture} alt="Neon Agent Logo" className="w-18 h-16 rounded-xl" />
           <div className="flex flex-col w-full pl-5">
               <div className="grid grid-rows-2 xl:flex xl:flex-row">
-                <span className="text-red-500 font-bold text-2xl pb-2 w-1/5">Derrota</span>
+                <span className={resultColor}>{gameResult}</span>
                 <span className="text-red-500 font-bold text-lg pt-1 w-1/5">+150 RR</span>
                 <span className="w-1/5"></span>
                 <span className="w-1/5"></span>
                 <span className="flex text-gray-400 font-bold text-lg w-1/5 justify-end">10th · Competitive</span>
               </div>
             <div className="flex flex-row">
-              <span className="flex text-white text-xl w-1/5">8-13</span>
+              <span className="flex text-white text-3xl w-1/5">8-13</span>
               <span className="text-custom-orange font-bold text-xl w-1/5">{kda} KDA</span>
               <span className="text-white font-bold text-xl w-1/5">{mpr} MPR</span>
               <span className="text-white font-bold text-xl w-1/5">{hsp}% Cabeza</span>
