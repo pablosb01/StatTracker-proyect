@@ -1,7 +1,7 @@
 import { GameSelector } from "../../components/gameSelector/GameSelector";
 /* import Jett from '/public/assets/home-imgs/jett.png'; */
 import { Link } from 'react-router-dom';
-import  Logo  from '/public/assets/home-imgs/scole-biglogo.png';
+import  Logo  from '/assets/home-imgs/scole-biglogo.png';
 import { GameSelector2 } from "../../components/gameSelector/GameSelector2";
 import Jett from '/assets/home-imgs/jett.png'
 import March from '/assets/home-imgs/march.png';
@@ -21,9 +21,9 @@ function Home() {
                     <Link to='/valorant'>
                         <GameSelector imageSrc={Jett} gameName='VALORANT'/>
                     </Link>
-                    <Link to='/honkai'>
-                        <GameSelector imageSrc={March} gameName='HONKAI: Star Rail'/>
-                    </Link>
+                    
+                    <GameSelector2 imageSrc={March} gameName='HONKAI: Star Rail'/>
+                    
                     <GameSelector2 imageSrc={cs2} gameName='Counter Strike 2'/>
                     <GameSelector2 imageSrc={honkai} gameName='Genshin Impact'/>
                 </div>

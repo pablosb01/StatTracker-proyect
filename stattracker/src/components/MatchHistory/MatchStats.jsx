@@ -11,6 +11,8 @@ export function MatchStats({playerid}) {
   const [gameResult, setGameResult] = useState(null)
   const [resultColor, setResultColor] = useState(null)
   const [borderColor, setBorderColor] = useState(null)
+  const [roundsWon, setRoundsWon] = useState(null)
+  const [roundsLost, setRoundsLost] = useState(null)
 
   const puuid = playerid;
 
@@ -79,9 +81,9 @@ export function MatchStats({playerid}) {
 
   function getResultColor (gameResult) {
     if (gameResult === "Win") {
-      return 'text-green-500 font-bold text-2xl pb-2 w-1/5'
+      return 'text-green-700 font-bold text-2xl pb-2 w-1/5'
     } else if (gameResult === 'Defeat') {
-      return 'text-red-500 font-bold text-2xl pb-2 w-1/5'
+      return 'text-red-700 font-bold text-2xl pb-2 w-1/5'
     } else {
       return null;
     }
@@ -165,6 +167,36 @@ export function MatchStats({playerid}) {
       return headshotPercentage
     }
 
+    console.log(gameData)
+
+    function getWonRounds(gameData, puuid) {
+      let playerTeam = '';
+      let wonRounds = 0;
+      let lostRounds = 0;
+      gameData.players.forEach(player => {
+        if (player.puuid === puuid) {
+          playerTeam = player.teamId;
+        }
+      })
+
+      gameData.teams.forEach(team => {
+        if(team.teamId.toUpperCase() === playerTeam){
+          wonRounds = team.roundsWon
+          lostRounds = team.roundsPlayed - team.roundsWon
+        }
+        
+      })
+
+      return {wonRounds, lostRounds}
+    }
+
+    useEffect(()=>{
+      let rounds = getWonRounds(gameData, puuid)
+      let roundsResult = `${rounds.wonRounds} - ${rounds.lostRounds}`
+      setRoundsWon(rounds.wonRounds)
+      setRoundsLost(rounds.lostRounds)
+    },[puuid])
+
     
     
     
@@ -217,7 +249,11 @@ export function MatchStats({playerid}) {
                 <span className="flex text-gray-400 font-bold text-lg w-1/5 justify-end">10th · Competitive</span>
               </div>
             <div className="flex flex-row">
-              <span className="flex text-black text-3xl w-1/5">8-13</span>
+              <span className="flex text-black text-3xl w-1/5">
+                <span className='text-green-800'>{roundsWon}</span>
+                -
+                <span className='text-red-800'>{roundsLost}</span>
+              </span>
               <span className="text-custom-orange font-bold text-xl w-1/5">{kda} KDA</span>
               <span className="text-black font-bold text-xl w-1/5">{mpr} MPR</span>
               <span className="text-black font-bold text-xl w-1/5">{hsp}% Cabeza</span>

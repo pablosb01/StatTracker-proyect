@@ -4,7 +4,7 @@ import { useMemo, useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
 import ranksIcon from '/src/objects/ranks.js'
 import gameData from '/src/objects/matchinfo.js'
-import profilePhoto from '../../../public/assets/e.png'
+import profilePhoto from '/assets/e.png'
 import { MatchHistory } from "../../components/MatchHistory/MatchHistory";
 
 export function PlayerValorant() {

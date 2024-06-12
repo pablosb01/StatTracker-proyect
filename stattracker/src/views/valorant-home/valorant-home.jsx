@@ -2,7 +2,7 @@ import { Agents } from '../../components/Agents/Agents'
 import UserFormValorant from '../../components/UserFormValorant/UserFormValorant'
 import LeaderBoard from '../../components/leaderboard/Leaderboard'
 import matchInfo from '/src/objects/matchinfo.js'
-import ValoLogo from '/public/assets/valorant-logo.png'
+import ValoLogo from '/assets/valorant-logo.png'
 import { Download } from '../../components/downloadbutton/DownloadButton'
 import {useState, useEffect} from "react" 
 
