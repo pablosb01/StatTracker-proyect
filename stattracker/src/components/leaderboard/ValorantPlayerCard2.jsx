@@ -1,10 +1,14 @@
 export function ValorantPlayerCard2({playerName, playerAvatar, playerMedal}) {
 
     return (
-          <div className="bg-gray-300 rounded-lg drop-shadow-md overflow-hidden flex flex-col justify-end h-fit ">
-            <div className={`bg-gray-500 rounded-lg drop-shadow-md h-[190px] overflow-hidden`}>
-              <img src={playerMedal} alt="Medalla" className={`w-12 absolute`}/>
-              <img src={playerAvatar} alt="Imagen" className=""/>
+          <div className="bg-gray-400 rounded-lg drop-shadow-md overflow-hidden flex flex-col justify-end h-fit w-full">
+            
+            <div className="bg-gradient-to-b to-gray-600 from-red-900 rounded-lg drop-shadow-md h-[170px] overflow-hidden">
+              <img src={playerAvatar} alt="Imagen" className="relative right-12 max-w-44 xl:right-0 xl:left-3 lg:right-0"/>
+              <img src={playerMedal} alt="Medalla" className="w-12 bottom-44 relative"/>
+              
+              
+              
             </div>
             <div className="flex justify-around">
               <p className="font-bold">{playerName}</p>

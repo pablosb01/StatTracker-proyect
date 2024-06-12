@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import ValorantLogo from '/public/assets/logos/ValorantLogo';
-import logo from '/public/assets/small-logo-nb.png';
+import logo from '/assets/small-logo-nb.png';
 import { NavItem } from '../navitem/NavItem';
 import HonkaiLogo from '/public/assets/logos/HonkaiLogo';
 
@@ -14,9 +14,6 @@ export function Navbar() {
         <ul className="ml-5 h-full flex">
             <NavItem link={'valorant'} icon={<ValorantLogo />}>
               VALORANT
-            </NavItem>
-            <NavItem link={'honkai'} icon={<HonkaiLogo />}>
-              HONKAI: STAR RAIL
             </NavItem>
         </ul>
       </div>

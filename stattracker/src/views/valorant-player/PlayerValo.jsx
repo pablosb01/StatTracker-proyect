@@ -4,6 +4,7 @@ import { useMemo, useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
 import ranksIcon from '/src/objects/ranks.js'
 import gameData from '/src/objects/matchinfo.js'
+import profilePhoto from '/assets/e.png'
 import { MatchHistory } from "../../components/MatchHistory/MatchHistory";
 
 export function PlayerValorant() {
@@ -276,18 +277,14 @@ export function PlayerValorant() {
         <>
             {/* <StatsCard rank='12' ladderPoints='50' wins='2' defeats='2'/> */}
             <div className="flex flex-col">
-                <div className="flex flex-row gap-3">
-                    
-                    <h1 className='font-sans text-white text-4xl'>{accountName}</h1>
+                <div className="flex flex-row xl:gap-3 gap-4 mb-10 mt-10 justify-center xl:justify-start  xl:mx-28 lg:items-center">
+                    <img className='h-20 rounded-full'src={profilePhoto}></img>
+                    <h1 className='font-sans text-white text-6xl'>{accountName}</h1>
                     <h1 className='font-sans text-gray-500 text-4xl'>#{hashtag}</h1>
                 </div>
-                <div className='flex flex-row gap-6'>
-                    <div className='flex flex-col'>
-                        <StatsCard player={player}/>
-                    </div>
-                    <div className='flex flex-col'>
-                        <MatchHistory/>
-                    </div>
+                <div className='flex xl:flex-row flex-col w-full'>
+                    <StatsCard player={player}/>
+                    <MatchHistory/>
                 </div>
             </div>
         </>
