@@ -97,7 +97,7 @@ export function Overview() {
         ],
     };  
     return (
-        <div className="grid grid-cols-2">
+        <div className="w-full grid grid-cols-2">
             <div className="col-span-2" id="overview-graph">
                 <ReactECharts option={option} />
             </div>
