@@ -53,7 +53,7 @@ const agentsData = [
 
 export function Agents() {
   return (
-    <div className="caja w-full max-w-[600px] h-[380px] rounded-[7px] overflow-hidden bg-gray-300">
+    <div className="caja w-full max-w-[600px] h-[380px] rounded-[7px] overflow-hidden bg-gray-300 ">
       <div className="flex items-center h-12 rounded-lg drop-shadow-md group bg-gradient-to-r from-black to-red-900 border border-gray-300 hover:from-red-900 hover:to-black">
         <h2 className="text-left tracking-wide group-hover:tracking-widest transition-all duration-300 ease-in-out items-center p-1.5 pl-3 text-3xl text-white font-sans">
           AGENTS
