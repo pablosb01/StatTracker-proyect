@@ -7,6 +7,12 @@ import { getDivisionNameByRankNumber } from '../../helpers/valorant/rank';
 export function Overview() {
 
     let option = {
+        grid: {
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '128px'
+        },
         xAxis: {
             type: 'category',
             show: false
@@ -97,9 +103,9 @@ export function Overview() {
         ],
     };  
     return (
-        <div className="w-full grid grid-cols-2">
+        <div className="w-full grid grid-cols-2 mb-4 overflow-hidden rounded-xl">
             <div className="col-span-2" id="overview-graph">
-                <ReactECharts option={option} />
+                <ReactECharts option={option} style={{height: '128px'}}/>
             </div>
         </div>
     )
