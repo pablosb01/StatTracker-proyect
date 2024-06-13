@@ -23,24 +23,27 @@ const rankVariableImage = `https://trackercdn.com/cdn/tracker.gg/valorant/icons/
             </select>
           </button>
         </div> */}
-        <div className="h-1/6 bg-gradient-to-r from-black to-red-900 border border-gray-300 text-white p-3  flex items-center text-4xl leading-none rounded-[7px] box-shadow-0_4_4_rgba(0,0,0,0.25)">
-            <span>Overall</span>
-        </div>
-        <div className="flex items-center px-4 space-x-4 mt-4">
-          <img 
-            src={rankVariableImage}
-            alt={player.rankName}
-            className="w-12 h-12"
-          />
-          <div>
-            <h2 className="text-xl font-bold text-yellow-500">{player.rankName}</h2>
+        
+        <div className="items-center rounded-lg bg-gray-400">
+          <div className="flex items-center group h-12 rounded-lg drop-shadow-md bg-gradient-to-r from-black to-red-900 border border-gray-300 hover:from-red-900 hover:to-black ">
+            <span className="text-left  items-center p-1.5 pl-3  text-3xl text-white font-sans tracking-wide group-hover:tracking-widest transition-all duration-300 ease-in-out">OVERALL</span>
+          </div>
+          <div className="flex group gap-3 justify-center p-3 pb-2">
+            <img 
+              src={rankVariableImage}
+              alt={player.rankName}
+              className="w-16 h-16 group-hover:h-20 group-hover:w-20 transition-all duration-300 ease-in-out"
+            />
+            <div className="flex flex-col items-center justify-center">
+              <h2 className="text-2xl font-bold text-yellow-500">{player.rankName}</h2>
             {/* <p className="text-sm text-gray-400">{player.ladderPoints} RR</p> */}
-            <p className="text-sm text-black font-bold">{player.wins}V {player.defeats}D
-              <span className="text-green-500 font-bold pl-1">{player.wr}%</span>
-            </p>
+              <p className="text-md text-black font-bold">{player.wins}V {player.defeats}D
+                <span className="text-green-400 text-md font-bold pl-1">{player.wr}%</span>
+              </p>
+            </div>
           </div>
         </div>
-        <div className="mt-4 my p-4 py-5 space-y-2">
+        <div className="p-4 py-4 space-y-2">
           <div className="flex xl: justify-between">
             <p className="text-black font-bold">Asesinatos/Muerte</p>
             <p className="text-black">{player.kda} %</p>

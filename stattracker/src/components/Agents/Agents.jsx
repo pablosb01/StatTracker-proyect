@@ -53,24 +53,24 @@ const agentsData = [
 
 export function Agents() {
   return (
-    <div className="w-full max-w-[600px] h-[380px] rounded-[7px] overflow-hidden bg-gray-300">
-      <div className="flex items-center h-12 rounded-lg drop-shadow-md bg-gradient-to-r from-black to-red-900 border border-gray-300">
-        <h2 className="text-left tracking-widest items-center p-1.5 pl-3 text-3xl text-white font-sans">
+    <div className="caja w-full max-w-[600px] h-[380px] rounded-[7px] overflow-hidden bg-gray-300 ">
+      <div className="flex items-center h-12 rounded-lg drop-shadow-md group bg-gradient-to-r from-black to-red-900 border border-gray-300 hover:from-red-900 hover:to-black">
+        <h2 className="text-left tracking-wide group-hover:tracking-widest transition-all duration-300 ease-in-out items-center p-1.5 pl-3 text-3xl text-white font-sans">
           AGENTS
         </h2>
       </div>
       <div className="h-[332px] overflow-y-auto">
         {agentsData.map((agent, index) => (
-          <div className="flex px-3 py-2 justify-between border-b border-stone-800" key={index}>
+          <div className="group bg-gray-300 hover:bg-gray-400 flex px-3 py-2 justify-between border-b border-stone-800 transition-all duration-500 ease-in-out" key={index}>
             <div className="flex items-center">
-              <img src={agent.imgSrc} alt={agent.name} className="w-14 h-14 rounded-lg sm:mr-8 mr-2" />
+              <img src={agent.imgSrc} alt={agent.name} className="w-14 h-14 group-hover:w-16 group-hover:h-16 rounded-lg sm:mr-8 mr-2 transition-all duration-300 ease-in-out" />
               <div className="flex flex-col justify-between">
                 <span className="font-bold border-b-2 border-red-600 tracking-wide text-xl">{agent.name}</span>
                 <span className="text-md text-gray-48  ">{agent.role}</span>
               </div>
             </div>
             <div className="flex flex-row  md:gap-8 gap-6 justify-between">
-              <div className='flex flex-col pl-9 justify-center'>
+              <div className='flex flex-col justify-center'>
                 <span className="font-bold text-base xl:text-lg">Win Rate:</span>
                 <span className=" text-xl">{agent.winRate}</span>
               </div>
