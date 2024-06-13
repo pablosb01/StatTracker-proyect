@@ -48,7 +48,7 @@ function UserFormValorant () {
       />
       <button
         type="submit"
-        className="bg-red-600 hover:ring-white-500 hover:ring-2 hover:outline-none text-white font-bold py-2 px-4 w-full lg:w-2/5 xl:w-1/3 lg:justify-center rounded-[25px]">
+        className="h-[44px] bg-red-700 hover:bg-red-900 hover:ring-white-500 hover:ring-2 hover:outline-none text-white font-bold py-2 px-4 w-full lg:w-2/5 xl:w-1/3 lg:justify-center rounded-[25px] transition-colors duration-300 ease-in-out">
             Submit
       </button>
     </form>

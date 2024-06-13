@@ -10,7 +10,7 @@ function LeaderBoard() {
   return (
     <div className="w-full xl:w-auto lg:max-w-[600px] rounded-[7px] overflow-hidden">
       <div className="rounded-lg drop-shadow-md bg-gray-300">
-        <div className="flex items-center h-12 rounded-lg drop-shadow-md bg-gradient-to-r from-black to-red-900 border border-gray-300">
+        <div className="flex items-center h-12 rounded-lg drop-shadow-md bg-gradient-to-r from-black to-red-900 border border-gray-300 hover:from-red-900 hover:to-black">
           <h2 className="text-left tracking-widest items-center p-1.5 pl-3  text-3xl text-white font-sans">
             LEADERBOARD
           </h2>
