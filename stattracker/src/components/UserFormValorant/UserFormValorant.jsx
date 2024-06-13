@@ -27,7 +27,11 @@ function UserFormValorant () {
   };
 
   return (
+<<<<<<< HEAD
     <form onSubmit={handleSubmit} className="flex gap-4 flex-wrap justify-between max-w-[600px]">
+=======
+    <form onSubmit={handleSubmit} className="flex gap-4 flex-nowrap justify-between max-w-[600px]">
+>>>>>>> main
       <input
         type="text"
         placeholder="Account Name"
@@ -48,10 +52,13 @@ function UserFormValorant () {
       />
       <button
         type="submit"
+<<<<<<< HEAD
         className="bg-red-600 hover:ring-white-500 hover:ring-2 hover:outline-none text-white font-bold py-2 px-4 w-1/6 lg:justify-center rounded-[25px]">
         <div className='flex items-center h-4'>
+=======
+        className="h-[44px] bg-red-700 hover:bg-red-900 hover:ring-white-500 hover:ring-2 hover:outline-none text-white font-bold py-2 px-4 w-full lg:w-2/5 xl:w-1/3 lg:justify-center rounded-[25px] transition-colors duration-300 ease-in-out">
+>>>>>>> main
             Submit
-        </div>
       </button>
     </form>
   );

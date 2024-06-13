@@ -277,12 +277,12 @@ export function PlayerValorant() {
         <>
             {/* <StatsCard rank='12' ladderPoints='50' wins='2' defeats='2'/> */}
             <div className="flex flex-col">
-                <div className="flex flex-row xl:gap-3 gap-4 mb-10 mt-10 justify-center xl:justify-start  xl:mx-28 lg:items-center">
-                    <img className='h-20 rounded-full'src={profilePhoto}></img>
+                <div className="flex flex-row xl:gap-3 gap-4 mb-10 mt-10 justify-center xl:justify-start  xl:mx-28 lg:items-center h-[80px]">
+                    <img className='h-20 hover:h-24 rounded-full'src={profilePhoto}></img>
                     <h1 className='font-sans text-white text-6xl'>{accountName}</h1>
                     <h1 className='font-sans text-gray-500 text-4xl'>#{hashtag}</h1>
                 </div>
-                <div className='flex xl:flex-row flex-col w-full'>
+                <div className='flex xl:flex-row flex-col w-full px-5 xl:px-0 overflow-y-auto'>
                     <StatsCard player={player}/>
                     <MatchHistory/>
                 </div>
