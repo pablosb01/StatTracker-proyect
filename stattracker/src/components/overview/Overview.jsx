@@ -1,57 +1,101 @@
 import ReactECharts from 'echarts-for-react';
 import { graphic } from 'echarts/core'
+import gameData from '/src/objects/matchinfo'
+import { matchesFromAMatchData } from '/src/helpers/valorant/match';
+import { getDivisionNameByRankNumber } from '../../helpers/valorant/rank';
 
 export function Overview() {
-    let base = +new Date(1968, 9, 3);
-    let oneDay = 24 * 3600 * 1000;
-    let date = [];
-    let data = [Math.random() * 300];
-    for (let i = 1; i < 20000; i++) {
-        var now = new Date((base += oneDay));
-        date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
-        data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
-    }
+
     let option = {
-        tooltip: {
-            trigger: 'axis',
-            position: function (pt) {
-            return [pt[0], '10%'];
-            }
-        },
-        title: {
-            left: 'center',
-            text: 'Large Area Chart'
-        },
         xAxis: {
             type: 'category',
-            boundaryGap: false,
-            data: date
+            show: false
         },
         yAxis: {
-            type: 'value',
-            boundaryGap: [0, '100%']
+            show: false,
         },
         series: [
             {
-                name: 'Fake Data',
+                name: "RADIANT",
+                smooth: true,
                 type: 'line',
                 symbol: 'none',
+                itemStyle: {
+                    color: '#ffffaaff'
+                },
                 areaStyle: {
                     color: new graphic.LinearGradient(0, 0, 0, 1, [
-                    {
-                        offset: 0,
-                        color: 'rgb(255, 158, 68)'
-                    },
-                    {
-                        offset: 1,
-                        color: 'rgb(255, 70, 131)'
-                    }
+                        { offset: 0, color: '#ffffaaff' },
+                        { offset: 1, color: 'transparent' }
                     ])
                 },
-                data: data
-            }
-        ]
-    };
+                data: [27,27,25],
+                markPoint: {
+                    data: [
+                      { 
+                        symbol: "image://https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/27/largeicon.png",
+                        coord: [0,27],
+                        symbolSize: 32,
+                      }
+                    ],
+                },
+            },
+            {
+                name: "INMORTAL",
+                type: 'line',
+                smooth: true,
+                symbol: 'none',
+                itemStyle: {
+                    color: '#bb3d65ff'
+                },
+                areaStyle: {
+                    color: new graphic.LinearGradient(0, 0, 0, 1, [
+                        { offset: 0, color: '#bb3d65ff' },
+                        { offset: 1, color: 'transparent' }
+                    ])
+                },
+                data: [undefined,undefined,25,25,26,26,27],
+                markPoint: {
+                    data: [
+                      { 
+                        symbol: "image://https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/25/largeicon.png",
+                        coord: [2,25],
+                        symbolSize: 32,
+                      },
+                      { 
+                        symbol: "image://https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/26/largeicon.png",
+                        coord: [4,26],
+                        symbolSize: 32,
+                      },
+                    ],
+                },
+            },
+            {
+                name: "RADIANT",
+                type: 'line',
+                symbol: 'none',
+                itemStyle: {
+                    color: '#ffffaaff'
+                },
+                areaStyle: {
+                    color: new graphic.LinearGradient(0, 0, 0, 1, [
+                        { offset: 0, color: '#ffffaaff' },
+                        { offset: 1, color: 'transparent' }
+                    ])
+                },
+                data: [undefined, undefined, undefined, undefined, undefined, undefined, 27,27,27],
+                markPoint: {
+                    data: [
+                      { 
+                        symbol: "image://https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/27/largeicon.png",
+                        coord: [6,27],
+                        symbolSize: 32,
+                      }
+                    ],
+                },
+            },
+        ],
+    };  
     return (
         <div className="grid grid-cols-2">
             <div className="col-span-2" id="overview-graph">
