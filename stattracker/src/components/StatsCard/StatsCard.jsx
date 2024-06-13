@@ -1,10 +1,12 @@
+import { Overview } from "../overview/Overview";
+
 const StatsCard = ({player}) => {
 
 const rankVariableImage = `https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/${player.rank}.png`
 
 
   return (
-      <div className=" mb-10  bg-gray-200 text-white rounded-xl shadow-md overflow-hidden h-fit xl:w-1/5 xl:ml-20 ">
+      <div className=" mb-10  bg-gray-300 text-white rounded-xl shadow-md overflow-hidden h-fit xl:w-1/5 xl:ml-24">
         {/* <div className="flex justify-center xl:justify-center bg-gray-300 ml-10 rounded gap-4 pb-5">
           <button className="flex justify-center">
             <select className="flex justify-content-center px-4 py-2 bg-gradient-to-r from-black to-red-900 border border-gray-300 rounded hover:bg-gray-600 focus:outline-none">
@@ -65,6 +67,8 @@ const rankVariableImage = `https://trackercdn.com/cdn/tracker.gg/valorant/icons/
             <p className="text-black">{player.economy}</p>
           </div>
         </div>
+        
+        <Overview />
       </div>
   );
 };

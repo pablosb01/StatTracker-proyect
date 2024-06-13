@@ -212,7 +212,7 @@ export function MatchStats({playerid}) {
   
     return (
       <>
-        <div className="group bg-gray-300 hover:bg-gray-400 lg:flex items-center h-auto md:p-3 hidden border-b border-stone-800 transition-all duration-500 ease-in-out">
+        <div className="group bg-gray-300 hover:bg-gray-400 xl:flex items-center h-auto md:p-3 hidden border-b border-stone-800 transition-all duration-500 ease-in-out">
           {/* <div className="flex items-center">
             <img src={Neon} alt="Neon Agent Logo" className="w-14 h-13 rounded-lg" />
             <div className=" ml-4 pt-3">

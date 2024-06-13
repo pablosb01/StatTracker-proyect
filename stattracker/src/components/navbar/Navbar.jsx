@@ -6,7 +6,7 @@ import HonkaiLogo from '/public/assets/logos/HonkaiLogo';
 
 export function Navbar() {
   return (
-    <nav className="w-screen flex justify-between bg-stone-900 px-5">
+    <nav className="w-screen flex justify-between bg-stone-900 px-5 sticky top-0 z-50">
       <div className='flex items-center'>
         <Link to="/" className="text-lg font-bold text-white">
           <img src={logo} alt="Logo" className="h-12 my-3 hover:scale-[140%] transition duration-200 scale ease-in-out" />
