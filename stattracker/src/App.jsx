@@ -1,16 +1,23 @@
 //import Example from "./components/example/example"
 //import Pruebas from "./components/pruebas/pruebas"
 
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import './App.css'
 import Home from "./views/home/home.jsx";
 import { ValoHome } from "./views/valorant-home/valorant-home.jsx"
 import { HonkaiHome } from './views/honkai-home/honkai-home.jsx'
 import { Navbar } from "./components/navbar/Navbar.jsx";
 import { Footer } from "./components/footer/Footer.jsx";
+import { PlayerValorant } from "./views/valorant-player/PlayerValo.jsx";
+import matchInfo from '/src/objects/matchinfo.js'
+import { useParams } from 'react-router-dom'
 
 
 function App() {
+
+  /* console.log(matchInfo) */
+
 
   return (
     <>
@@ -21,6 +28,7 @@ function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/valorant' element={<ValoHome/>}/>
             <Route path='/honkai' element={<HonkaiHome/>}/>
+            <Route path='/valorant/:accountName/:hashtag' element={<PlayerValorant/>}/>
           </Routes>
         </div>
         <Footer/>
