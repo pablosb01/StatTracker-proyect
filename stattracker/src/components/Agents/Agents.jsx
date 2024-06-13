@@ -61,7 +61,7 @@ export function Agents() {
       </div>
       <div className="h-[332px] overflow-y-auto">
         {agentsData.map((agent, index) => (
-          <div className="group bg-gray-300 hover:bg-gray-400 flex px-3 py-2 justify-between border-b border-stone-800 transition-all duration-700 ease-in-out" key={index}>
+          <div className="group bg-gray-300 hover:bg-gray-400 flex px-3 py-2 justify-between border-b border-stone-800 transition-all duration-500 ease-in-out" key={index}>
             <div className="flex items-center">
               <img src={agent.imgSrc} alt={agent.name} className="w-14 h-14 group-hover:w-16 group-hover:h-16 rounded-lg sm:mr-8 mr-2 transition-all duration-300 ease-in-out" />
               <div className="flex flex-col justify-between">
