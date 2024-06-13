@@ -256,8 +256,8 @@ export function PlayerValorant() {
     }
 
     const player = {
-        rank: 13,
-        rankName: 'Gold 1',
+        rank: 27,
+        rankName: 'Radiant',
         ladderPoints: 50,
         wins: 20,
         defeats: 4,
