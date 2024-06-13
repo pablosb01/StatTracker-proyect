@@ -5,9 +5,9 @@ export function MatchHistory() {
   
   return (
     <>
-    <div className="mx-auto hidden xl:block prueba bg-gray-300 rounded-lg h-full w-3/5 overflow-hidden mx-62">
-        <div className="flex items-center h-12 rounded-lg drop-shadow-md bg-gradient-to-r from-black to-red-900 border border-gray-300 hover:from-red-900 hover:to-black">
-            <span className="text-left tracking-widest items-center p-1.5 pl-3  text-3xl text-white font-sans">MATCH HISTORY</span>
+    <div className="mx-auto hidden xl:block bg-gray-300 rounded-lg h-full w-3/5 overflow-hidden ">
+        <div className="flex items-center h-12 rounded-lg drop-shadow-md bg-gradient-to-r group  from-black to-red-900 border border-gray-300 hover:from-red-900 hover:to-black">
+            <span className="text-left tracking-wide group-hover:tracking-widest transition-all duration-300 ease-in-out items-center p-1.5 pl-3  text-3xl text-white font-sans">MATCH HISTORY</span>
         </div>
         <div className="h-5/6">
             <MatchComplete puuid="Hng3HRgjI7CMrBDFH4jd6TS08gALhYD_muPm9JKN2bcwT_s-wOBumpfcrWeSXv7OVydqBXSRunlUsA"/>
@@ -21,8 +21,8 @@ export function MatchHistory() {
         </div>
     </div>
       <div className="xl:hidden bg-gray-300 rounded-lg w-auto h-fit overflow-hidden">    {/*este w-fit cambia el ancho del contenedor */}
-        <div className="flex items-center h-12 rounded-lg drop-shadow-md bg-gradient-to-r from-black to-red-900 border border-gray-300 hover:from-red-900 hover:to-black">
-            <span className="text-left tracking-widest items-center p-1.5 pl-3  text-3xl text-white font-sans">MATCH HISTORY</span>
+        <div className="flex items-center h-12 rounded-lg drop-shadow-md group bg-gradient-to-r from-black to-red-900 border border-gray-300 hover:from-red-900 hover:to-black">
+            <span className="text-left tracking-wide group-hover:tracking-widest transition-all duration-300 ease-in-out items-center p-1.5 pl-3  text-3xl text-white font-sans">MATCH HISTORY</span>
         </div>
         <div className="h-5/6">
             <MatchComplete puuid="Hng3HRgjI7CMrBDFH4jd6TS08gALhYD_muPm9JKN2bcwT_s-wOBumpfcrWeSXv7OVydqBXSRunlUsA"/>
