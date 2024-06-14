@@ -12,6 +12,8 @@ import { Footer } from "./components/footer/Footer.jsx";
 import { PlayerValorant } from "./views/valorant-player/PlayerValo.jsx";
 import matchInfo from '/src/objects/matchinfo.js'
 import { useParams } from 'react-router-dom'
+import { ValoAgents } from './views/valorant-agents/agents-valo.jsx';
+import { ValoAgent } from './components/ValoAgent/ValoAgent.jsx';
 
 
 function App() {
@@ -28,7 +30,12 @@ function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/valorant' element={<ValoHome/>}/>
             <Route path='/honkai' element={<HonkaiHome/>}/>
-            <Route path='/valorant/:accountName/:hashtag' element={<PlayerValorant/>}/>
+            <Route path='/valorant/profile/:accountName/:hashtag' element={<PlayerValorant/>}/>
+            <Route path="/valorant/agents" element={<ValoAgents />}>
+              
+              <Route path=':agentName' element={<ValoAgent/>} />
+
+            </Route>
           </Routes>
         </div>
         <Footer/>
