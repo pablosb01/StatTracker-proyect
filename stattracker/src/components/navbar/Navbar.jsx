@@ -15,6 +15,9 @@ export function Navbar() {
             <NavItem link={'valorant'} icon={<ValorantLogo />}>
               VALORANT
             </NavItem>
+            <NavItem link={'honkai'} icon={<ValorantLogo />}>
+              HONKAI
+            </NavItem>
         </ul>
       </div>
       <div></div>
