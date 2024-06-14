@@ -6,7 +6,7 @@ const rankVariableImage = `https://trackercdn.com/cdn/tracker.gg/valorant/icons/
 
 
   return (
-      <div className=" mb-10  bg-gray-300 text-white rounded-xl shadow-md overflow-hidden h-fit xl:w-1/5 xl:ml-24">
+      <div className=" mb-10  bg-gray-300 text-white rounded-lg shadow-md overflow-hidden h-fit xl:w-1/5 xl:ml-24">
         {/* <div className="flex justify-center xl:justify-center bg-gray-300 ml-10 rounded gap-4 pb-5">
           <button className="flex justify-center">
             <select className="flex justify-content-center px-4 py-2 bg-gradient-to-r from-black to-red-900 border border-gray-300 rounded hover:bg-gray-600 focus:outline-none">
@@ -38,7 +38,7 @@ const rankVariableImage = `https://trackercdn.com/cdn/tracker.gg/valorant/icons/
             />
             <div className="flex flex-col items-center justify-center">
               <h2 className="text-2xl font-bold text-yellow-500">{player.rankName}</h2>
-            {/* <p className="text-sm text-gray-400">{player.ladderPoints} RR</p> */}
+              {/* <p className="text-sm text-gray-400">{player.ladderPoints} RR</p> */}
               <p className="text-md text-black font-bold">{player.wins}V {player.defeats}D
                 <span className="text-green-400 text-md font-bold pl-1">{player.wr}%</span>
               </p>
