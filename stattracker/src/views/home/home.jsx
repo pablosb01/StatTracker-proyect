@@ -21,9 +21,9 @@ function Home() {
                     <Link to='/valorant'>
                         <GameSelector imageSrc={Jett} gameName='VALORANT'/>
                     </Link>
-                    
-                    <GameSelector2 imageSrc={March} gameName='HONKAI: Star Rail'/>
-                    
+                    <Link to='/honkai'>
+                    <GameSelector imageSrc={March} gameName='HONKAI: Star Rail'/>
+                    </Link>
                     <GameSelector2 imageSrc={cs2} gameName='Counter Strike 2'/>
                     <GameSelector2 imageSrc={honkai} gameName='Genshin Impact'/>
                 </div>
