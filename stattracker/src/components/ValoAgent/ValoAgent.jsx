@@ -8,21 +8,10 @@ export function ValoAgent (){
 
     const currentAgent = useOutletContext()
 
-    function getBackgroundGradient() {
-        if(currentAgent) {
-            let back = ` bg-gradient-to-b from-[#${currentAgent.backgroundGradientColors[0]}] via-[#${currentAgent.backgroundGradientColors[1]}] via-[#${currentAgent.backgroundGradientColors[2]}] to-[#${currentAgent.backgroundGradientColors[3]}]`
-            setBackgroundGradient(back)
-    }
-    }
-    
-    useEffect(()=>{
-        getBackgroundGradient()
-    },[currentAgent])
-
     return(
         <div className='flex flex-row w-full'>
             <div className='relative w-fit h-screen px-2 my-auto'>
-                <img src={currentAgent.background} alt={currentAgent.name} className={`absolute top-0 left-0 h-full object-cover z-0 ${backgroundGrandient}`}/>
+                <img src={currentAgent.background} alt={currentAgent.name} className={`absolute top-0 left-0 h-full object-cover z-0`}/>
                 <div className='relative z-10 flex items-center justify-center w-full h-full'>
                     <img src={currentAgent.bustPortrait} className={`max-w-xl w-full h-full object-cover`} style={{filter: `drop-shadow(0 0 10px #${currentAgent.backgroundGradientColors[0]})`}}/>
                 </div>
