@@ -6,7 +6,7 @@ export function ValoAgents() {
     const [agents, setAgents] = useState([])
     const {agentName} = useParams() || 'jett';
    
-    console.log(agentName + 'agentName')
+    
     
 
     function getAgentsInfo() {
@@ -18,13 +18,13 @@ export function ValoAgents() {
             .catch(err => console.error(err))
     }
 
-    console.log(agents)
+    
 
     useEffect(()=>{
         getAgentsInfo()
     },[])
 
-    console.log(agents)
+    
 
     const currentAgent = agents.find(agent => agent.displayName.toLowerCase().replace('/', '') === agentName) || 'jett'
 
@@ -40,7 +40,7 @@ export function ValoAgents() {
         }
     },[agentsInfo, agentName]) */
     
-    console.log(agents)
+    
 
 
 
