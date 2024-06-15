@@ -10,7 +10,7 @@ export function ImageNavbar(object) {
                     if (agent.displayName && agent.displayIcon) {
                         return (
                             <Link key={index} to={agent.displayName.toLowerCase().replace("/","")}>
-                                <img className='flex hover:scale[120%]' src={agent.displayIcon} alt={agent.displayName}/>
+                                <img className='flex hover:scale-[140%] transition duration-200 scale ease-in-out' src={agent.displayIcon} alt={agent.displayName}/>
                             </Link>
                         );
                     }
