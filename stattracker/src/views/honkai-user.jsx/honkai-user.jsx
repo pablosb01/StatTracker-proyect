@@ -16,7 +16,7 @@ export function HonkaiUser() {
                 console.log(apiInfo);
             })
             .catch(err => setError(err));
-    }, [user]);
+    },);
 
     if(apiInfo === null) {
         if(error !== null) {
