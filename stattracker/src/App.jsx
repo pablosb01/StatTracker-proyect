@@ -30,7 +30,7 @@ function App() {
             <Route path='/valorant' element={<ValoHome/>}/>
             <Route path='/honkai' element={<HonkaiHome/>}/>
             <Route path='/valorant/:accountName/:hashtag' element={<PlayerValorant/>}/>
-            <Route path='/honkaiuser' element={<HonkaiUser/>}/>
+            <Route path='/honkai/:user' element={<HonkaiUser/>}/>
           </Routes>
         </div>
         <Footer/>
