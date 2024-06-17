@@ -57,16 +57,6 @@ export interface RoundResult {
     defusePlayerLocations?: DefusePlayerLocation[]
 }
 
-export interface PlantLocation {
-    x: number
-    y: number
-}
-
-export interface DefuseLocation {
-    x: number
-    y: number
-}
-
 export interface PlayerStat {
     puuid: string
     kills: Kill[]
@@ -87,20 +77,27 @@ export interface Kill {
     finishingDamage: FinishingDamage
 }
 
-export interface VictimLocation {
+export interface Coordinate {
     x: number
     y: number
 }
+
+export interface PlantLocation extends Coordinate {}
+
+export interface DefuseLocation extends Coordinate {}
+
+export interface VictimLocation extends Coordinate {}
+
+export interface Location extends Coordinate {}
+
+export interface Location2 extends Coordinate {}
+
+export interface Location3 extends Coordinate {}
 
 export interface PlayerLocation {
     puuid: string
     viewRadians: number
     location: Location
-}
-
-export interface Location {
-    x: number
-    y: number
 }
 
 export interface FinishingDamage {
@@ -133,20 +130,10 @@ export interface PlantPlayerLocation {
     location: Location2
 }
 
-export interface Location2 {
-    x: number
-    y: number
-}
-
 export interface DefusePlayerLocation {
     puuid: string
     viewRadians: number
     location: Location3
-}
-
-export interface Location3 {
-    x: number
-    y: number
 }
 
 export interface Team {
