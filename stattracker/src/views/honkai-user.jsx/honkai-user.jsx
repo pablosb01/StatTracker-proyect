@@ -26,8 +26,6 @@ export function HonkaiUser() {
         }
     }
 
-    console.log(user)
-
     return (
         <div className="flex flex-col items-center h-full">
             <HonkaiUserNav />
