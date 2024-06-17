@@ -10,7 +10,7 @@ export function HonkaiUserNav({obj}) {
         <img src={`${link}/${obj.player.avatar.icon}`} alt="" className="h-3/4 max-h-20"/>
         <p className="text-white">{obj.player.nickname} UID: {obj.player.uid}</p>
       </div>
-      <HonkaiUserNavChar/>
+      <HonkaiUserNavChar obj={obj}/>
     </nav>
   );
 }
