@@ -9,7 +9,7 @@ export function HonkaiUser() {
     const [apiInfo, setApiInfo] = useState()
 
     useEffect(() => {
-        fetch(`https://api.mihomo.me/sr_info_parsed/${user}?lang=en`)
+        fetch(`https://api.mihomo.me/sr_info_parsed/${user}?lang=en`, {mode: 'no-cors'})
             .then(res => res.json())
             .then(data => setApiInfo(data))
             .catch(err => console.err(err))
