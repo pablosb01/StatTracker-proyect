@@ -8,7 +8,9 @@ export default function BoxHUC ({children, stl, title}) {
             {title}
           </h2>
         </div>
-        {children}
+        <div className="text-xs sm:text-sm md:text-base">
+          {children}
+        </div>
       </div>
     );
   }
