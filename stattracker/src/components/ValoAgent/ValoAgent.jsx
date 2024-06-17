@@ -10,7 +10,7 @@ export function ValoAgent (){
 
     return(
         <div className='flex flex-row w-full'>
-            <div className='relative w-fit h-screen px-2 my-auto'>
+            <div className='w-fit h-screen px-2 my-auto'>
                 <img src={currentAgent.background} alt={currentAgent.name} className={`absolute top-0 left-0 h-full object-cover z-0`}/>
                 <div className='relative z-10 flex items-center justify-center w-full h-full'>
                     <img src={currentAgent.bustPortrait} className={`max-w-xl w-full h-full object-cover`} style={{filter: `drop-shadow(0 0 10px #${currentAgent.backgroundGradientColors[0]})`}}/>
