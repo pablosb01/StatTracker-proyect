@@ -3,24 +3,35 @@ import { HonkaiUserCharacter } from "../../components/HonkaiUserCharacter/honkai
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-
 export function HonkaiUser() {
-    const {user} = useParams()
-    const [apiInfo, setApiInfo] = useState()
+    const { user } = useParams();
+    const [apiInfo, setApiInfo] = useState();
+    const [error, setError] = useState();
 
     useEffect(() => {
-        fetch(`https://api.mihomo.me/sr_info_parsed/${user}?lang=en`, {mode: 'no-cors'})
+        fetch(`https://api.mihomo.me/sr_info_parsed/${user}?lang=en`, /* { mode: 'no-cors' } */)
             .then(res => res.json())
-            .then(data => setApiInfo(data))
-            .catch(err => console.err(err))
-    },[user])
+            .then(data => {
+                setApiInfo(data);
+                console.log(apiInfo);
+            })
+            .catch(err => setError(err));
+    }, [user]);
 
-    console.log(apiInfo)
+    if(apiInfo === null) {
+        if(error !== null) {
+            return <div>Error: {error.message}</div>
+        } else {
+            return <div>Loading...</div>
+        }
+    }
 
-    return(
+    console.log(user)
+
+    return (
         <div className="flex flex-col items-center h-full">
             <HonkaiUserNav />
-            <HonkaiUserCharacter/>
+            <HonkaiUserCharacter />
         </div>
-    )
+    );
 }
