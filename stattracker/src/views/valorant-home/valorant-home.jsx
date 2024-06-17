@@ -32,7 +32,7 @@ export function ValoHome() {
 
     return(
         <>
-            <div className='flex w-screen items-center gap-x-32 gap-y-16 flex-col justify-center py-10 md:flex-col 2xl:flex-row px-4 lg:gap-16'>
+            <div className='flex w-full items-center gap-x-32 gap-y-16 flex-col justify-center py-10 md:flex-col 2xl:flex-row px-4 lg:gap-16'>
                 <div className='relative xl:w-1/2 md:w-2/3 flex flex-col gap-16 items-center xl:px-20'>
                     <img className='w-1/2'src={ValoLogo}/>
                     <UserFormValorant/>

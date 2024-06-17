@@ -212,7 +212,7 @@ export function MatchStats({playerid}) {
   
     return (
       <>
-        <div className="lg:flex items-center flex  h-auto md:p-3 hidden border-b border-stone-800">
+        <div className="group bg-gray-300 hover:bg-gray-400 xl:flex items-center h-auto md:p-3 hidden border-b border-stone-800 transition-all duration-500 ease-in-out">
           {/* <div className="flex items-center">
             <img src={Neon} alt="Neon Agent Logo" className="w-14 h-13 rounded-lg" />
             <div className=" ml-4 pt-3">
@@ -239,14 +239,14 @@ export function MatchStats({playerid}) {
               <p className="text-stone-900 font-bold text-sm">.</p>
               <p className="text-gray-400 text-xs">anteayer</p>
           </div> */}
-          <img src={agentPicture} alt="Neon Agent Logo" className="w-18 h-16 rounded-xl" />
+          <img src={agentPicture} alt="Neon Agent Logo" className="w-20 h-20 group-hover:w-24 group-hover:h-24 rounded-xl transition-all duration-300 ease-in-out" />
           <div className="flex flex-col w-full pl-5">
               <div className="grid grid-rows-2 xl:flex xl:flex-row">
                 <span className={resultColor}>{gameResult}</span>
-                <span className="text-red-500 font-bold text-lg pt-1 w-1/5">+150 RR</span>
-                <span className="w-1/5"></span>
-                <span className="w-1/5"></span>
-                <span className="flex text-gray-400 font-bold text-lg w-1/5 justify-end">10th · Competitive</span>
+                <span className="text-red-500 font-bold text-lg pt-1 w-3/12">+150 RR</span>
+                <span className="w-3/12"></span>
+                <span className="w-3/12"></span>
+                <span className="flex text-gray-400 group-hover:text-gray-300 font-bold text-lg w-3/12 justify-end">10th · Competitive</span>
               </div>
             <div className="flex flex-row">
               <span className="flex text-black text-3xl w-1/5">
@@ -254,35 +254,35 @@ export function MatchStats({playerid}) {
                 -
                 <span className='text-red-800'>{roundsLost}</span>
               </span>
-              <span className="text-custom-orange font-bold text-xl w-1/5">{kda} KDA</span>
-              <span className="text-black font-bold text-xl w-1/5">{mpr} MPR</span>
-              <span className="text-black font-bold text-xl w-1/5">{hsp}% Cabeza</span>
-              <span className="w-1/5"></span>
+              <span className="text-custom-orange font-bold text-xl w-3/12">{kda} KDA</span>
+              <span className="text-black font-bold text-xl w-3/12">{mpr} MPR</span>
+              <span className="text-black font-bold text-xl w-3/12">{hsp}% Cabeza</span>
+              <span className="w-4/12"></span>
             </div>
             <div className="flex flex-row">
-              <span className="text-black-400 text-xl w-1/5">Ascent</span>
-              <span className="text-black-400 text-xl w-1/5">{playerStats.kills}/{playerStats.deaths}/{playerStats.assists}</span>
-              <span className="text-black-400 text-xl w-1/5">{dpr} DPR</span>
-              <span className="text-black-400 text-xl w-1/5">{averageScore} Puntuación media</span>
-              <span className="flex text-black-400 text-xl w-1/5 justify-end">anteayer</span>
+              <span className="text-black-400 text-xl w-2/12">Ascent</span>
+              <span className="text-black-400 text-xl w-2/12">{playerStats.kills}/{playerStats.deaths}/{playerStats.assists}</span>
+              <span className="text-black-400 text-xl w-2/12">{dpr} DPR</span>
+              <span className="text-black-400 text-xl w-4/12">{averageScore} Puntuación media</span>
+              <span className="flex text-black-400 text-xl w-2/12 justify-end">anteayer</span>
             </div>
           </div>
         </div>
 
-        <div className="xl:hidden h-auto flex w-full border-b border-stone-800">
+        <div className="xl:hidden group h-auto flex w-full border-b border-stone-800">
           <div className={borderColor}>
-            <div className="flex flex-row w-full justify-between px-2">
-              <div className="flex pb-2">
-                <img src={agentPicture} alt="Neon Agent Logo" className="w-18 h-16 rounded-2xl" />
-                <div className="flex flex-col pl-3">
+            <div className=" flex ml-1 flex-row bg-gray-400 rounded-xl w-full justify-between px-2">
+              <div className=" flex ">
+                <img src={agentPicture} alt="Neon Agent Logo" className="w-16 h-16 group-hover:w-20 group-hover:h-20 rounded-2xl transition-all duration-300 ease-in-out" />
+                <div className="flex flex-col pl-3 ">
                   <span className="flex text-gray-400 font-bold text-xs">Competitive · 13h ago</span>
-                  <span className="text-white font-bold text-sm">Ascent</span>
+                  <span className="text-black font-bold text-sm">Ascent</span>
                 </div>
               </div>
               <img src={radiant} className="w-auto h-3/5"></img>
               <div className="flex flex-col">
                 <div>
-                  <span className="text-green-600 text-base">8 </span><span className="text-white text-base">: </span><span className="text-red-600 text-base">13</span>
+                  <span className="text-green-600 text-base">8 </span><span className="text-black text-base">: </span><span className="text-red-600 text-base">13</span>
                 </div>
               <span className="text-white font-bold text-sm bg-red-400 rounded-xl p-1">10th</span>
               </div>
@@ -290,19 +290,19 @@ export function MatchStats({playerid}) {
             <div className="flex flex-row justify-between px-3">
               <div className="flex flex-col justify-between">
                 <span className="flex flex-start text-custom-orange font-bold text-sm">K / D / A</span>
-                <span className="text-gray-400 text-sm">{playerStats.kills}/{playerStats.deaths}/{playerStats.assists}</span>
+                <span className="text-ray-700 text-sm">{playerStats.kills}/{playerStats.deaths}/{playerStats.assists}</span>
               </div>
               <div className="flex flex-col justify-between">
                 <span className="flex flex-center text-custom-orange font-bold text-sm">K/D</span>
-                <span className="text-gray-400 font-bold text-sm">{kda}</span>
+                <span className="text-gray-700 font-bold text-sm">{kda}</span>
               </div>
               <div className="flex flex-col justify-between">
-                <span className="text-white font-bold text-base">HS%</span>
-                <span className="text-gray-400 font-bold text-sm">{hsp}</span>
+                <span className="text-black font-bold text-base">HS%</span>
+                <span className="text-gray-700 font-bold text-sm">{hsp}</span>
               </div>
               <div className="flex flex-col justify-between">
-                <span className="text-white font-bold text-base">ACS</span>
-                <span className="text-gray-400 text-sm font-bold">{averageScore}</span>
+                <span className="text-black font-bold text-base">ACS</span>
+                <span className="text-gray-700 text-sm font-bold">{averageScore}</span>
               </div>
             </div>
           </div>
