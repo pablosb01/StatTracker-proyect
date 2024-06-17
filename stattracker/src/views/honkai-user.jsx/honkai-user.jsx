@@ -9,17 +9,17 @@ export function HonkaiUser() {
     const [error, setError] = useState();
 
     useEffect(() => {
-        fetch(`https://api.mihomo.me/sr_info_parsed/${user}?lang=en`)
+        fetch(`https://honkaiserver.onrender.com/honkai/${user}`)
             .then(res => res.json())
             .then(data => {
                 setApiInfo(data);
-                console.log(apiInfo)
+                console.log(data)
             })
             .catch(err => setError(err));
     },[]);
 
-    if(apiInfo === null) {
-        if(error !== null) {
+    if(!apiInfo) {
+        if(error) {
             return <div>Error: {error.message}</div>
         } else {
             return <div>Loading...</div>
@@ -28,7 +28,7 @@ export function HonkaiUser() {
 
     return (
         <div className="flex flex-col items-center h-full">
-            <HonkaiUserNav />
+            <HonkaiUserNav obj={apiInfo}/>
             <HonkaiUserCharacter />
         </div>
     );
