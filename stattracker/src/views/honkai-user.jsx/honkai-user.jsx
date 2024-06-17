@@ -29,7 +29,9 @@ export function HonkaiUser() {
     return (
         <div className="flex flex-col items-center h-full">
             <HonkaiUserNav obj={apiInfo}/>
-            <HonkaiUserCharacter />
+            {
+                apiInfo.length !== 0 && <Outlet context={apiInfo}/>
+            }
         </div>
     );
 }
