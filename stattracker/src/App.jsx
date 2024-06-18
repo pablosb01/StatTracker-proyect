@@ -14,6 +14,7 @@ import matchInfo from '/src/objects/matchinfo.js'
 import { useParams } from 'react-router-dom'
 import { HonkaiUser } from './views/honkai-user.jsx/honkai-user.jsx';
 import RiotView from './views/riot/RiotView.jsx';
+import { HonkaiUserCharacter } from './components/HonkaiUserCharacter/HonkaiUserCharacter.jsx';
 
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
             <Route path='/valorant/:accountName/:hashtag' element={<PlayerValorant/>}/>
             <Route path='/honkai/:user' element={<HonkaiUser/>}>
 
-              <Route path=":character" element={<honkaiUserCharacter/>}/>
+              <Route path=":char" element={<HonkaiUserCharacter/>}/>
             
             </Route>
             <Route path='/riot' element={<RiotView/>}/>

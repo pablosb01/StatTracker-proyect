@@ -5,21 +5,26 @@ import HonkaiUserCharOrnaments from "./HonkaiUserCharOrnaments";
 import BoxHuc from "./BoxHuc";
 import HonkaiUserCharSkillsboxed from "./HonkaiUserCharSkillsboxed";
 import HonkaiUserCharSplash from "./HonkaiUserCharSplash";
+import { useOutletContext, useParams } from "react-router-dom";
 
-export function HonkaiUserCharacter({ obj }) {
+export function HonkaiUserCharacter() {
+
+  const obj = useOutletContext();
+  console.log(obj)
+
   return (
     <div className=" w-full lg:max-w-[1300px] grid grid-cols-3 lg:grid-cols-7 gap-2 rounded-lg ">
-      <HonkaiUserCharSplash obj={obj[0]} />
+      <HonkaiUserCharSplash obj={obj} />
       <BoxHuc
-        title={`${obj[0].name.toUpperCase()}`}
+        title={`${obj.name.toUpperCase()}`}
         stl="col-span-1 row-span-4 order-2 lg:col-span-2 lg:row-span-6 lg:order-2">
-        <HonkaiUserCharStats obj={obj[0]} />
+        <HonkaiUserCharStats obj={obj} />
       </BoxHuc>
-      <BoxHuc
+      {obj.light_cone && <BoxHuc
         title="LIGHT CONE"
         stl="col-span-1 row-span-2 order-3 lg:col-span-2 lg:row-span-2 lg:order-5">
-        <HonkaiUserLightCone obj={obj[0].light_cone} />
-      </BoxHuc>
+        <HonkaiUserLightCone obj={obj.light_cone} />
+      </BoxHuc>}
       <BoxHuc
         title="SKILLS"
         stl="col-span-1 row-span-2 order-4 lg:col-span-2 lg:row-span-3 lg:order-6">

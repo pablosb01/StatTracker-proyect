@@ -6,28 +6,40 @@ export default function HonkaiUserCharStats({ obj }) {
     const statsObj = {};
   
     // Iterate through attributes, additions, and properties
-  const arrays = [obj.attributes, obj.additions, obj.properties];
-  arrays.forEach((array) => {
-    array.forEach((item) => {
-      const field = item.field;
+    const arrays = [obj.attributes, obj.additions, obj.properties];
+    arrays.forEach((array) => {
+      array.forEach((item) => {
+        const field = item.field;
+        if (!statsObj[field]) {
+          statsObj[field] = {
+            name: item.name,
+            icon: item.icon,
+            value: 0,
+          };
+        }
+        statsObj[field].value += item.value;
+      });
+    });
+  
+    // Add missing fields with value 0
+    const missingFields = ['sp_rate', 'effect_hit', 'effect_res'];
+    missingFields.forEach((field) => {
       if (!statsObj[field]) {
         statsObj[field] = {
-          name: item.name,
-          icon: item.icon,
+          name: field,
+          icon: '',
           value: 0,
         };
       }
-      statsObj[field].value += item.value;
     });
-  });
-
-  // Calculate the display value as a single number
-  Object.keys(statsObj).forEach((key) => {
-    statsObj[key].display = (statsObj[key].value * 100).toFixed(2);
-  });
-
-  return statsObj;
-}
+  
+    // Calculate the display value as a single number
+    Object.keys(statsObj).forEach((key) => {
+      statsObj[key].display = (statsObj[key].value * 100).toFixed(2);
+    });
+  
+    return statsObj;
+  }
 
   let statsObj = sumStats(obj)
   console.log(statsObj)
@@ -77,7 +89,7 @@ export default function HonkaiUserCharStats({ obj }) {
         <p>{statsObj.crit_dmg.display}%</p>
       </div>
       <div className="flex justify-center text-white font-bold bg-gray-300/5 rounded-2xl">
-        <p>{statsObj.sp_rate.name}</p>
+        <p>{statsObj.sp_rate.name || 0}</p>
       </div>
       <div className="flex justify-center text-white bg-gray-300/5 rounded-2xl">
         <p>{statsObj.sp_rate.display}%</p>

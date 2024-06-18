@@ -1,22 +1,25 @@
 import { HonkaiUserNav } from "../../components/honkai-usernav/HonkaiUserNav";
-import { HonkaiUserCharacter } from "../../components/HonkaiUserCharacter/honkaiUserCharacter.jsx";
-import { useParams } from "react-router-dom";
+import { HonkaiUserCharacter } from "../../components/HonkaiUserCharacter/HonkaiUserCharacter.jsx";
+import { Outlet, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export function HonkaiUser() {
     const { user } = useParams();
+    const { char } = useParams()
     const [apiInfo, setApiInfo] = useState();
     const [error, setError] = useState();
+    /* console.log('characterNumber:'+char) */
 
     useEffect(() => {
         fetch(`https://honkaiserver.onrender.com/honkai/${user}`)
             .then(res => res.json())
             .then(data => {
                 setApiInfo(data);
-                console.log(data)
+                /* console.log(data.characters[char]) */
             })
             .catch(err => setError(err));
     },[]);
+
 
     if(!apiInfo) {
         if(error) {
@@ -30,7 +33,7 @@ export function HonkaiUser() {
         <div className="flex flex-col items-center h-full">
             <HonkaiUserNav obj={apiInfo}/>
             {
-                apiInfo.length !== 0 && <Outlet context={apiInfo}/>
+                apiInfo.length !== 0 && <Outlet context={apiInfo.characters[char]}/>
             }
         </div>
     );

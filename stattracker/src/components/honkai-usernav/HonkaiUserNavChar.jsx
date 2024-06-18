@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export function HonkaiUserNavChar({obj}) {
 
   const link = 'https://cdn.jsdelivr.net/gh/Mar-7th/StarRailRes@master/'
@@ -14,8 +16,10 @@ export function HonkaiUserNavChar({obj}) {
           <div className="bg-orange-300 rounded-xl h-min"><img src="/assets/honkai/Sparkle_Icon.png" alt="" className="max-h-24 rounded-xl hover:max-h-28 transition-all duration-300 ease-in-out"/></div>
           <div className="bg-orange-300 rounded-xl h-min"><img src="/assets/honkai/Swan_Icon.png" alt="" className="max-h-24 rounded-xl hover:max-h-28 transition-all duration-300 ease-in-out"/></div> */}
 
-          {obj.characters.map((char) => (
-            <div className="bg-orange-300 rounded-xl h-min"><img src={link + char.icon} alt="" className="max-h-24 rounded-xl hover:max-h-28 transition-all duration-300 ease-in-out"/></div>
+          {obj.characters.map((char, index) => (
+            <Link to={`${index}`}>
+              <div className="bg-orange-300 rounded-xl h-min"><img src={link + char.icon} alt="" className="max-h-24 rounded-xl hover:max-h-28 transition-all duration-300 ease-in-out"/></div>
+            </Link>
           ))}
         </div>
     );
