@@ -14,11 +14,12 @@ export function HonkaiUserCharacter() {
 
   return (
     <div className=" w-full lg:max-w-[1300px] grid grid-cols-3 lg:grid-cols-7 gap-2 rounded-lg ">
-      <HonkaiUserCharSplash obj={obj} />
+      <HonkaiUserCharSplash obj={obj} className=""/>
       <BoxHuc
         title={`${obj.name.toUpperCase()}`}
+        className=""
         stl="col-span-1 row-span-4 order-2 lg:col-span-2 lg:row-span-6 lg:order-2">
-        <HonkaiUserCharStats obj={obj} />
+        <HonkaiUserCharStats obj={obj} className=""/>
       </BoxHuc>
       {obj.light_cone && <BoxHuc
         title="LIGHT CONE"
