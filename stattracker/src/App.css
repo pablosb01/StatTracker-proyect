@@ -44,30 +44,6 @@ html, body, #root {
             }
 }
 
-.cajaHonkai {
-    ::-webkit-scrollbar {
-        width: 21px;
-        height: 100px;
-        background: #686868;
-        border: 1px solid #000000;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 15px;
-        transition: color ease-in-out;
-            transition-duration: 500ms;
-      }
-    
-      ::-webkit-scrollbar-thumb {
-        background: #484848;
-        border-radius: 10px;
-        transition: color ease-in-out;
-            transition-duration: 500ms;
-        }
-        :hover::-webkit-scrollbar-thumb {
-            background: #004675;
-            transition: color ease-in-out;
-            transition-duration: 500ms;
-            }
-}
 
 .paralelogramo {
     width: 220px;
@@ -103,34 +79,43 @@ body {
     background-color: var(--gray-background);
 }
 
+@media (min-width:1800px) {
+.cajaHonkai 
+    ::-webkit-scrollbar {
+        width: 25px;
+        height: 10px;
+        background: #686868;
+        border: 1px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+        transition: color ease-in-out;
+            transition-duration: 500ms;
+      }
+    
+      ::-webkit-scrollbar-thumb {
+        height: 20px;
+        background: #414141;
+        border-radius: 10px;
+        transition: color ease-in-out;
+            transition-duration: 500ms;
+        }
+        :hover::-webkit-scrollbar-thumb {
+            background: #004675;
+            transition: color ease-in-out;
+            transition-duration: 500ms;
+            }
+}
+
+@media (min-width:100px) {
+    .cajaHonkai 
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+    }
+
 @media (max-width: 1200px) {
     #root {
         flex-direction: column;
     }
 }
 
-@media (max-width:600px) {
-    .cajaHonkai {
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        :hover::-webkit-scrollbar-thumb {
-            background: #004675;
-            transition: color ease-in-out;
-            transition-duration: 500ms;
-            }
-    }
-}
-
-@media (max-height:600px) {
-    .cajaHonkai {
-        ::-webkit-scrollbar {
-            height: 20px;
-        }
-        :hover::-webkit-scrollbar-thumb {
-            background: #004675;
-            transition: color ease-in-out;
-            transition-duration: 500ms;
-            }
-    }
-}

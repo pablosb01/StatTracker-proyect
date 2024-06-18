@@ -15,12 +15,12 @@ function HonkaiCharacters() {
   };
 
   const handlePath = (event) => {
-    setPathSelect(event.target.value)
-  }
+    setPathSelect(event.target.value);
+  };
 
   const handleElement = (event) => {
-    setElementSelect(event.target.value)
-  }
+    setElementSelect(event.target.value);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,10 +37,6 @@ function HonkaiCharacters() {
 
     fetchData();
   }, []);
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
 
   let sortedCharacters = Object.values(characters);
 
@@ -66,32 +62,36 @@ function HonkaiCharacters() {
     );
   }
 
+  sortedCharacters = sortedCharacters.map((character) => {
+    if (character.name === "{NICKNAME}") {
+      character.name = "Trailbrazer";
+    }
+    return character;
+  });
+
   return (
-    <div className="cajaHonkai mt-20 max-h-[800px] overflow-hidden rounded-xl xl:w-[700px] mr-2 ml-2">
-      <div className="flex items-center gap-2 xl:gap-5 h-12 w-full drop-shadow-md group bg-gradient-to-r from-[#004675] to-[#0083DB] border border-gray-300 hover:from-[#0083DB] hover:to-[#004675] ">
+    <div className="cajaHonkai mt-[25px] max-h-[800px] rounded-xl sm:w-[700px] mr-2 ml-2">
+      <div className="flex items-center gap-2 rounded-t-xl xl:gap-5 h-12 w-full drop-shadow-md group bg-gradient-to-r from-[#004675] to-[#0083DB]  hover:from-[#0083DB] hover:to-[#004675] ">
         <h2 className="text-left tracking-wide group-hover:tracking-widest transition-all duration-300 ease-in-out items-center p-1.5 xl:text-3xl text-lg text-white font-sans md:ml-10 md:text-2xl">
           CHARACTERS
         </h2>
         <div className="w-full flex gap-2 xl:gap-5 md:justify-evenly">
           <select
+           
             onChange={handleOrder}
             className="text-[#858585] bg-[#D9D9D9] rounded-md px-1 xl:text-lg text-center items-center whitespace-nowrap w-[70px] xl:w-[100px] text-sm"
-            >
+          >
             <option selected disabled>Order</option>
             <option value="ascending">Ascending Order</option>
             <option value="descending">Descending order</option>
-            <svg className="w-2.5 h-2.5 ms-3" viewBox="0 0 10 6">
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="m1 1 4 4 4-4"
-                />
-            </svg>
           </select>
-          <select onChange={handlePath} className="text-[#858585] bg-[#D9D9D9] rounded-md px-0.5 xl:text-lg text-center items-center whitespace-nowrap w-[60px] xl:w-[100px] text-sm">
-            <option selected disabled value="">Path</option>
+          <select
+            onChange={handlePath}
+            className="text-[#858585] bg-[#D9D9D9] rounded-md px-0.5 xl:text-lg text-center items-center whitespace-nowrap w-[60px] xl:w-[100px] text-sm"
+          >
+            <option disabled selected value="">
+              Path
+            </option>
             <option value="Knight">Knight</option>
             <option value="Mage">Mage</option>
             <option value="Priest">Priest</option>
@@ -99,17 +99,12 @@ function HonkaiCharacters() {
             <option value="Shaman">Shaman</option>
             <option value="Warlock">Warlock</option>
             <option value="Warrior">Warrior</option>
-            <svg className="w-2.5 h-2.5 ms-3" viewBox="0 0 10 6">
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="m1 1 4 4 4-4"
-                />
-            </svg>
+            
           </select>
-          <select onChange={handleElement} className=" text-[#858585] bg-[#D9D9D9] rounded-md px-1 xl:text-lg text-center items-center whitespace-nowrap w-[80px] xl:w-[110px] text-sm">
+          <select
+            onChange={handleElement}
+            className=" text-[#858585] bg-[#D9D9D9] rounded-md px-1 xl:text-lg text-center items-center  whitespace-nowrap w-[80px] xl:w-[110px] text-sm"
+          >
             <option value="">Element</option>
             <option value="Fire">Fire</option>
             <option value="Ice">Ice</option>
@@ -118,26 +113,19 @@ function HonkaiCharacters() {
             <option value="Quantum">Quantum</option>
             <option value="Thunder">Thunder</option>
             <option value="Wind">Wind</option>
-            <svg className="w-2.5 h-2.5 ms-3" viewBox="0 0 10 6">
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="m1 1 4 4 4-4"
-                />
-            </svg>
+            
           </select>
         </div>
       </div>
-      <div className="bg-[#BDBDBD] xl:max-h-[800px] max-h-[2000px] mb-2 grid lg:grid-cols-5 grid-cols-2 gap- overflow-y-auto p-5 group-hover:tracking-widest transition-all duration-300 ease-in-out ">
+      
+      <div className="bg-gray-300/50 xl:max-h-[720px] 2xl:mb-3 max-h-[650px] mb-2 grid sm:grid-cols-5 rounded-b-lg grid-cols-2 overflow-auto p-5 group-hover:tracking-widest transition-all duration-300 ease-in-out ">
         {sortedCharacters.map((character, index) => (
           <div
             key={`${character.StoryCharacterID}-${index}`}
-            className="flex flex-col border rounded-2xl border-[#858585] bg-[#D9D9D9] m-2 text-center pb-2 w-[115px] h-[170px] mr-"
+            className="flex flex-col border rounded-3xl border-[#858585] bg-[#D9D9D9] m-2 text-center pb-2 w-[115px] h-auto mr-"
           >
             <img
-              className="mb-1 max-w-[120px] h-[150px] rounded-2xl"
+              className="mb-1 rounded-2xl"
               src={`https://cdn.jsdelivr.net/gh/Mar-7th/StarRailRes@master/${character.icon}`}
               alt="Imagen Character"
               style={{
@@ -149,9 +137,11 @@ function HonkaiCharacters() {
                     : "",
               }}
             />
-            <span className="underline underline-offset1 font-bold text-xs px-2 py-1">
-              {character.name}
-            </span>
+            <div className="2xl:h-[30px] flex justify-center items-center">
+              <span className="underline underline-offset1 font-bold text-sm">
+                {character.name}
+              </span>
+            </div>
           </div>
         ))}
       </div>
