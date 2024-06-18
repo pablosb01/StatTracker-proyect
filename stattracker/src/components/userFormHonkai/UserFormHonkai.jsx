@@ -16,11 +16,10 @@ function UserFormHonkai() {
   };
 
   return (
-    <>
-      <span className='text-white text-bold text-4xl ml-14'>SEARCH UID </span>
+    <div className='md:w-30'>
       <form
         onSubmit={handleSubmit}
-        className="flex gap-4 flex-nowrap justify-evenly max-w-[600px]"
+        className="flex gap-4 flex-nowrap justify-evenly max-w-[600px] mt-10 mx-3"
       >
         <input
           type="text"
@@ -32,12 +31,12 @@ function UserFormHonkai() {
         
         <button
           type="submit"
-          className="h-[44px] bg-[#004675] hover:bg-red-900 hover:ring-white-500 hover:ring-2 hover:outline-none text-white font-bold py-2 px-4 w-full lg:w-2/5 xl:w-1/3 lg:justify-center rounded-[25px] transition-colors duration-300 ease-in-out"
+          className="h-[44px] bg-[#004675] hover:bg-[#0083DB] hover:ring-white-500 hover:ring-2 hover:outline-none text-white font-bold py-2 px-4 w-full lg:w-2/5 xl:w-1/3 lg:justify-center rounded-[25px] transition-colors duration-300 ease-in-out"
         >
           Submit
         </button>
       </form>
-    </>
+    </div>
   );
 }
 
