@@ -112,9 +112,13 @@ body {
 @media (max-width:600px) {
     .cajaHonkai {
         ::-webkit-scrollbar {
-            height: 20px;
             width: 10px;
         }
+        :hover::-webkit-scrollbar-thumb {
+            background: #004675;
+            transition: color ease-in-out;
+            transition-duration: 500ms;
+            }
     }
 }
 
@@ -123,5 +127,10 @@ body {
         ::-webkit-scrollbar {
             height: 20px;
         }
+        :hover::-webkit-scrollbar-thumb {
+            background: #004675;
+            transition: color ease-in-out;
+            transition-duration: 500ms;
+            }
     }
 }

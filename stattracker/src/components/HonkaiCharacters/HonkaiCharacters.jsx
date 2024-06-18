@@ -67,15 +67,15 @@ function HonkaiCharacters() {
   }
 
   return (
-    <div className="cajaHonkai mt-20 max-h-[800px] overflow-hidden rounded-xl w-full mr-2 ml-2">
-      <div className="flex items-center gap-2 h-12 w-full drop-shadow-md group bg-gradient-to-r from-[#004675] to-[#0083DB] border border-gray-300 hover:from-[#0083DB] hover:to-[#004675] ">
-        <h2 className="text-left tracking-wide group-hover:tracking-widest transition-all duration-300 ease-in-out items-center p-1.5 xl:text-3xl text-lg text-white font-sans">
+    <div className="cajaHonkai mt-20 max-h-[800px] overflow-hidden rounded-xl xl:w-[700px] mr-2 ml-2">
+      <div className="flex items-center gap-2 xl:gap-5 h-12 w-full drop-shadow-md group bg-gradient-to-r from-[#004675] to-[#0083DB] border border-gray-300 hover:from-[#0083DB] hover:to-[#004675] ">
+        <h2 className="text-left tracking-wide group-hover:tracking-widest transition-all duration-300 ease-in-out items-center p-1.5 xl:text-3xl text-lg text-white font-sans md:ml-10 md:text-2xl">
           CHARACTERS
         </h2>
-        <div className="w-full flex gap-2">
+        <div className="w-full flex gap-2 xl:gap-5 md:justify-evenly">
           <select
             onChange={handleOrder}
-            className="text-[#858585] bg-[#D9D9D9] rounded-md px-1 xl:text-lg text-center items-center whitespace-nowrap w-[70px] text-sm"
+            className="text-[#858585] bg-[#D9D9D9] rounded-md px-1 xl:text-lg text-center items-center whitespace-nowrap w-[70px] xl:w-[100px] text-sm"
             >
             <option selected disabled>Order</option>
             <option value="ascending">Ascending Order</option>
@@ -90,7 +90,7 @@ function HonkaiCharacters() {
                 />
             </svg>
           </select>
-          <select onChange={handlePath} className="text-[#858585] bg-[#D9D9D9] rounded-md px-0.5 xl:text-lg text-center items-center whitespace-nowrap w-[60px] text-sm">
+          <select onChange={handlePath} className="text-[#858585] bg-[#D9D9D9] rounded-md px-0.5 xl:text-lg text-center items-center whitespace-nowrap w-[60px] xl:w-[100px] text-sm">
             <option selected disabled value="">Path</option>
             <option value="Knight">Knight</option>
             <option value="Mage">Mage</option>
@@ -109,7 +109,7 @@ function HonkaiCharacters() {
                 />
             </svg>
           </select>
-          <select onChange={handleElement} className=" text-[#858585] bg-[#D9D9D9] rounded-md px-1 xl:text-lg text-center items-center whitespace-nowrap w-[80px] text-sm">
+          <select onChange={handleElement} className=" text-[#858585] bg-[#D9D9D9] rounded-md px-1 xl:text-lg text-center items-center whitespace-nowrap w-[80px] xl:w-[110px] text-sm">
             <option value="">Element</option>
             <option value="Fire">Fire</option>
             <option value="Ice">Ice</option>
@@ -130,14 +130,14 @@ function HonkaiCharacters() {
           </select>
         </div>
       </div>
-      <div className="bg-[#BDBDBD] xl:max-h-[800px] max-h-[2000px] mb-2 grid xl:grid-cols-5 grid-cols-2 gap- overflow-y-auto p-5 group-hover:tracking-widest transition-all duration-300 ease-in-out">
+      <div className="bg-[#BDBDBD] xl:max-h-[800px] max-h-[2000px] mb-2 grid lg:grid-cols-5 grid-cols-2 gap- overflow-y-auto p-5 group-hover:tracking-widest transition-all duration-300 ease-in-out ">
         {sortedCharacters.map((character, index) => (
           <div
             key={`${character.StoryCharacterID}-${index}`}
-            className="flex flex-col border rounded-2xl border-[#858585] bg-[#D9D9D9] m-2 text-center pb-2 w-[115px] h-[170px] sm:w-[50px]"
+            className="flex flex-col border rounded-2xl border-[#858585] bg-[#D9D9D9] m-2 text-center pb-2 w-[115px] h-[170px] mr-"
           >
             <img
-              className="mb-1 max-w-[120px] sm:max-w-[50px] h-[150px] rounded-2xl"
+              className="mb-1 max-w-[120px] h-[150px] rounded-2xl"
               src={`https://cdn.jsdelivr.net/gh/Mar-7th/StarRailRes@master/${character.icon}`}
               alt="Imagen Character"
               style={{

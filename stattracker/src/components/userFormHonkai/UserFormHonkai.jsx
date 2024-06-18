@@ -16,10 +16,10 @@ function UserFormHonkai() {
   };
 
   return (
-    <div className='md:w-30'>
+    <div className='md:w-[600px]'>
       <form
         onSubmit={handleSubmit}
-        className="flex gap-4 flex-nowrap justify-evenly max-w-[600px] mt-10 mx-3"
+        className="flex gap-4 flex-nowrap justify-evenly max-w-[600px] mt-10 lg:mt-0 mx-3"
       >
         <input
           type="text"
