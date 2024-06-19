@@ -14,7 +14,7 @@ export function ImageNavbar(object) {
     className: 'z-10 py-2',
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1400,
         settings: {
           slidesToShow: 12,
           slidesToScroll: 12,
