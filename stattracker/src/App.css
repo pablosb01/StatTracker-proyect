@@ -10,15 +10,6 @@
     --Ubuntu-font: "Ubuntu", sans-serif;
 }
 
-html, body, #root {
-    height: 100%;
-    margin: 0;
-  }
-
-/* #root {
-    display: flex;
-} */
-
 .caja {
     ::-webkit-scrollbar {
         width: 21px;
@@ -28,20 +19,20 @@ html, body, #root {
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 15px;
         transition: color ease-in-out;
-            transition-duration: 500ms;
+        transition-duration: 500ms;
       }
     
-      ::-webkit-scrollbar-thumb {
+    ::-webkit-scrollbar-thumb {
         background: #484848;
         border-radius: 10px;
         transition: color ease-in-out;
-            transition-duration: 500ms;
-        }
-        :hover::-webkit-scrollbar-thumb {
-            background: #671717;
-            transition: color ease-in-out;
-            transition-duration: 500ms;
-            }
+        transition-duration: 500ms;
+    }
+    :hover::-webkit-scrollbar-thumb {
+        background: #671717;
+        transition: color ease-in-out;
+        transition-duration: 500ms;
+    }
 }
 
 .paralelogramo {
@@ -70,16 +61,4 @@ html, body, #root {
     transform: skew(20deg);
     margin: 0;
     z-index: 2;
-}
-
-body {
-    margin: 0px;
-    height: 100vh;
-    background-color: var(--gray-background);
-}
-
-@media (max-width: 1200px) {
-    #root {
-        flex-direction: column;
-    }
 }

@@ -53,13 +53,13 @@ const agentsData = [
 
 export function Agents() {
   return (
-    <div className="caja w-full max-w-[600px] h-[380px] rounded-[7px] overflow-hidden bg-gray-300 ">
+    <div className="caja w-full max-w-[600px] rounded-[7px] overflow-hidden bg-gray-300 ">
       <div className="flex items-center h-12 rounded-lg drop-shadow-md group bg-gradient-to-r from-black to-red-900 border border-gray-300 hover:from-red-900 hover:to-black">
         <h2 className="text-left tracking-wide group-hover:tracking-widest transition-all duration-300 ease-in-out items-center p-1.5 pl-3 text-3xl text-white font-sans">
           AGENTS
         </h2>
       </div>
-      <div className="h-[332px] overflow-y-auto">
+      <div className="overflow-y-scroll max-h-72">
         {agentsData.map((agent, index) => (
           <div className="group bg-gray-300 hover:bg-gray-400 flex px-3 py-2 justify-between border-b border-stone-800 transition-all duration-500 ease-in-out" key={index}>
             <div className="flex items-center">
