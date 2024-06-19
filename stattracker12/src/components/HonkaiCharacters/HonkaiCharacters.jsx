@@ -88,7 +88,7 @@ function HonkaiCharacters() {
           CHARACTERS
         </h2>
         <div className="relative w-full flex gap-2 xl:gap-5 md:justify-evenly">
-          <div className="relative flex flex-col w-40 h-32 items-center md:justify-evenly">
+          <div className="relative flex flex-col w-40 h-auto items-center md:justify-evenly">
             <button
               className="flex text-[#0083DB] bg-[#D9D9D9] rounded-md xl:text-sm justify-between items-center tracking-wider border-3 px-3 border-transparent active:border-[#0083DB] duration-300 active:text-white w-full text-sm text-nowrap"
               onClick={() => SetIsOpen((prev) => !prev)}
@@ -101,7 +101,7 @@ function HonkaiCharacters() {
               )}
             </button>
             {isOpen && (
-              <div className="absolute bg-[#D9D9D9] rounded-md p-2 flex flex-col items-start top-[70px] w-full z-50">
+              <div className="absolute bg-[#D9D9D9] rounded-md p-2 flex flex-col items-start top-[40px] z-50">
                 <ul className="">
                   <li
                     className="text-sm"
@@ -120,6 +120,174 @@ function HonkaiCharacters() {
                     }}
                   >
                     Descending
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="relative w-full flex gap-2 xl:gap-5 md:justify-evenly">
+          <div className="relative flex flex-col w-40 h-auto items-center md:justify-evenly">
+            <button
+              className="flex text-[#0083DB] bg-[#D9D9D9] rounded-md xl:text-sm justify-between items-center tracking-wider border-3 px-3 border-transparent active:border-[#0083DB] duration-300 active:text-white w-full text-sm text-nowrap"
+              onClick={() => SetIsOpen((prev) => !prev)}
+            >
+              Path
+              {!isOpen ? (
+                <AiOutlineArrowDown className="h-3.5" />
+              ) : (
+                <AiOutlineArrowUp className="h-3.5" />
+              )}
+            </button>
+            {isOpen && (
+              <div className="absolute bg-[#D9D9D9] rounded-md p-2 flex flex-col items-start top-[40px] z-50">
+                <ul className="">
+                  <li
+                    className="text-sm"
+                    onClick={() => {
+                      setPathSelect("Knight");
+                      SetIsOpen(false);
+                    }}
+                  >
+                    Knight
+                  </li>
+                  <li
+                    className="text-sm"
+                    onClick={() => {
+                      setPathSelect("Mage");
+                      SetIsOpen(false);
+                    }}
+                  >
+                    Mage
+                  </li>
+                  <li
+                    className="text-sm"
+                    onClick={() => {
+                      setPathSelect("Priest");
+                      SetIsOpen(false);
+                    }}
+                  >
+                    Priest
+                  </li>
+                  <li
+                    className="text-sm"
+                    onClick={() => {
+                      setPathSelect("Rogue");
+                      SetIsOpen(false);
+                    }}
+                  >
+                    Rogue
+                  </li>
+                  <li
+                    className="text-sm"
+                    onClick={() => {
+                      setPathSelect("Shaman");
+                      SetIsOpen(false);
+                    }}
+                  >
+                    Shaman
+                  </li>
+                  <li
+                    className="text-sm"
+                    onClick={() => {
+                      setPathSelect("Warlock");
+                      SetIsOpen(false);
+                    }}
+                  >
+                    Warlock
+                  </li>
+                  <li
+                    className="text-sm"
+                    onClick={() => {
+                      setPathSelect("Warrior");
+                      SetIsOpen(false);
+                    }}
+                  >
+                    Warrior
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="relative w-full flex gap-2 xl:gap-5 md:justify-evenly">
+          <div className="relative flex flex-col w-40 h-auto items-center md:justify-evenly">
+            <button
+              className="flex text-[#0083DB] bg-[#D9D9D9] rounded-md xl:text-sm justify-between items-center tracking-wider border-3 px-3 border-transparent active:border-[#0083DB] duration-300 active:text-white w-full text-sm text-nowrap"
+              onClick={() => SetIsOpen((prev) => !prev)}
+            >
+              Element
+              {!isOpen ? (
+                <AiOutlineArrowDown className="h-3.5" />
+              ) : (
+                <AiOutlineArrowUp className="h-3.5" />
+              )}
+            </button>
+            {isOpen && (
+              <div className="absolute bg-[#D9D9D9] rounded-md p-2 flex flex-col items-start top-[40px] z-50">
+                <ul className="">
+                  <li
+                    className="text-sm"
+                    onClick={() => {
+                      setElementSelect("Fire");
+                      SetIsOpen(false);
+                    }}
+                  >
+                    Fire
+                  </li>
+                  <li
+                    className="text-sm"
+                    onClick={() => {
+                      setElementSelect("Ice");
+                      SetIsOpen(false);
+                    }}
+                  >
+                    Ice
+                  </li>
+                  <li
+                    className="text-sm"
+                    onClick={() => {
+                      setElementSelect("Imaginary");
+                      SetIsOpen(false);
+                    }}
+                  >
+                    Imaginary
+                  </li>
+                  <li
+                    className="text-sm"
+                    onClick={() => {
+                      setElementSelect("Physical");
+                      SetIsOpen(false);
+                    }}
+                  >
+                    Physical
+                  </li>
+                  <li
+                    className="text-sm"
+                    onClick={() => {
+                      setElementSelect("Quantum");
+                      SetIsOpen(false);
+                    }}
+                  >
+                    Quantum
+                  </li>
+                  <li
+                    className="text-sm"
+                    onClick={() => {
+                      setElementSelect("Thunder");
+                      SetIsOpen(false);
+                    }}
+                  >
+                    Thunder
+                  </li>
+                  <li
+                    className="text-sm"
+                    onClick={() => {
+                      setElementSelect("Windior");
+                      SetIsOpen(false);
+                    }}
+                  >
+                    Windior
                   </li>
                 </ul>
               </div>
