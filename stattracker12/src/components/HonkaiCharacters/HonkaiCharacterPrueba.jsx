@@ -2,10 +2,10 @@ export function HonkaiCharacterPrueba({ character, index }) {
   return (
     <div
       key={`${character.StoryCharacterID}-${index}`}
-      className="flex flex-col group shadow-lg justify-end rounded-xl m-2 text-center w-[120px] h-[170px] overflow-hidden"
+      className="flex flex-col group shadow-lg justify-end rounded-xl hover:border-2 hover:border-[#444343] m-2 text-center w-[120px] h-[220px] overflow-hidden"
     >
       <img
-        className="mb-1 rounded-xl relative w-max z-10 top-[3rem] scale-[125%] group-hover:scale-[145%] transition-all ease-in-out duration-500"
+        className="mb-1 rounded-xl h-full transition-all ease-in-out duration-500 "
         src={`https://cdn.jsdelivr.net/gh/Mar-7th/StarRailRes@master/${character.preview}`}
         alt="Imagen Character"
         style={{
@@ -17,8 +17,8 @@ export function HonkaiCharacterPrueba({ character, index }) {
               : "",
         }}
       />
-      <div className="min-h-[40px] flex justify-center items-end pb-2 bg-gradient-to-t from-black/35 group-hover:from-black/50 z-40 rounded-b-xl ">
-        <span className=" font-bold text-white/85 drop-shadow-[0_0_1px_rgba(255,255,255,0.2)] group-hover:tracking-wider  text-sm group-hover:text-base transition-all ease-in-out duration-500">
+      <div className="min-h-[40px] flex justify-center items-center pb-2 bg-gradient-to-t from-black/35 group-hover:from-black/50 rounded-b-lg ">
+        <span className=" font-bold text-white/85  drop-shadow-[0_0_1px_rgba(255,255,255,0.2)] group-hover:tracking-wider  text-sm group-hover:text-sm transition-all ease-in-out z-50 duration-500 overflow-visible">
           {character.name.toUpperCase()}
         </span>
       </div>

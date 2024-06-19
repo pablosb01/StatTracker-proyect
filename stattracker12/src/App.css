@@ -79,7 +79,7 @@ body {
     background-color: var(--gray-background);
 }
 
-@media (min-width:1800px) {
+@media (min-width:1536px) {
 .cajaHonkai 
     ::-webkit-scrollbar {
         width: 25px;
@@ -106,7 +106,30 @@ body {
             }
 }
 
-@media (max-width:1025px) {
+@media (min-width:375px) {
+    .cajaHonkaiDos {
+        width: 99%;
+    }
+    .cajaHonkai {
+        width: 99%;
+    }
+}
+
+@media (min-width:100px) {
+    .cajaDivHonkai {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width:400px) {
+    .cajaDivHonkai {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width:1200px) {
     .cajaHonkai 
         ::-webkit-scrollbar {
             width: 0px;
