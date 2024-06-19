@@ -1,0 +1,26 @@
+.agents-navbar-item {
+    @apply  relative flex hover:scale-[130%] origin-top bg-gradient-to-b 
+            from-red-800 to-gray-600 transition duration-200 hover:z-10
+            ease-in-out [clip-path:_polygon(20%_0,_100%_0,_100%_80%,_80%_100%,0_100%,_0_20%)] 
+}
+.slick-slide.slick-active:first-of-type .agents-navbar-item {
+    @apply origin-top-left
+}
+.slick-slide.slick-active:last-of-type .agents-navbar-item {
+    @apply origin-top-right
+}
+.agents-navbar-item.active {
+    @apply from-green-800 to-gray-600 border-2 border-white
+}
+
+.slick-list:has(.agents-navbar-item) {
+    @apply overflow-visible
+}
+
+.slick-slider:has(.agents-navbar-item) {
+    @apply overflow-x-hidden
+}
+
+.slick-slider:has(.agents-navbar-item) .slick-dots {
+    @apply static min-h-7
+}
