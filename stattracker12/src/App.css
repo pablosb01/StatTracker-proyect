@@ -106,7 +106,7 @@ body {
             }
 }
 
-@media (min-width:100px) {
+@media (max-width:1025px) {
     .cajaHonkai 
         ::-webkit-scrollbar {
             width: 0px;
