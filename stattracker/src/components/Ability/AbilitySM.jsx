@@ -10,12 +10,12 @@ export function AbilitySM({ ab }) {
 
   return (
     <div className="flex flex-col gap-3 border border-red-600 border-2 p-8 mb-2 gap-4">
-      <details className='flex flex-row'>
+      <details className="flex flex-row">
         <div>
           <p className="text-white text-lg md:text-2xl">{ab.description}</p>
         </div>
 
-        <summary className='flex flex-row hover:border-b-2 w-fit'>
+        <summary className="flex flex-row hover:border-b-2 w-fit">
           <div className="flex items-center justify-left flex-row gap-4 cursor-pointer">
             <img
               className={`h-8 w-8 md:h-12 md:w-12 ${iconImg}`}
