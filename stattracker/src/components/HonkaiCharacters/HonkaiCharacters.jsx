@@ -122,7 +122,7 @@ console.log(characters)
       
       <div className=" xl:max-h-[720px] 2xl:mb-3 max-h-[650px] mb-2 grid sm:grid-cols-5 rounded-b-lg grid-cols-2 overflow-auto p-5 group-hover:tracking-widest transition-all duration-300 ease-in-out ">
         {sortedCharacters.map((character, index) => (
-          <HonkaiCharacter character={character} index={index}/>
+          <HonkaiCharacterPrueba character={character} index={index}/>
         ))}
       </div>
     </div>
