@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { HonkaiCharacterPrueba }from "./HonkaiCharacterPrueba.jsx"
+import { HonkaiCharacter }from "./HonkaiCharacter.jsx"
 
 function HonkaiCharacters() {
   const [characters, setCharacters] = useState({});
@@ -61,7 +63,7 @@ function HonkaiCharacters() {
       (character) => character.element === elementSelect
     );
   }
-
+console.log(characters)
   sortedCharacters = sortedCharacters.map((character) => {
     if (character.name === "{NICKNAME}") {
       character.name = "Trailbrazer";
@@ -70,8 +72,8 @@ function HonkaiCharacters() {
   });
 
   return (
-    <div className="cajaHonkai mt-[25px] max-h-[800px] rounded-xl sm:w-[700px] mr-2 ml-2">
-      <div className="flex items-center gap-2 rounded-t-xl xl:gap-5 h-12 w-full drop-shadow-md group bg-gradient-to-r from-[#004675] to-[#0083DB]  hover:from-[#0083DB] hover:to-[#004675] ">
+    <div className="cajaHonkai mt-[25px] max-h-[800px] rounded-xl sm:w-[700px] mr-2 ml-2 bg-gray-300/50">
+      <div className="flex justify-between items-center gap-2 rounded-xl xl:gap-5 h-12 w-full drop-shadow-md group bg-gradient-to-r from-[#004675] to-[#0083DB]  hover:from-[#0083DB] hover:to-[#004675] ">
         <h2 className="text-left tracking-wide group-hover:tracking-widest transition-all duration-300 ease-in-out items-center p-1.5 xl:text-3xl text-lg text-white font-sans md:ml-10 md:text-2xl">
           CHARACTERS
         </h2>
@@ -118,31 +120,9 @@ function HonkaiCharacters() {
         </div>
       </div>
       
-      <div className="bg-gray-300/50 xl:max-h-[720px] 2xl:mb-3 max-h-[650px] mb-2 grid sm:grid-cols-5 rounded-b-lg grid-cols-2 overflow-auto p-5 group-hover:tracking-widest transition-all duration-300 ease-in-out ">
+      <div className=" xl:max-h-[720px] 2xl:mb-3 max-h-[650px] mb-2 grid sm:grid-cols-5 rounded-b-lg grid-cols-2 overflow-auto p-5 group-hover:tracking-widest transition-all duration-300 ease-in-out ">
         {sortedCharacters.map((character, index) => (
-          <div
-            key={`${character.StoryCharacterID}-${index}`}
-            className="flex flex-col border rounded-3xl border-[#858585] bg-[#D9D9D9] m-2 text-center pb-2 w-[115px] h-auto mr-"
-          >
-            <img
-              className="mb-1 rounded-2xl"
-              src={`https://cdn.jsdelivr.net/gh/Mar-7th/StarRailRes@master/${character.icon}`}
-              alt="Imagen Character"
-              style={{
-                background:
-                  character.rarity === 5
-                    ? "linear-gradient(#935D53 0%, #C6A470 75%)"
-                    : character.rarity === 4
-                    ? "linear-gradient(#414067 0%, #9864CD 75%)"
-                    : "",
-              }}
-            />
-            <div className="2xl:h-[30px] flex justify-center items-center">
-              <span className="underline underline-offset1 font-bold text-sm">
-                {character.name}
-              </span>
-            </div>
-          </div>
+          <HonkaiCharacter character={character} index={index}/>
         ))}
       </div>
     </div>
