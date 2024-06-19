@@ -1,5 +1,4 @@
 import { HonkaiUserNav } from "../../components/honkai-usernav/HonkaiUserNav";
-import { HonkaiUserCharacter } from "../../components/HonkaiUserCharacter/HonkaiUserCharacter.jsx";
 import { Outlet, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
