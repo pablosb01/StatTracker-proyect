@@ -13,33 +13,32 @@ export function HonkaiUserCharacter() {
   console.log(obj)
 
   return (
-    <div className=" w-full lg:max-w-[1300px] grid grid-cols-3 lg:grid-cols-7 gap-2 rounded-lg ">
-      <HonkaiUserCharSplash obj={obj} className=""/>
+    <div className="px-[0.1rem] w-full lg:max-w-[1300px] grid grid-cols-3 lg:grid-cols-7 gap-2 rounded-lg transition-all ease-in-out duration-500 ">
+      <HonkaiUserCharSplash obj={obj} className=" order-1 lg:row-span-7"/>
       <BoxHuc
         title={`${obj.name.toUpperCase()}`}
-        className=""
-        stl="col-span-1 row-span-4 order-2 lg:col-span-2 lg:row-span-6 lg:order-2">
+        stl="col-span-1 row-span-4 order-2 lg:col-span-2 lg:row-span-4 lg:order-2">
         <HonkaiUserCharStats obj={obj} className=""/>
       </BoxHuc>
       {obj.light_cone && <BoxHuc
         title="LIGHT CONE"
-        stl="col-span-1 row-span-2 order-3 lg:col-span-2 lg:row-span-2 lg:order-5">
+        stl="col-span-1 row-span-2 order-3 lg:col-span-2 lg:row-span-2 lg:order-4">
         <HonkaiUserLightCone obj={obj.light_cone} />
       </BoxHuc>}
       <BoxHuc
         title="SKILLS"
-        stl="col-span-1 row-span-2 order-4 lg:col-span-2 lg:row-span-3 lg:order-6">
-        <HonkaiUserCharSkillsboxed />
+        stl="col-span-1 row-span-2 order-4 lg:col-span-2 lg:row-span-5 lg:order-5">
+        <HonkaiUserCharSkillsboxed obj={obj.skills}/>
       </BoxHuc>
       <BoxHuc
         title="ARTIFACTS"
-        stl="col-span-2 row-span-3 order-5 lg:col-span-2 lg:row-span-6 lg:order-4">
-        <HonkaiUserCharArtifacts />
+        stl="col-span-2 row-span-3 order-5 lg:col-span-2 lg:row-span-6 lg:order-3 h-full">
+        <HonkaiUserCharArtifacts obj={obj.relics}/>
       </BoxHuc>
       <BoxHuc
         title="ORNAMENTS"
-        stl="col-span-1 row-span-3 order-6 lg:col-span-2 lg:row-span-5 lg:order-3">
-        <HonkaiUserCharOrnaments />
+        stl="col-span-1 row-span-3 order-6 lg:col-span-2 lg:row-span-5 lg:order-6">
+        <HonkaiUserCharOrnaments obj={obj.relics}/>
       </BoxHuc>
     </div>
   );
