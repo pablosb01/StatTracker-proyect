@@ -6,7 +6,7 @@ export function HonkaiButton() {
 
     return(
         <div className="flex justify-center 2xl:mt-10">
-            <button onClick={handleDownload} className='bg-[#004675] hover:bg-[#0083DB] w-[220px] md:w-[248px] h-14 flex rounded text-white justify-center items-center  hover:text-black transition-colors duration-500 ease-in-out'>
+            <button onClick={handleDownload} className='bg-red-700 hover:bg-red-500 w-[220px] md:w-[248px] h-14 flex rounded text-white justify-center items-center  hover:text-black transition-colors duration-500 ease-in-out'>
                 <p className='font-sans bold '>Download</p>
             </button>
         </div>

@@ -24,7 +24,7 @@ export function HonkaiUserCharacter() {
       {obj.light_cone && (
         <BoxHuc
           color={obj.element.color}
-          title="LIGHT CONE"
+          title="CONO DE LUZ"
           stl="col-span-1 row-span-2 order-3 lg:col-span-2 lg:row-span-2 lg:order-4"
         >
           <HonkaiUserLightCone obj={obj.light_cone} />
@@ -32,21 +32,21 @@ export function HonkaiUserCharacter() {
       )}
       <BoxHuc
         color={obj.element.color}
-        title="SKILLS"
+        title="HABILIDADES"
         stl="col-span-1 row-span-2 order-4 lg:col-span-2 lg:row-span-5 lg:order-5"
       >
         <HonkaiUserCharSkillsboxed obj={obj.skills} />
       </BoxHuc>
       <BoxHuc
         color={obj.element.color}
-        title="ARTIFACTS"
+        title="ARTEFACTOS"
         stl="col-span-2 row-span-3 order-5 lg:col-span-2 lg:row-span-6 lg:order-3 h-full"
       >
         <HonkaiUserCharArtifacts obj={obj.relics} />
       </BoxHuc>
       <BoxHuc
         color={obj.element.color}
-        title="ORNAMENTS"
+        title="ORNAMENTOS"
         stl="col-span-1 row-span-3 order-6 lg:col-span-2 lg:row-span-5 lg:order-6"
       >
         <HonkaiUserCharOrnaments obj={obj.relics} />
