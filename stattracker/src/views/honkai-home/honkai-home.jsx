@@ -6,9 +6,9 @@ import { HonkaiButton } from "../../components/HonkaiButton.jsx/HonkaiButton";
 export function HonkaiHome() {
   return (
     <>
-      <div className="flex 2xl:flex-row flex-col md:justify-center md:items-center xl:items-start">
+      <div className="flex xl:flex-row flex-col md:justify-center md:items-center xl:items-start">
         <div
-          className="absolute 2xl:h-screen opacity-20 w-full top-[250px] xl:top-10 h-40 sm:w-full bg-cover bg-center z-10"
+          className="absolute xl:h-screen opacity-20 w-full top-[250px] xl:top-10 h-40 sm:w-full bg-cover bg-center z-10"
           style={{
             backgroundImage: `url('/assets/honkai-logo.png')`,
             filter: 'grayscale(100%)'
@@ -20,7 +20,7 @@ export function HonkaiHome() {
           <UserFormHonkai />
           <HonkaiButton />
         </div>
-        <div className="xl:max-w-[600px] max-h-[800px] flex flex-col lg:w-[600px] w-full z-20 xl:w-1/2 md:w-1/2 gap-16 items-center 2xl:mx-40 overflow-y:auto">
+        <div className="cajaHonkaiDos xl:max-w-[600px] max-h-[800px] flex flex-col lg:w-[600px] sm:w-full z-20 xl:w-1/2 md:w-1/2 gap-16 items-center xl:mx-40 overflow-y:auto">
         <HonkaiCharacters />
         </div>
       </div>
