@@ -9,7 +9,7 @@ export function Navbar() {
     <nav className="w-full flex justify-between bg-stone-900 px-5 sticky top-0 z-50">
       <div className='flex items-center'>
         <Link to="/" className="text-lg font-bold text-white">
-          <img src={logo} alt="Logo" className="h-12 my-3 hover:scale-[140%] transition duration-200 scale ease-in-out" />
+          <img src={logo} alt="Logo" className="h-12 my-3 hover:scale-[120%] transition duration-200 scale ease-in-out" />
         </Link>
         <ul className="ml-5 h-full flex">
             <NavItem link={'valorant'} icon={<ValorantLogo />}>

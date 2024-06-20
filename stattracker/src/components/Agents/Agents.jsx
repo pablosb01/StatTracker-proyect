@@ -22,6 +22,7 @@ import Astra from '/assets/astra.png'
 import Omen from '/assets/omen.png'
 import Kayo from '/assets/kayo.png'
 import Harbor from '/assets/harbor.png'
+import { Link } from 'react-router-dom'
 
 
 const agentsData = [
@@ -52,6 +53,9 @@ const agentsData = [
 ];
 
 export function Agents() {
+
+  
+
   return (
     <div className="caja w-full max-w-[600px] rounded-[7px] overflow-hidden bg-gray-300 ">
       <div className="flex items-center h-12 rounded-lg drop-shadow-md group bg-gradient-to-r from-black to-red-900 border border-gray-300 hover:from-red-900 hover:to-black">
@@ -61,7 +65,7 @@ export function Agents() {
       </div>
       <div className="overflow-y-scroll max-h-72">
         {agentsData.map((agent, index) => (
-          <div className="group bg-gray-300 hover:bg-gray-400 flex px-3 py-2 justify-between border-b border-stone-800 transition-all duration-500 ease-in-out" key={index}>
+          <Link to={`agents/${agent.name.toLowerCase()}`}className="group bg-gray-300 hover:bg-gray-400 flex px-3 py-2 justify-between border-b border-stone-800 transition-all duration-500 ease-in-out" key={index}>
             <div className="flex items-center">
               <img src={agent.imgSrc} alt={agent.name} className="w-14 h-14 group-hover:w-16 group-hover:h-16 rounded-lg sm:mr-8 mr-2 transition-all duration-300 ease-in-out" />
               <div className="flex flex-col justify-between">
@@ -79,7 +83,7 @@ export function Agents() {
                   <span className="text-xl">{agent.pickRate}</span>
                 </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

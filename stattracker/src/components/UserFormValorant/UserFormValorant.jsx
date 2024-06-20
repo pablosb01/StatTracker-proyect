@@ -17,7 +17,7 @@ function UserFormValorant () {
     event.preventDefault();
 
 
-    const newUrl = `/valorant/${accountName}/${hashtag}`;
+    const newUrl = `/valorant/profile/${accountName}/${hashtag}`;
     navigate(newUrl, {replace: true});
 
 

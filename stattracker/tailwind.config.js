@@ -12,6 +12,7 @@ export default {
       fontFamily: {
         montserrat: 'Montserrat',
         sans: ['Ubuntu' , 'sans-serif'],
+        fat: ["Rowdies", 'sans-serif'],
       },
       keyframes: {
         "nav-link-tag": {
