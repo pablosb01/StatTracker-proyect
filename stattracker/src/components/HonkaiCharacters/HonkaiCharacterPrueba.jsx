@@ -17,7 +17,7 @@ export function HonkaiCharacterPrueba({ character, index }) {
             : "",
       }}
     />
-    <div className="min-h-[40px] flex justify-center items-end pb-2 bg-gradient-to-t from-black/35 group-hover:from-black/50 z-10 rounded-b-xl -z-10">
+    <div className="min-h-[40px] flex justify-center items-end pb-2 bg-gradient-to-t from-black/35 group-hover:from-black/50 rounded-b-xl -z-10">
       <span className=" font-bold text-white/85 drop-shadow-[0_0_1px_rgba(255,255,255,0.2)] group-hover:tracking-wider  text-sm group-hover:text-base transition-all ease-in-out duration-500 ">
         {character.name.toUpperCase()}
       </span>
