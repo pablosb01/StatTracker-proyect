@@ -5,8 +5,8 @@ export default function HonkaiUserCharSkillsboxed({ obj }) {
   const { link } = hsrlink;
 
   const styles = [
-    { bg: 'bg-gray-300/10' },
-    { bg: 'bg-gray-300/5' },
+    { bg: 'bg-[#524e4d]/50' },
+    { bg: 'bg-[#3d3938]/50' },
   ];
 
   return (
