@@ -16,7 +16,7 @@ import { HonkaiUser } from './views/honkai-user.jsx/honkai-user.jsx';
 import RiotView from './views/riot/RiotView.jsx';
 import { ValoAgents } from './views/valorant-agents/agents-valo.jsx';
 import { ValoAgent } from './components/ValoAgent/ValoAgent.jsx';
-import { HonkaiUserCharacter } from './components/HonkaiUserCharacter/HonkaiUserCharacter.jsx';
+import { HonkaiUserCharacter } from './components/HonkaiUserCharacter/honkaiUserCharacter.jsx';
 
 
 function App() {
