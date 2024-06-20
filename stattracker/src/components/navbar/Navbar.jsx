@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import ValorantLogo from '/public/assets/logos/ValorantLogo';
 import logo from '/assets/small-logo-nb.png';
 import { NavItem } from '../navitem/NavItem';
-import HonkaiLogo from '/public/assets/logos/HonkaiLogo';
+import HonkaiLogo from '/public/assets/logos/HonkaiLogo'
+import { NavItemHonkai } from '../navitem/NavItemHonkai';
 
 export function Navbar() {
   return (
@@ -15,9 +16,9 @@ export function Navbar() {
             <NavItem link={'valorant'} icon={<ValorantLogo />}>
               VALORANT
             </NavItem>
-            <NavItem link={'honkai'} icon={<HonkaiLogo />}>
+            <NavItemHonkai link={'honkai'} icon={<HonkaiLogo />}>
               HONKAI
-            </NavItem>
+            </NavItemHonkai>
         </ul>
       </div>
       <div></div>

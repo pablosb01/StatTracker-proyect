@@ -19,7 +19,6 @@ export function HonkaiUser() {
             .catch(err => setError(err));
     },[]);
 
-
     if(!apiInfo) {
         if(error) {
             return <div>Error: {error.message}</div>

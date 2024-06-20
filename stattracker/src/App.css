@@ -21,13 +21,18 @@
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 15px;
         transition: color ease-in-out;
+<<<<<<< HEAD
         transition-duration: 500ms;
+=======
+            transition-duration: 500ms;
+>>>>>>> Prueba-Honkai-Home
       }
     
     ::-webkit-scrollbar-thumb {
         background: #484848;
         border-radius: 10px;
         transition: color ease-in-out;
+<<<<<<< HEAD
         transition-duration: 500ms;
     }
     :hover::-webkit-scrollbar-thumb {
@@ -35,7 +40,17 @@
         transition: color ease-in-out;
         transition-duration: 500ms;
     }
+=======
+            transition-duration: 500ms;
+        }
+        :hover::-webkit-scrollbar-thumb {
+            background: #671717;
+            transition: color ease-in-out;
+            transition-duration: 500ms;
+            }
+>>>>>>> Prueba-Honkai-Home
 }
+
 
 .paralelogramo {
     width: 220px;
@@ -63,4 +78,78 @@
     transform: skew(20deg);
     margin: 0;
     z-index: 2;
+<<<<<<< HEAD
 }
+=======
+}
+
+body {
+    margin: 0px;
+    height: 100vh;
+    background-color: var(--gray-background);
+}
+
+@media (min-width:1536px) {
+.cajaHonkai 
+    ::-webkit-scrollbar {
+        width: 25px;
+        height: 10px;
+        background: #686868;
+        border: 1px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+        transition: color ease-in-out;
+            transition-duration: 500ms;
+      }
+    
+      ::-webkit-scrollbar-thumb {
+        height: 20px;
+        background: #414141;
+        border-radius: 10px;
+        transition: color ease-in-out;
+            transition-duration: 500ms;
+        }
+        :hover::-webkit-scrollbar-thumb {
+            background: #004675;
+            transition: color ease-in-out;
+            transition-duration: 500ms;
+            }
+}
+
+@media (min-width:375px) {
+    .cajaHonkaiDos {
+        width: 99%;
+    }
+    .cajaHonkai {
+        width: 99%;
+    }
+}
+
+@media (min-width:100px) {
+    .cajaDivHonkai {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width:400px) {
+    .cajaDivHonkai {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width:1200px) {
+    .cajaHonkai 
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+    }
+
+@media (max-width: 1200px) {
+    #root {
+        flex-direction: column;
+    }
+}
+
+>>>>>>> Prueba-Honkai-Home
