@@ -19,6 +19,7 @@
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
     "starrail.js": "^1.7.0",
+    "to-regex-range": "^5.0.1",
     "traverse": "^0.6.6",
     "util-deprecate": "^1.0.2"
   },

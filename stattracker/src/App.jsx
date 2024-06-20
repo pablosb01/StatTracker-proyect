@@ -16,6 +16,7 @@ import { HonkaiUser } from './views/honkai-user.jsx/honkai-user.jsx';
 import RiotView from './views/riot/RiotView.jsx';
 import { ValoAgents } from './views/valorant-agents/agents-valo.jsx';
 import { ValoAgent } from './components/ValoAgent/ValoAgent.jsx';
+import { HonkaiUserCharacter } from './components/HonkaiUserCharacter/HonkaiUserCharacter.jsx';
 
 
 function App() {
@@ -33,9 +34,11 @@ function App() {
             <Route path='/valorant' element={<ValoHome/>}/>
             <Route path='/honkai' element={<HonkaiHome/>}/>
             <Route path='/valorant/:accountName/:hashtag' element={<PlayerValorant/>}/>
-            <Route path='/honkai/:user' element={<HonkaiUser/>}/>
+            <Route path='/honkai/:user' element={<HonkaiUser/>}>
 
+              <Route path=":char" element={<HonkaiUserCharacter/>}/>
             
+            </Route>
             <Route path='/riot' element={<RiotView/>}/>
             <Route path='/valorant/profile/:accountName/:hashtag' element={<PlayerValorant/>}/>
             <Route path="/valorant/agents" element={<ValoAgents />}>
