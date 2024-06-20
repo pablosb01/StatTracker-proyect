@@ -8,7 +8,7 @@ export function HonkaiHome() {
     <>
       <div className="flex xl:flex-row flex-col md:justify-center md:items-center xl:items-start">
         <div
-          className="absolute xl:h-screen opacity-20 w-full top-[250px] xl:top-10 h-40 sm:w-full bg-cover bg-center z-10"
+          className="absolute xl:h-[90%] opacity-20 w-full top-[250px] xl:top-10 h-full sm:w-full bg-cover bg-center z-10"
           style={{
             backgroundImage: `url('/assets/honkai-logo.png')`,
             filter: 'grayscale(100%)'

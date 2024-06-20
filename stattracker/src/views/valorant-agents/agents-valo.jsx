@@ -29,16 +29,14 @@ export function ValoAgents() {
     const currentAgent = agents.find(agent => agent.displayName.toLowerCase().replace('/', '') === agentName) || 'jett'
 
     console.log(currentAgent)
-  /*   console.log(currentAgent + 'current agent') */
 
-    /* useEffect(() => {
-        if (agentsInfo.length > 0 && agentName) {
-            const foundAgent = agentsInfo.find(agent => 
-                agent.displayName.toLowerCase().replace("/","") === agentName
-            )
-            setCurrentAgent(foundAgent)
-        }
-    },[agentsInfo, agentName]) */
+    if(!currentAgent) {
+        return(
+            <div className="fixed w-screen h-screen flex items-center justify-center">
+                <Loader/>
+            </div>
+        )
+    }
     
     
 

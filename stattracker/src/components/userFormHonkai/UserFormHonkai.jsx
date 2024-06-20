@@ -9,7 +9,7 @@ function UserFormHonkai() {
     event.preventDefault();
 
 
-    const newUrl = `/honkai/profile/${honkaiUid}`;
+    const newUrl = `/honkai/profile/${honkaiUid}/0`;
     navigate(newUrl, {replace: true});
 
     console.log('Account UID:', honkaiUid);
@@ -26,7 +26,7 @@ function UserFormHonkai() {
           placeholder="Account Name"
           maxLength={16}
           onChange={(e) => setHonkaiUid(e.target.value)}
-          className="w-full lg:w-1/2 xl:w-2/5 px-4 py-2 mb-4 lg:mb-0 xl:mb-0 text-lg text-gray-700 bg-gray-200 rounded-[25px] focus:outline-none focus:ring-2 focus:ring-red-500"
+          className="w-full lg:w-1/2 xl:w-2/5 px-4 py-2 mb-4 lg:mb-0 xl:mb-0 text-lg text-gray-700 bg-gray-200 rounded-[25px] focus:outline-none focus:ring-2 focus:ring-[#004675]"
         />
         
         <button
