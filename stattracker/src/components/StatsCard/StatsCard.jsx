@@ -47,23 +47,23 @@ const rankVariableImage = `https://trackercdn.com/cdn/tracker.gg/valorant/icons/
         </div>
         <div className="p-4 py-4 space-y-2">
           <div className="flex xl: justify-between">
-            <p className="text-black font-bold">Asesinatos/Muerte</p>
+            <p className="text-black font-bold">Kill/Deaths</p>
             <p className="text-black">{player.kda} %</p>
           </div>
           <div className="flex xl: justify-between">
-            <p className="text-black font-bold">Daño/Ronda</p>
+            <p className="text-black font-bold">Dmg/Round</p>
             <p className="text-black">150</p>
           </div>
           <div className="flex xl: justify-between">
-            <p className="text-black font-bold">Porcentaje Disparos a Cabeza</p>
+            <p className="text-black font-bold">Headshot Percentage</p>
             <p className="text-black">{player.headshotPercent} %</p>
           </div>
           <div className="flex xl: justify-between">
-            <p className="text-black font-bold">Puntuación De Combate</p>
+            <p className="text-black font-bold">Combat Score</p>
             <p className="text-black">{player.combatscore}</p>
           </div>
           <div className="flex xl: justify-between">
-            <p className="text-black font-bold">Puntuación Econ</p>
+            <p className="text-black font-bold">Economics Score</p>
             <p className="text-black">{player.economy}</p>
           </div>
         </div>

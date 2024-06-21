@@ -325,7 +325,7 @@ function HonkaiCharacters() {
                       SetIsOpenElement(false);
                     }}
                   >
-                    Windior
+                    Wind
                   </li>
                 </ul>
               </div>
