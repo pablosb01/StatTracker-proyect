@@ -40,12 +40,12 @@ export function Navbar() {
           />
         </Link>
         <ul className="ml-5 h-full flex">
-          <NavItem link={"valorant"} icon={<ValorantLogo />}>
-            VALORANT
-          </NavItem>
-          <NavItemHonkai link={"honkai"} icon={<HonkaiLogo />}>
-            HONKAI
-          </NavItemHonkai>
+            <NavItem link={'valorant'} icon={<ValorantLogo />}>
+              VALORANT
+            </NavItem>
+            <NavItem link={'honkai'} icon={<HonkaiLogo />}>
+              HONKAI
+            </NavItem>
         </ul>
       </div>
       <div className="flex items-center justify-center">
