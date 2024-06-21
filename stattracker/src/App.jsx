@@ -25,7 +25,7 @@ function App() {
             <Route path='/valorant' element={<ValoHome/>}/>
             <Route path='/honkai' element={<HonkaiHome/>}/>
             <Route path='/valorant/:accountName/:hashtag' element={<PlayerValorant/>}/>
-            <Route path='/honkai/profile/:user' element={<HonkaiUser/>}>
+            <Route path='/honkai/profile/:user/:lang' element={<HonkaiUser/>}>
 
               <Route path=":char" element={<HonkaiUserCharacter/>}/>
             

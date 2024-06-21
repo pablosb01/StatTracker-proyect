@@ -6,12 +6,13 @@ import { Loader } from "../../components/Loader/Loader";
 export function HonkaiUser() {
   const { user } = useParams();
   const { char } = useParams();
+  const { lang } = useParams();
   const [apiInfo, setApiInfo] = useState();
   const [error, setError] = useState();
   /* console.log('characterNumber:'+char) */
 
   useEffect(() => {
-    fetch(`https://honkaiserver.onrender.com/honkai/${user}`)
+    fetch(`https://honkaiserver.onrender.com/honkai/${user}/${lang}`)
       .then((res) => res.json())
       .then((data) => {
         setApiInfo(data);

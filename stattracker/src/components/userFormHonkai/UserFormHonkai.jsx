@@ -3,13 +3,14 @@ import { useNavigate } from 'react-router-dom'
 
 function UserFormHonkai() {
   const [honkaiUid, setHonkaiUid] = useState("");
+  const [language, setLanguage] = useState('')
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
 
-    const newUrl = `/honkai/profile/${honkaiUid}/0`;
+    const newUrl = `/honkai/profile/${honkaiUid}/${language}/0`;
     navigate(newUrl, {replace: true});
 
     console.log('Account UID:', honkaiUid);
@@ -28,6 +29,8 @@ function UserFormHonkai() {
           onChange={(e) => setHonkaiUid(e.target.value)}
           className="w-full lg:w-1/2 xl:w-2/5 px-4 py-2 mb-4 lg:mb-0 xl:mb-0 text-lg text-gray-700 bg-gray-200 rounded-[25px] focus:outline-none focus:ring-2 focus:ring-red-900"
         />
+
+        <input type='text' placeholder='language' maxLength={2} onChange={(e) => {setLanguage(e.target.value)}}/>
         
         <button
           type="submit"
