@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { HonkaiCharacterPrueba } from "./HonkaiCharacterPrueba.jsx";
-import { HonkaiCharacter } from "./HonkaiCharacter.jsx";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
 
 function HonkaiCharacters() {
   const [characters, setCharacters] = useState({});
+
   const [error, setError] = useState(null);
 
   const [order, setOrder] = useState("");
@@ -20,8 +20,6 @@ function HonkaiCharacters() {
   const [isOpenPath, SetIsOpenPath] = useState(false);
 
   const [isOpenElement, SetIsOpenElement] = useState(false);
-
-  const [buttonsReset, SetButtonReset] = useState("");
 
   function handleResetPath() {
     setPathSelect("");
@@ -41,7 +39,7 @@ function HonkaiCharacters() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://cdn.jsdelivr.net/gh/Mar-7th/StarRailRes@master/index_new/es/characters.json"
+          "https://cdn.jsdelivr.net/gh/Mar-7th/StarRailRes@master/index_new/en/characters.json"
         );
         const data = await response.json();
         setCharacters(data);
@@ -77,6 +75,7 @@ function HonkaiCharacters() {
     );
   }
   console.log(characters);
+
   sortedCharacters = sortedCharacters.map((character) => {
     if (character.name === "{NICKNAME}") {
       character.name = "Trailbrazer";
@@ -91,12 +90,13 @@ function HonkaiCharacters() {
   }
 
   return (
-    <div className="cajaHonkai mt-[25px] sm:w-auto max-h-[800px] rounded-xl lg:w-[700px] mr-2 ml-2 bg-gray-300/50">
-      <div className="flex justify-between items-center gap-2 rounded-xl xl:gap-5 h-12 w-full drop-shadow-md group bg-gradient-to-r from-[#004675] to-[#0083DB]  hover:from-[#0083DB] hover:to-[#004675] pr-1.5 whitespace-nowrap">
+    <div className="cajaHonkai mt-[25px] sm:w-auto max-h-[800px] rounded-xl lg:w-[700px] mr-2 ml-2 bg-gray-300/50 z-50">
+      <div className="flex justify-between items-center gap-2 rounded-xl xl:gap-5 h-12 w-full drop-shadow-md group bg-gradient-to-r from-black to-red-900 border border-gray-300 hover:from-red-900 hover:to-black pr-1.5 whitespace-nowrap z-50">
         <h2 className="text-left tracking-wide group-hover:tracking-widest transition-all duration-300 ease-in-out items-center p-1.5 xl:text-3xl text-xs text-white font-sans md:ml-10 md:text-2xl">
           CHARACTERS
         </h2>
-        <button
+        <div className="flex gap-2 justify-center items-center z-50">
+          <button
           className="text-white border rounded-full p-0.5"
           onClick={handleResetAll}
         >
@@ -105,10 +105,8 @@ function HonkaiCharacters() {
         <div className="relative w-full flex gap-2 xl:gap-5 md:justify-evenly">
           <div className="relative flex flex-col w-auto h-auto items-center md:justify-evenly">
             <button
-              className="flex text-[#004675] bg-[#D9D9D9] rounded-md xl:text-sm justify-between items-center tracking-wider border-3 px-3 border-transparent active:border-[#0083DB] duration-300 active:text-white w-full text-xs text-nowrap"
+              className="flex text-[#004675] bg-[#D9D9D9] rounded-md xl:text-sm justify-between items-center tracking-wider border-3 px-3 border-transparent active:border-red-900 duration-300 active:text-white w-full text-xs text-nowrap"
               onClick={() => SetIsOpen(!isOpen)}
-              type="open"
-              id="buttonOrder"
             >
               {order} Order
               {!isOpen ? (
@@ -143,6 +141,7 @@ function HonkaiCharacters() {
             )}
           </div>
         </div>
+        
         <div className="relative w-full flex gap-2 xl:gap-5 md:justify-evenly">
           <div className="relative flex flex-col w-auto h-auto items-center md:justify-evenly">
             <button
@@ -167,6 +166,7 @@ function HonkaiCharacters() {
                       setPathSelect(handleResetPath);
                       SetIsOpenPath(false);
                     }}
+                  
                   >
                     Reset
                   </li>
@@ -238,8 +238,8 @@ function HonkaiCharacters() {
             )}
           </div>
         </div>
-        <div className="relative w-full flex gap-2 xl:gap-5 md:justify-evenly">
-          <div className="relative flex flex-col w-auto h-auto items-center md:justify-evenly">
+        <div className="relative w-full flex gap-2 xl:gap-5 md:justify-evenly z-50">
+          <div className="relative flex flex-col w-auto h-auto items-center md:justify-evenly z-50">
             <button
               className="flex text-[#004675] bg-[#D9D9D9] rounded-md xl:text-sm justify-between items-center tracking-wider border-3 px-3 border-transparent active:border-[#0083DB] duration-300 active:text-white w-full text-xs text-nowrap"
               onClick={() => SetIsOpenElement((prev) => !prev)}
@@ -310,7 +310,7 @@ function HonkaiCharacters() {
                     Quantum
                   </li>
                   <li
-                    className="sm:text-sm text:xs cursor-pointer"
+                    className="sm:text-sm text:xs cursor-pointer z-50"
                     onClick={() => {
                       setElementSelect("Thunder");
                       SetIsOpenElement(false);
@@ -325,19 +325,20 @@ function HonkaiCharacters() {
                       SetIsOpenElement(false);
                     }}
                   >
-                    Windior
+                    Wind
                   </li>
                 </ul>
               </div>
             )}
           </div>
         </div>
+        </div>
       </div>
-      <div className="cajaDivHonkai xl:max-h-[720px] 2xl:mb-3 max-h-[650px] sm:max-w-[740px] mb-2 grid sm:grid-cols-3 xl:grid-cols-5 rounded-b-lg overflow-auto p-5 group-hover:tracking-widest transition-all duration-300 ease-in-out mx-auto gap-5 2xl:gap-0 w-fit py-6">
+      <div className="overflow-hidden"><div className="cajaDivHonkai xl:max-h-[720px] 2xl:mb-3 max-h-[650px] sm:max-w-[740px] mb-2 grid sm:grid-cols-3 xl:grid-cols-5 rounded-b-lg overflow-auto p-5 group-hover:tracking-widest transition-all duration-300 ease-in-out mx-auto gap-5 2xl:gap-0 w-fit py-6 ">
         {sortedCharacters.map((character, index) => (
           <HonkaiCharacterPrueba character={character} key={index} />
         ))}
-      </div>
+      </div></div>
     </div>
   );
 }

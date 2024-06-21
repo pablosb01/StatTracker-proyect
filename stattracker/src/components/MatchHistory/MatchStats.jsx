@@ -256,15 +256,15 @@ export function MatchStats({playerid}) {
               </span>
               <span className="text-custom-orange font-bold text-xl w-3/12">{kda} KDA</span>
               <span className="text-black font-bold text-xl w-3/12">{mpr} MPR</span>
-              <span className="text-black font-bold text-xl w-3/12">{hsp}% Cabeza</span>
+              <span className="text-black font-bold text-xl w-3/12">{hsp}% Headshot</span>
               <span className="w-4/12"></span>
             </div>
             <div className="flex flex-row">
               <span className="text-black-400 text-xl w-2/12">Ascent</span>
               <span className="text-black-400 text-xl w-2/12">{playerStats.kills}/{playerStats.deaths}/{playerStats.assists}</span>
               <span className="text-black-400 text-xl w-2/12">{dpr} DPR</span>
-              <span className="text-black-400 text-xl w-4/12">{averageScore} Puntuación media</span>
-              <span className="flex text-black-400 text-xl w-2/12 justify-end">anteayer</span>
+              <span className="text-black-400 text-xl w-4/12">{averageScore} Average Score</span>
+              <span className="flex text-black-400 text-xl w-2/12 justify-end">2 days ago</span>
             </div>
           </div>
         </div>

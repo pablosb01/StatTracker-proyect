@@ -30,7 +30,7 @@ export function ValoAgents() {
 
     console.log(currentAgent)
 
-    if(!currentAgent) {
+    if(!agents) {
         return(
             <div className="fixed w-screen h-screen flex items-center justify-center">
                 <Loader/>
