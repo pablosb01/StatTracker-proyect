@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { HonkaiCharacterPrueba } from "./HonkaiCharacterPrueba.jsx";
-import { HonkaiCharacter } from "./HonkaiCharacter.jsx";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
 
 function HonkaiCharacters() {
   const [characters, setCharacters] = useState({});
+
   const [error, setError] = useState(null);
 
   const [order, setOrder] = useState("");
@@ -20,8 +20,6 @@ function HonkaiCharacters() {
   const [isOpenPath, SetIsOpenPath] = useState(false);
 
   const [isOpenElement, SetIsOpenElement] = useState(false);
-
-  const [buttonsReset, SetButtonReset] = useState("");
 
   function handleResetPath() {
     setPathSelect("");
@@ -41,7 +39,7 @@ function HonkaiCharacters() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://cdn.jsdelivr.net/gh/Mar-7th/StarRailRes@master/index_new/es/characters.json"
+          "https://cdn.jsdelivr.net/gh/Mar-7th/StarRailRes@master/index_new/en/characters.json"
         );
         const data = await response.json();
         setCharacters(data);
@@ -77,6 +75,7 @@ function HonkaiCharacters() {
     );
   }
   console.log(characters);
+
   sortedCharacters = sortedCharacters.map((character) => {
     if (character.name === "{NICKNAME}") {
       character.name = "Trailbrazer";
@@ -96,7 +95,8 @@ function HonkaiCharacters() {
         <h2 className="text-left tracking-wide group-hover:tracking-widest transition-all duration-300 ease-in-out items-center p-1.5 xl:text-3xl text-xs text-white font-sans md:ml-10 md:text-2xl">
           CHARACTERS
         </h2>
-        <div className="flex gap-2 justify-center items-center z-50"><button
+        <div className="flex gap-2 justify-center items-center z-50">
+          <button
           className="text-white border rounded-full p-0.5"
           onClick={handleResetAll}
         >
@@ -107,8 +107,6 @@ function HonkaiCharacters() {
             <button
               className="flex text-[#004675] bg-[#D9D9D9] rounded-md xl:text-sm justify-between items-center tracking-wider border-3 px-3 border-transparent active:border-red-900 duration-300 active:text-white w-full text-xs text-nowrap"
               onClick={() => SetIsOpen(!isOpen)}
-              type="open"
-              id="buttonOrder"
             >
               {order} Order
               {!isOpen ? (
@@ -168,6 +166,7 @@ function HonkaiCharacters() {
                       setPathSelect(handleResetPath);
                       SetIsOpenPath(false);
                     }}
+                  
                   >
                     Reset
                   </li>
