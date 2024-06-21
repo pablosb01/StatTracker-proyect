@@ -14,10 +14,10 @@ export function ValoAgent (){
     return(
         <>
         <div className='flex flex-row w-full hidden xl:flex'>
-            <div className='relative w-fit h-screen px-2 my-auto'>
-                <img src={currentAgent.background} alt={currentAgent.name} className={`absolute top-0 left-0 h-full object-cover z-0`}/>
+            <div className='relative w-fit h-screen px-2 my-auto group'>
+                <img src={currentAgent.background} alt={currentAgent.name} className={`absolute top-0 left-0 h-full object-cover group-hover:scale-[90%] transition-all ease-in-out duration-300 z-0`}/>
                 <div className='relative z-10 flex items-center justify-center w-full h-full'>
-                    <img src={currentAgent.bustPortrait} className={`max-w-xl w-full h-full object-cover`} style={{filter: `drop-shadow(0 0 10px #${currentAgent.backgroundGradientColors[0]})`}}/>
+                    <img src={currentAgent.bustPortrait} className={`max-w-xl w-full group-hover:scale-[110%] h-full object-cover transition-all ease-in-out duration-300 `} style={{filter: `drop-shadow(0 0 10px #${currentAgent.backgroundGradientColors[0]}) `}}/>
                 </div>
             </div>
             <div className='mx-auto p-5 w-3/5'>
